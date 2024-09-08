@@ -1,6 +1,6 @@
 *.zip
 *.rar
-*.pdf
+data/*.pdf
 AQI*.csv
 
 # Byte-compiled / optimized / DLL files
