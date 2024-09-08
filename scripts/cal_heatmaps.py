@@ -92,8 +92,6 @@ aqi_colors = [aqi_colors[i-1] for i in sorted(df['AQI'].unique())]
 cmap = ListedColormap(aqi_colors)
 #norsm = BoundaryNorm(aqi_ranges, cmap.N, clip=True)
 
-
-df.to_csv('Mangalore.csv')
 if len(city) < 12:
     title_font_size = 40
 else:
