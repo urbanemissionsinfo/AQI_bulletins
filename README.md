@@ -1,6 +1,8 @@
-## Uncertainty of Operating Smaller Number of Ambient Monitoring Stations - Indian Cities from 2015 to 2023
+## AQI Analysis for Indian Cities from 2015 to 2023
 
 This research project is presented at the iCACGP-IGAC Conference 2024, Kuala Lumpur. [Abstract](https://icacgp-igac2024.com/wp-content/uploads/2024/08/A144.-Sai-Krishna-Dammalapati.pdf)
+
+Detailed report can be accessed here: [AQI Analysis for Indian cities from 2015-2023](https://urbanemissions.info/wp-content/uploads/docs/SIM-47-2024.pdf)
 
 ![alt text](assets/India_Monitoring_Poster.jpg)
 
