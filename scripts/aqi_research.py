@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 
-df = pd.read_csv(os.getcwd() + '/data/Processed/AllIndiaBulletins_Master.csv')
+df = pd.read_csv(os.getcwd() + '/data/Processed/AllIndiaBulletins_Master_2024.csv')
 df['No. Stations'] = df['No. Stations'].apply(lambda x: str(x).replace('(', ' '))
 df['No. Stations'] = df['No. Stations'].apply(lambda x: str(x).replace('!', ' '))
 df['No. Stations'] = df['No. Stations'].apply(lambda x: str(x).split(' ')[0])
@@ -16,7 +16,7 @@ df['year'] = df['date'].dt.year
 df['month'] = df['date'].dt.month
 df['day365'] = df['date'].dt.dayofyear
 
-df.City.value_counts().to_csv(os.getcwd() + '/data/Processed/Cities_list.csv')
+#df.City.value_counts().to_csv(os.getcwd() + '/data/Processed/cities.csv')
 # for city in df.City.unique():
 #     df[df.City==city].to_csv(os.getcwd() + '/data/Processed/Citywise/{}_AQIBulletins.csv'.format(city), index=False)
 # exit()
@@ -84,7 +84,7 @@ plt.close()
 ## Total number of stations on any day
 num_stations = df.groupby(['year', 'month', 'day365'])['No. Stations'].sum().reset_index()
 
-## Considering max number of stations in a year as "num stations in that year"
+## Considering max number of stations in a month as "num stations in that year"
 num_stations_per_month = num_stations.groupby(['year','month']).max().reset_index()
 num_stations_per_month = num_stations_per_month[['year', 'month', 'No. Stations']]
 num_stations_per_month.to_csv(os.getcwd() + '/data/Results/num_stations_per_month.csv')

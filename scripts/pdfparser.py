@@ -6,7 +6,7 @@ import pandas as pd
 import glob
 from tqdm import tqdm
 
-year = str(2015)
+year = str(2024)
 
 def parse_pdf(f_path):
     # Capturing pollutants and saving residues to log to check for missed pollutants
@@ -27,7 +27,7 @@ def parse_pdf(f_path):
             fl.write(x)
         return ', '.join(sorted(polls))
 
-    #f_path = os.getcwd() +'/data/2023/AQI_Bulletin_20230815.pdf' # Example
+    #f_path = os.getcwd() +r'/data/PDFs/2024/AQI_Bulletin_20240101.pdf' # Example
 
     tables = camelot.read_pdf(f_path, pages = "1-end")
 
