@@ -1,0 +1,16 @@
+#mainheader {
+    display: flex;
+    justify-content: space-between;
+}
+#aqiheader {
+    border: 1px solid black;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+#footer {
+    text-align: right;
+    padding-right: 3rem;
+    font-size: 0.9rem;
+}

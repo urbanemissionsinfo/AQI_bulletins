@@ -35,3 +35,5 @@ City wise AQI bulletins CSV and calendar plots can be obtained on UrbanEmissions
 
 To produce such calendar heat maps, refer to our Climate Visuals repository: [Calendar Heatmap](https://github.com/urbanemissions-info/ClimateVisuals/blob/main/Calendar%20Heatmap.ipynb)
 
+7. `Box Annotations.ipynb`: It is the script used to build the Bokeh data application of the AQI data. The data application is live here: [Link](https://urbanemissionsinfo.github.io/AQI_bulletins/)
+
