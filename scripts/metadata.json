@@ -1,0 +1,16 @@
+{
+    "databases": {
+        "aqi-bulletins": {
+            "tables": {
+                "aqi_bulletins": {
+                    "facets": [
+                        "city",
+                        "aqi_category",
+                        "year",
+                        "month"
+                    ]
+                }
+            }
+        }
+    }
+}
