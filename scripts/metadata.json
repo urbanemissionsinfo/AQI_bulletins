@@ -1,4 +1,12 @@
 {
+    "title": "Air Quality Index (AQI) Bulletins",
+    "description": "This dataset contains daily Air quality bulletins released by CPCB from 2015-24",
+    "license": "GODL",
+    "license_url": "https://www.data.gov.in/Godl",
+    "source": "Central Pollution Control Board (CPCB)",
+    "source_url": "https://cpcb.nic.in/AQI_Bulletin.php",
+    "about": "UrbanEmissions.info",
+    "about_url": "https://github.com/urbanemissionsinfo/AQI_bulletins",
     "databases": {
         "aqi-bulletins": {
             "tables": {

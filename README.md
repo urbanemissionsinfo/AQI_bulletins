@@ -1,5 +1,22 @@
-## AQI Analysis for Indian Cities from 2015 to 2023
+# AQI Analysis for Indian Cities from 2015 to 2023
 
+## Dataset
+
+This dataset contains AQI Daily bulletins released by the Central Pollution Control Board (CPCB) between 2015-24. These daily bulletins can be currently obtained here: [CPCB Daily AQI Bulletins](https://cpcb.nic.in/AQI_Bulletin.php)
+
+The data contains (available) following columns:
+- `date`: The granularity of the data is at day level. Date in YYYY-MM-DD format.
+- `city`: Name of city.
+- `no_station`: Number of active stations in the city on the given date.
+- `aqi_category`: [India's AQI categories](https://www.pib.gov.in/newsite/printrelease.aspx?relid=110654) based on AQI value.
+- `aqi`: Average AQI value for the city on the given date.
+- `prominent_pollutant`: The pollutant driving the AQI value for the day.
+
+This data for all cities can be obtained in the  `AllIndiaBulletins_master.csv` from `data/Processed` folder.
+
+City wise AQI bulletins CSV and calendar plots can be obtained on UrbanEmissions website: [Link](https://urbanemissions.info/india-air-quality/india-ncap-aqi-indian-cities-2015-2023/)
+
+## Analysis
 This research project is presented at the iCACGP-IGAC Conference 2024, Kuala Lumpur. [Abstract](https://icacgp-igac2024.com/wp-content/uploads/2024/08/A144.-Sai-Krishna-Dammalapati.pdf)
 
 Detailed report can be accessed here: [AQI Analysis for Indian cities from 2015-2023](https://urbanemissions.info/wp-content/uploads/docs/SIM-47-2024.pdf)
@@ -7,12 +24,6 @@ Detailed report can be accessed here: [AQI Analysis for Indian cities from 2015-
 ![alt text](assets/India_Monitoring_Poster.jpg)
 
 <hr>
-
-This repository contains analysis of AQI Daily bulletins released by the Central Pollution Control Board (CPCB) since 2015. These daily bulletins can be currently obtained here: [CPCB Daily AQI Bulletins](https://cpcb.nic.in/AQI_Bulletin.php)
-
-The data contains (available) day-wise `city-average AQI value`, `AQI category`, and `conditional pollutant` information. This data for all cities can be obtained in the  `AllIndiaBulletins_master.csv` from `data/Processed` folder.
-
-City wise AQI bulletins CSV and calendar plots can be obtained on UrbanEmissions website: [Link](https://urbanemissions.info/india-air-quality/india-ncap-aqi-indian-cities-2015-2023/)
 
 
 ## Codes
