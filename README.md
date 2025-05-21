@@ -4,6 +4,8 @@
 
 This dataset contains AQI Daily bulletins released by the Central Pollution Control Board (CPCB) between 2015-24. These daily bulletins can be currently obtained here: [CPCB Daily AQI Bulletins](https://cpcb.nic.in/AQI_Bulletin.php)
 
+The dataset is published on Datasette: [AQI Bulletins](https://aqi-bulletins.vercel.app/)
+
 The data contains (available) following columns:
 - `date`: The granularity of the data is at day level. Date in YYYY-MM-DD format.
 - `city`: Name of city.
@@ -51,5 +53,5 @@ To produce such calendar heat maps, refer to our Climate Visuals repository: [Ca
 
 7. `Box Annotations.ipynb`: It is the script used to build the Bokeh data application of the AQI data. The data application is live here: [Link](https://urbanemissionsinfo.github.io/AQI_bulletins/)
 
-8. `Datasette.ipynb`: Contains the process to convert the CSV into [Datasette](https://datasette.io/)
+8. `Datasette.ipynb`: Contains the process to convert the CSV into [Datasette](https://datasette.io/). The Datasette can be found here: [Datasette AQI Bulletins](https://aqi-bulletins.vercel.app/)
 
