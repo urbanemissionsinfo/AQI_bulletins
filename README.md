@@ -17,9 +17,12 @@ This data for all cities can be obtained in the  `AllIndiaBulletins_master.csv` 
 City wise AQI bulletins CSV and calendar plots can be obtained on UrbanEmissions website: [Link](https://urbanemissions.info/india-air-quality/india-ncap-aqi-indian-cities-2015-2023/)
 
 ## Analysis
-This research project is presented at the iCACGP-IGAC Conference 2024, Kuala Lumpur. [Abstract](https://icacgp-igac2024.com/wp-content/uploads/2024/08/A144.-Sai-Krishna-Dammalapati.pdf)
+A visualisation of this dataset can be accessed here: [AQI Bulletins Interactive scatter plot](https://urbanemissionsinfo.github.io/AQI_bulletins/)
 
 Detailed report can be accessed here: [AQI Analysis for Indian cities from 2015-2023](https://urbanemissions.info/wp-content/uploads/docs/SIM-47-2024.pdf)
+
+This research project is presented at the iCACGP-IGAC Conference 2024, Kuala Lumpur. [Abstract](https://icacgp-igac2024.com/wp-content/uploads/2024/08/A144.-Sai-Krishna-Dammalapati.pdf)
+
 
 ![alt text](assets/India_Monitoring_Poster.jpg)
 
@@ -47,4 +50,6 @@ Detailed report can be accessed here: [AQI Analysis for Indian cities from 2015-
 To produce such calendar heat maps, refer to our Climate Visuals repository: [Calendar Heatmap](https://github.com/urbanemissions-info/ClimateVisuals/blob/main/Calendar%20Heatmap.ipynb)
 
 7. `Box Annotations.ipynb`: It is the script used to build the Bokeh data application of the AQI data. The data application is live here: [Link](https://urbanemissionsinfo.github.io/AQI_bulletins/)
+
+8. `Datasette.ipynb`: Contains the process to convert the CSV into [Datasette](https://datasette.io/)
 
