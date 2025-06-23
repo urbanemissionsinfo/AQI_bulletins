@@ -1,0 +1,68 @@
+body {
+    margin: 0 20px 0 20px;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+}
+
+#header {
+    color: white;
+    background-color: #08306B;
+    text-align: center;
+    align-items: center;
+    padding: 3px;
+    margin: auto;
+}
+.holder {
+    display: flex;
+    width: 100%;
+}
+
+.steps {
+    width: 40%;
+    margin-right: 5px;
+}
+
+.step {
+    margin-top: 50px;
+    min-height: 600px;
+}
+
+.step p{
+    margin: 0px;
+    padding: 5px;
+    opacity: 0.3;
+}
+#chart {
+    width: 60%;
+    position: sticky;
+    top: 0px;
+    right: 0px;
+    background-color: #E0F0FF;
+    height: 100vh;
+}
+
+#footer {
+    color: white;
+    background-color: #08306B;
+    text-align: center;
+    align-items: center;
+    padding: 3px;
+    margin: auto;
+}
+#footer a{
+    color: #E0F0FF;
+}
+
+#footnotes{
+    font-size: 1rem;
+}
+
+svg g{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+svg text{
+    font-weight: bold;
+    font-size: 1rem;
+}

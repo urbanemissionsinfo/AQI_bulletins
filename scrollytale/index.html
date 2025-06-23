@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AQI Scrolly Tale</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <link rel="icon" href="ue.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="header">
+        <h2> India's Ambient Monitoring Capacity</h2>
+        This is a scrolly tale on the state of India's air quality monitoring capacity. Scroll on.
+    </div> 
+    <section style="display: flex;">
+        <!-- <h1> Viz</h1> -->
+        <div class="holder">
+            
+            <div class="steps">
+                <div class="step" id="step0">
+                    <p>
+                        Continuous air quality monitoring stations (CAAQMS) report data at 15-minute intervals and the 
+                        data is posted on the CPCB portal in real time.<br><br>
+                        There are a total of <b>512 CAAQMS </b>in India as of February, 2024. 
+                    </p>
+                    </div>
+                <div class="step" id="step1">
+                    <p>
+                        Manual monitoring stations are those that report daily averages of select 
+                        pollutants for at least 103 days in a year. <br><br>
+                        There are a total of <b>883 manual stations</b> in India as of February, 2023.
+                    </p>
+                    </div>
+                <div class="step" id="step2">
+                    <p>
+                        The number of Indian cities reporting AQI in the bulletins increased <b>10-fold</b> 
+                        between 2015 and 2023.
+                    </p>
+                </div>
+                <div class="step" id="step3">
+                    <p>
+                        However, most of these cities only have one monitoring station. <br><br>
+
+                       A city needs atleast 5 stations to cover one location each at residential, commercial, industrial, roadside, and background sites to provide a representative sample.<br><br>
+
+                        In 2023, only metropolitan and some Tier-1 cities, reported more than 5 stations.<br><br>
+                        
+                        These 15 cities are – Agra (6), Ahmedabad (9), Bengaluru (13), Chennai (8), Delhi (39), 
+                        Hyderabad (14), Jaipur (6), Jodhpur (5), Kolkata (7), Lucknow (6), Moradabad (6), 
+                        Mumbai (28), Navi Mumbai (7), Patna (6), and Pune (8).
+
+                    </p>
+                </div>
+            </div>
+            <svg id="chart" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
+            </svg>
+        </div>
+    </section>
+    <section>
+        <div id="footer">
+            <h2> India needs atleast 4094 monitoring stations!</h2>
+            <p>
+                While monitoring efforts in most of the cities start with only one station, the 
+                representativeness of its location is always in question and could lead to biases in 
+                interpreting the data, till the overall sample size is at least 4, and covers a mix of 
+                residential, commercial, industrial, transportation, and background characteristics 
+                of the airshed.
+            </p> 
+            <p id="footnotes">
+                For further reading: <a href="https://urbanemissions.info/wp-content/uploads/docs/SIM-47-2024.pdf"> AQI Analysis for Indian cities</a>
+                <br>
+                
+                <a href="https://aqi-bulletins.vercel.app/">AQI Bulletings data is published on Datasette. </a>You can also visualise with this data at <a href="https://urbanemissionsinfo.github.io/AQI_bulletins/"> AQI Timeseries</a>
+            </p>
+        </div>
+    </section>
+    <script type="module" src="visuals/main.js"></script>
+</body>
