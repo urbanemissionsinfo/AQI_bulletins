@@ -4,7 +4,7 @@
 
 This dataset contains AQI Daily bulletins released by the Central Pollution Control Board (CPCB) between 2015-24. These daily bulletins can be currently obtained here: [CPCB Daily AQI Bulletins](https://cpcb.nic.in/AQI_Bulletin.php)
 
-The dataset is published on Datasette: [AQI Bulletins](https://aqi-bulletins.vercel.app/)
+The dataset is published on Datasette: [AQI Bulletins](https://urbanemissionsinfo.github.io/AQI_bulletins/data/index.html)
 
 The data contains (available) following columns:
 - `date`: The granularity of the data is at day level. Date in YYYY-MM-DD format.

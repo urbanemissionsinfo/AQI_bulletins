@@ -3,8 +3,9 @@ import glob
 import os
 from datetime import datetime
 
+year='2025'
 
-csvs = glob.glob(os.getcwd() + "/data/CSVs/**/*.csv")
+csvs = glob.glob(os.getcwd() + "/data/CSVs/{}/*.csv".format(year))
 
 dfs = []
 
@@ -58,8 +59,5 @@ master_df['City'] = master_df['City'].apply(lambda x: str(x).strip())
 
 master_df = master_df[['date', 'City','No. Stations', 'Air Quality', 'Index Value', 'Prominent Pollutant']]
 master_df = master_df.sort_values(by='date')
-master_df.to_csv(os.getcwd() + '/data/Processed/AllIndiaBulletins_Master2024.csv', index=False)
-
-
-# List of cities
-master_df.City.value_counts().to_csv(os.getcwd() + '/data/Processed/Cities_list.csv')
+master_df.to_csv(os.getcwd() + '/data/Processed/AllIndiaBulletins_Master{}.csv'.format(year), index=False)
+# Clean City Column in OpenRife

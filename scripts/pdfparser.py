@@ -6,7 +6,7 @@ import pandas as pd
 import glob
 from tqdm import tqdm
 
-year = str(2024)
+year = str(2025)
 
 def parse_pdf(f_path):
     # Capturing pollutants and saving residues to log to check for missed pollutants
