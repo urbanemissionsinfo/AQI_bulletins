@@ -33,7 +33,7 @@ This research project is presented at the iCACGP-IGAC Conference 2024, Kuala Lum
 
 ## Codes
 1. `pdfparser.py`: Extracted tables from all AQI bulletins from 2015.
-2. `clean.py`: Cleans all CSVs extracted and creates `AllIndiaBulletins_Master.csv`. Then manually cleaned `City` column for duplicates. (Chihuahua problem)
+2. `clean.py`: Cleans all CSVs extracted and creates `AllIndiaBulletins_Master.csv`. Then manually clean `City` column for duplicates. (Chihuahua problem)
 3. `cal_heatmaps.py`: Creates calendar heatmaps for each city. 
 4. `aqi_research.py`: Creates CSVs and plots that answers a few research questions as follows:
 
