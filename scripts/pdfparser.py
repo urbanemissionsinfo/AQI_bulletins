@@ -79,7 +79,8 @@ def parse_pdf(f_path):
 
     save_path = f_path.replace('.pdf', '.csv')
     save_path = save_path.replace('PDFs', 'CSVs')
-    # print('Saving to', save_path)
+
+    #print('Saving to', save_path)
     final_df.to_csv(save_path, index=None)
 
 

@@ -59,5 +59,5 @@ master_df['City'] = master_df['City'].apply(lambda x: str(x).strip())
 
 master_df = master_df[['date', 'City','No. Stations', 'Air Quality', 'Index Value', 'Prominent Pollutant']]
 master_df = master_df.sort_values(by='date')
-master_df.to_csv(os.getcwd() + '/data/Processed/AllIndiaBulletins_Master{}.csv'.format(year), index=False)
+master_df.to_csv(os.getcwd() + '/data/Processed/AllIndiaBulletins_{}.csv'.format(year), index=False)
 # Clean City Column in OpenRife
