@@ -51,7 +51,7 @@ This research project is presented at the iCACGP-IGAC Conference 2024, Kuala Lum
 
 To produce such calendar heat maps, refer to our Climate Visuals repository: [Calendar Heatmap](https://github.com/urbanemissions-info/ClimateVisuals/blob/main/Calendar%20Heatmap.ipynb)
 
-7. `Box Annotations.ipynb`: It is the script used to build the Bokeh data application of the AQI data. The data application is live here: [Link](https://urbanemissionsinfo.github.io/AQI_bulletins/)
+7. `Bokeh_AQI.ipynb`: It is the script used to build the Bokeh data application of the AQI data. The data application is live here: [Link](https://urbanemissionsinfo.github.io/AQI_bulletins/)
 
 8. `Datasette.ipynb`: Contains the process to convert the CSV into [Datasette](https://datasette.io/). The Datasette can be found here: [Datasette AQI Bulletins](https://aqi-bulletins.vercel.app/)
 

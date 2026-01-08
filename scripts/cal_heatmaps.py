@@ -67,30 +67,30 @@ def join_images(image1_path, image2_path, output_path, vertically=True):
 
 
 # Create a dataframe with a single column - dates from 2015 to 2023
-daily_dates = pd.date_range(start='2015-01-01', end='2024-12-31', freq='D')
+daily_dates = pd.date_range(start='2015-01-01', end='2025-12-31', freq='D')
 template = pd.DataFrame({'date': daily_dates})
 
-df = pd.read_csv(os.getcwd() + '/data/Processed/AllIndiaBulletins_Master_2024.csv')
+df = pd.read_csv(os.getcwd() + '/data/Processed/AllIndiaBulletinsMaster2025_openrefined.csv')
 #df['City'] = df['City'].replace('Pimpri Chinchwad', 'Pimpri-Chinchwad', regex=True)
 #df.to_csv(os.getcwd() + '/data/Processed/AllIndiaBulletins_Master_2024.csv', index=False)
 #print(df['City'].value_counts())
-df['City'].value_counts().to_csv(os.getcwd() + '/data/Processed/cities.csv')
+df['city'].value_counts().to_csv(os.getcwd() + '/data/Processed/cities.csv')
 
-df = df[df['City']==city]
+df = df[df['city']==city]
 df['date'] = pd.to_datetime(df['date'])
 df = template.merge(df, on='date', how='left') #Remove this code if you dont want years without data in calendar
 ##
-df['No. Stations'] = df['No. Stations'].apply(lambda x: str(x).replace('(', ' '))
-df['No. Stations'] = df['No. Stations'].apply(lambda x: str(x).replace('!', ''))
-df['No. Stations'] = df['No. Stations'].apply(lambda x: str(x).split(' ')[0])
+df['no_stations'] = df['no_stations'].apply(lambda x: str(x).replace('(', ' '))
+df['no_stations'] = df['no_stations'].apply(lambda x: str(x).replace('!', ''))
+df['no_stations'] = df['no_stations'].apply(lambda x: str(x).split(' ')[0])
 df.replace('', np.nan, inplace=True)
-df['No. Stations'] = df['No. Stations'].astype(float)
+df['no_stations'] = df['no_stations'].astype(float)
 
-result = df.groupby(df.date.dt.year)['No. Stations'].mean().reset_index()
+result = df.groupby(df.date.dt.year)['no_stations'].mean().reset_index()
 result = result.fillna(0)
 num_years = result.date.nunique()
 
-year_custom_labels = list(result['date'].astype(str) + ' ('+ round(result['No. Stations'],1).astype(str) + ')')
+year_custom_labels = list(result['date'].astype(str) + ' ('+ round(result['no_stations'],1).astype(str) + ')')
 #print(year_custom_labels)
 df.set_index('date', inplace=True)
 
@@ -103,19 +103,22 @@ image = Image.new('RGB', (2070, 350), color='white')
 draw = ImageDraw.Draw(image)
 
 # Define text, fonts, and positions
-text_lines = ["Air Quality Index Summary 2015-2024",
+text_lines = ["Air Quality Index Summary 2015-2025",
                 city,
-               "Average number of monitoring stations in 2024: {}".format(str(round(list(result['No. Stations'])[-1],1))),
+               "Average number of monitoring stations in 2025: {}".format(str(round(list(result['no_stations'])[-1],1))),
                 "Statistical minimum number of representative sample size is 5 (five)"]
 font_sizes = [90, 90, 60, 50]  # Descending font sizes
 y_positions = [30, 130, 230, 290]  # Vertical positions for each line
 
 # Load fonts and draw text on the image
 fonts = []
+font_path = "/usr/share/fonts/gnu-free/FreeSans.ttf"
 for size in font_sizes:
     try:
-        fonts.append(ImageFont.truetype("arial.ttf", size))
+        fonts.append(ImageFont.truetype(font_path, size))
+        print(f"Loaded Arial size {size}")
     except IOError:
+        print("Arial not found, using default font")
         fonts.append(ImageFont.load_default())
 
 for i, text in enumerate(text_lines):
@@ -143,13 +146,13 @@ aqi_colors = ['#eeeeeeff', # Null values are replaced with -1 - this color is fo
 
 # Define the conditions for each category
 conditions = [
-    (df['Index Value'] < 0), # Null values are replaced with -1 - this category is for that - remove it if null calendary years are not needed
-    (df['Index Value'] <= 50),
-    (df['Index Value'] > 50) & (df['Index Value'] <= 100),
-    (df['Index Value'] > 100) & (df['Index Value'] <= 200),
-    (df['Index Value'] > 200) & (df['Index Value'] <= 300),
-    (df['Index Value'] > 300) & (df['Index Value'] <= 400),
-    (df['Index Value'] > 400)
+    (df['aqi'] < 0), # Null values are replaced with -1 - this category is for that - remove it if null calendary years are not needed
+    (df['aqi'] <= 50),
+    (df['aqi'] > 50) & (df['aqi'] <= 100),
+    (df['aqi'] > 100) & (df['aqi'] <= 200),
+    (df['aqi'] > 200) & (df['aqi'] <= 300),
+    (df['aqi'] > 300) & (df['aqi'] <= 400),
+    (df['aqi'] > 400)
 ]
 
 categories = [1, 2, 3, 4, 5, 6, 7] #Should be 6 - +1 for the null value category.
@@ -204,13 +207,13 @@ plt.savefig(os.getcwd() + '/plots/calendarheats/{}_calendarhm.png'.format(city))
 plt.close()
 
 plt.figure(figsize=(20,8))  
-plt.bar(result.date, result['No. Stations'], )
+plt.bar(result.date, result['no_stations'], )
 plt.title('Average number of stations reporting', fontsize=40, fontweight='bold')
 plt.xticks(result.date, fontweight='bold', fontsize=25)
-ytick_stepsize = round(max(result['No. Stations'].dropna())/5, 1)
+ytick_stepsize = round(max(result['no_stations'].dropna())/5, 1)
 if ytick_stepsize>1:
     ytick_stepsize = round(ytick_stepsize,0)
-plt.yticks(np.arange(ytick_stepsize, max(result['No. Stations'].dropna())+ytick_stepsize, ytick_stepsize), fontweight='bold', fontsize=25)
+plt.yticks(np.arange(ytick_stepsize, max(result['no_stations'].dropna())+ytick_stepsize, ytick_stepsize), fontweight='bold', fontsize=25)
 
 plt.xlabel('Year', fontsize=30)
 plt.savefig(os.getcwd() + '/plots/calendarheats/{}_stations.png'.format(city))

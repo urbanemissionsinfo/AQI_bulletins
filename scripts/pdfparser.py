@@ -84,7 +84,7 @@ def parse_pdf(f_path):
     final_df.to_csv(save_path, index=None)
 
 
-pdfs = glob.glob(os.getcwd() + "/data/PDFs/{}/AQI_Bulletin_202507*.pdf".format(year))
+pdfs = glob.glob(os.getcwd() + "/data/PDFs/{}/AQI_Bulletin_202512*.pdf".format(year))
 
 for f_path in tqdm(pdfs):
     #parse_pdf(f_path)
