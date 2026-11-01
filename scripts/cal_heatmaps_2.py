@@ -19,7 +19,7 @@ if len(sys.argv) != 2:
 city = sys.argv[1]
 
 # Read and prepare data
-df = pd.read_csv(os.getcwd() + '/data/Processed/AllIndiaBulletinsMaster2025_openrefined.csv')
+df = pd.read_csv(os.getcwd() + '/data/Processed/AllIndiaBulletinsMaster2026_openrefined.csv')
 df = df[df['city'] == city]
 df['date'] = pd.to_datetime(df['date'])
 

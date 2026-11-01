@@ -3,7 +3,7 @@ import os
 import subprocess
 from tqdm import tqdm 
 import glob
-cities = pd.read_csv(os.getcwd() + '/data/Processed/AllIndiaBulletinsMaster2025_openrefined.csv')['city'].unique()
+cities = pd.read_csv(os.getcwd() + '/data/Processed/AllIndiaBulletinsMaster2026_openrefined.csv')['city'].unique()
 
 # done = glob.glob(os.getcwd() + "/plots/final_calendarheats/*.png")
 # done_cities = []
