@@ -6,7 +6,7 @@ import pandas as pd
 import glob
 from tqdm import tqdm
 
-year = str(2025)
+year = str(2026)
 
 def parse_pdf(f_path):
     # Capturing pollutants and saving residues to log to check for missed pollutants
@@ -61,8 +61,9 @@ def parse_pdf(f_path):
             df_list.append(df)
 
     ###########################################################
-    
-    final_df = pd.concat(df_list)
+    df_list = [df.loc[:, ~df.columns.duplicated()] for df in df_list]
+
+    final_df = pd.concat(df_list, ignore_index=True)
     
     # Wrong header correction - Title in header - then remove
     if year in (' '.join(final_df.columns)):
@@ -84,11 +85,11 @@ def parse_pdf(f_path):
     final_df.to_csv(save_path, index=None)
 
 
-pdfs = glob.glob(os.getcwd() + "/data/PDFs/{}/AQI_Bulletin_202512*.pdf".format(year))
+pdfs = glob.glob(os.getcwd() + "/data/PDFs/{}/AQI_Bulletin_202610*.pdf".format(year))
 
 for f_path in tqdm(pdfs):
-    #parse_pdf(f_path)
-    try:
-        parse_pdf(f_path)
-    except:
-        print('Failed: ', f_path)
+    parse_pdf(f_path)
+    # try:
+    #     parse_pdf(f_path)
+    # except:
+    #     print('Failed: ', f_path)

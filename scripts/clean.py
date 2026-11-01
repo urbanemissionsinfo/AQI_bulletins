@@ -3,7 +3,7 @@ import glob
 import os
 from datetime import datetime
 
-year='2025'
+year='2026'
 
 csvs = glob.glob(os.getcwd() + "/data/CSVs/{}/*.csv".format(year))
 

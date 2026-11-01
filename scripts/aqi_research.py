@@ -1,12 +1,17 @@
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import numpy as np
 
-df = pd.read_csv(os.getcwd() + '/data/Processed/AllIndiaBulletinsMaster2025_openrefined.csv')
+df = pd.read_csv(
+    os.getcwd() + '/data/Processed/AllIndiaBulletinsMaster2026_openrefined.csv'
+)
+
 df['no_stations'] = df['no_stations'].apply(lambda x: str(x).replace('(', ' '))
 df['no_stations'] = df['no_stations'].apply(lambda x: str(x).replace('!', ' '))
 df['no_stations'] = df['no_stations'].apply(lambda x: str(x).split(' ')[0])
+
 df.replace('', np.nan, inplace=True)
 df = df.dropna()
 
@@ -16,16 +21,28 @@ df['year'] = df['date'].dt.year
 df['month'] = df['date'].dt.month
 df['day365'] = df['date'].dt.dayofyear
 
-#df.City.value_counts().to_csv(os.getcwd() + '/data/Processed/cities.csv')
+# df.City.value_counts().to_csv(os.getcwd() + '/data/Processed/cities.csv')
 # for city in df.City.unique():
-#     df[df.City==city].to_csv(os.getcwd() + '/data/Processed/Citywise/{}_AQIBulletins.csv'.format(city), index=False)
+#     df[df.City == city].to_csv(
+#         os.getcwd() + '/data/Processed/Citywise/{}_AQIBulletins.csv'.format(city),
+#         index=False
+#     )
 # exit()
-# 1. total unique cities being monitored by year 
+
+
+# 1. Total unique cities being monitored by year
+
 unique_cities_per_year = df.groupby('year')['city'].nunique()
-unique_cities_per_year.to_csv(os.getcwd() + '/data/Results/unique_cities_per_year.csv')
-unique_cities_per_year.plot(x='year',
-                            kind='bar',
-                            figsize=(15,10))
+
+unique_cities_per_year.to_csv(
+    os.getcwd() + '/data/Results/unique_cities_per_year.csv'
+)
+
+unique_cities_per_year.plot(
+    x='year',
+    kind='bar',
+    figsize=(15, 10)
+)
 
 plt.xticks(fontweight='bold', rotation=0, fontsize=15)
 plt.yticks(fontweight='bold', fontsize=15)
@@ -36,39 +53,70 @@ plt.tight_layout()
 plt.savefig(os.getcwd() + '/plots/Results/unique_cities_per_year.png')
 plt.close()
 
-# 2. total unique cities by month
-unique_cities_per_month = df.groupby(['year', 'month'])['city'].nunique()
-unique_cities_per_month.to_csv(os.getcwd() + '/data/Results/unique_cities_per_month.csv')
-unique_cities_per_month = unique_cities_per_month.reset_index()
-unique_cities_per_month['date'] = unique_cities_per_month['year'].astype(str) + '-' + unique_cities_per_month['month'].astype(str)
 
-unique_cities_per_month.plot(x='date', y='city',
-                            kind='bar',
-                            figsize=(15,10))
-selected_ticks = [0] + list(range(12, unique_cities_per_month['date'].shape[0], 12))  # First, 13th, 26th, etc.
+# 2. Total unique cities by month
+
+unique_cities_per_month = df.groupby(['year', 'month'])['city'].nunique()
+
+unique_cities_per_month.to_csv(
+    os.getcwd() + '/data/Results/unique_cities_per_month.csv'
+)
+
+unique_cities_per_month = unique_cities_per_month.reset_index()
+
+unique_cities_per_month['date'] = (
+    unique_cities_per_month['year'].astype(str)
+    + '-'
+    + unique_cities_per_month['month'].astype(str)
+)
+
+unique_cities_per_month.plot(
+    x='date',
+    y='city',
+    kind='bar',
+    figsize=(15, 10)
+)
+
+selected_ticks = [
+    0
+] + list(range(12, unique_cities_per_month['date'].shape[0], 12))
+
 plt.xticks(selected_ticks, fontweight='bold', rotation=0, fontsize=15)
 plt.yticks(fontweight='bold', fontsize=15)
 plt.xlabel('Month', fontweight='bold', fontsize=20)
 plt.ylabel('No. of Cities', fontweight='bold', fontsize=20)
 plt.title('Number of Cities with Monitoring Stations', fontsize=25, fontweight='bold')
 plt.tight_layout()
-# Remove legend box
 plt.legend().remove()
 plt.savefig(os.getcwd() + '/plots/Results/unique_cities_per_month.png')
 plt.close()
 
-# 3. total number of monitoring stations by year
-## Total number of stations on any day
-num_stations = df.groupby(['year','day365'])['no_stations'].sum().reset_index()
 
-## Considering max number of stations in a year as "num stations in that year"
-num_stations_per_year = num_stations.groupby('year').max().reset_index()
+# 3. Total number of monitoring stations by year
+
+# Total number of stations on any day
+num_stations = (
+    df.groupby(['year', 'day365'])['no_stations']
+    .sum()
+    .reset_index()
+)
+
+# Considering maximum number of stations in a year
+num_stations_per_year = (
+    num_stations.groupby('year').max().reset_index()
+)
+
 num_stations_per_year = num_stations_per_year[['year', 'no_stations']]
-num_stations_per_year.to_csv(os.getcwd() + '/data/Results/num_stations_per_year.csv')
 
-num_stations_per_year.plot(x='year',
-                           kind='bar',
-                           figsize=(15,10))
+num_stations_per_year.to_csv(
+    os.getcwd() + '/data/Results/num_stations_per_year.csv', index=False
+)
+
+num_stations_per_year.plot(
+    x='year',
+    kind='bar',
+    figsize=(15, 10)
+)
 
 plt.xticks(fontweight='bold', rotation=0, fontsize=15)
 plt.yticks(fontweight='bold', fontsize=15)
@@ -80,42 +128,81 @@ plt.legend().remove()
 plt.savefig(os.getcwd() + '/plots/Results/num_stations_per_year.png')
 plt.close()
 
-# 4. total number of monitoring stations by month
-## Total number of stations on any day
-num_stations = df.groupby(['year', 'month', 'day365'])['no_stations'].sum().reset_index()
 
-## Considering max number of stations in a month as "num stations in that year"
-num_stations_per_month = num_stations.groupby(['year','month']).max().reset_index()
-num_stations_per_month = num_stations_per_month[['year', 'month', 'no_stations']]
-num_stations_per_month.to_csv(os.getcwd() + '/data/Results/num_stations_per_month.csv')
-num_stations_per_month['date'] = num_stations_per_month['year'].astype(str) + '-' + num_stations_per_month['month'].astype(str)
+# 4. Total number of monitoring stations by month
 
-num_stations_per_month.plot(x='date', y='no_stations',
-                            kind='bar',
-                            figsize=(15,10))
-selected_ticks = [0] + list(range(12, num_stations_per_month['date'].shape[0], 12))  # First, 13th, 26th, etc.
+# Total number of stations on any day
+num_stations = (
+    df.groupby(['year', 'month', 'day365'])['no_stations']
+    .sum()
+    .reset_index()
+)
+
+# Considering maximum number of stations in a month
+num_stations_per_month = (
+    num_stations.groupby(['year', 'month']).max().reset_index()
+)
+
+num_stations_per_month = num_stations_per_month[
+    ['year', 'month', 'no_stations']
+]
+
+num_stations_per_month.to_csv(
+    os.getcwd() + '/data/Results/num_stations_per_month.csv'
+)
+
+num_stations_per_month['date'] = (
+    num_stations_per_month['year'].astype(str)
+    + '-'
+    + num_stations_per_month['month'].astype(str)
+)
+
+num_stations_per_month.plot(
+    x='date',
+    y='no_stations',
+    kind='bar',
+    figsize=(15, 10)
+)
+
+selected_ticks = [
+    0
+] + list(range(12, num_stations_per_month['date'].shape[0], 12))
+
 plt.xticks(selected_ticks, fontweight='bold', rotation=0, fontsize=15)
 plt.yticks(fontweight='bold', fontsize=15)
 plt.xlabel('Month', fontweight='bold', fontsize=20)
 plt.ylabel('No. of Stations', fontweight='bold', fontsize=20)
 plt.title('Number of Monitoring Stations', fontsize=25, fontweight='bold')
 plt.tight_layout()
-# Remove legend box
 plt.legend().remove()
 plt.savefig(os.getcwd() + '/plots/Results/num_stations_per_month.png')
 plt.close()
 
 
-# 5. Average number of monitoring stations by year (I am assuming this is the same as point 3/ point 1)
+# 5. Average number of monitoring stations by year
 
-avg_by_year = num_stations_per_year.values[:,1]/unique_cities_per_year.values
-avg_by_year_df = pd.DataFrame([num_stations_per_year.values[:,0], avg_by_year]).T
+avg_by_year = (
+    num_stations_per_year.values[:, 1]
+    / unique_cities_per_year.values
+)
+
+avg_by_year_df = pd.DataFrame([
+    num_stations_per_year.values[:, 0],
+    avg_by_year
+]).T
+
 avg_by_year_df.columns = ['year', 'avg']
-avg_by_year_df['year'] = avg_by_year_df['year'].astype('int')
-avg_by_year_df.to_csv(os.getcwd() + '/data/Results/avg_numstations_by_year.csv')
-avg_by_year_df.plot(x='year',
-                    kind='bar',
-                    figsize=(15,10))
+avg_by_year_df['year'] = avg_by_year_df['year'].astype(int)
+
+avg_by_year_df.to_csv(
+    os.getcwd() + '/data/Results/avg_numstations_by_year.csv'
+)
+
+avg_by_year_df.plot(
+    x='year',
+    kind='bar',
+    figsize=(15, 10)
+)
 
 plt.xticks(fontweight='bold', rotation=0, fontsize=15)
 plt.yticks(fontweight='bold', fontsize=15)
@@ -127,52 +214,155 @@ plt.legend().remove()
 plt.savefig(os.getcwd() + '/plots/Results/avg_numstations_by_year.png')
 plt.close()
 
+
 # 5a. Average number of monitoring stations per city by year
-avg_by_city_year_df = df.groupby(['city', 'year'])['no_stations'].mean().reset_index()
-avg_by_city_year_df.to_csv(os.getcwd() + '/data/Results/avg_by_city_year_df.csv', index=False)
 
-# 6. Average number of monitoring stations per city by month (I am assuming this is the same as point 4/point 2)
-avg_by_month = num_stations_per_month.values[:,2]/unique_cities_per_month.values[:,2]
-avg_by_month_df = pd.DataFrame(unique_cities_per_month.values[:,0:2])
+avg_by_city_year_df = (
+    df.groupby(['city', 'year'])['no_stations']
+    .mean()
+    .reset_index()
+)
+
+avg_by_city_year_df.to_csv(
+    os.getcwd() + '/data/Results/avg_by_city_year_df.csv',
+    index=False
+)
+
+
+# 6. Average number of monitoring stations per city by month
+
+avg_by_month = (
+    num_stations_per_month.values[:, 2]
+    / unique_cities_per_month['city'].values
+)
+
+avg_by_month_df = unique_cities_per_month[['year', 'month']].copy()
 avg_by_month_df['avg'] = avg_by_month
-avg_by_month_df.columns = ['year', 'month', 'avg']
-avg_by_month_df.to_csv(os.getcwd() + '/data/Results/avg_numstations_by_month.csv')
 
-avg_by_month_df['date'] = avg_by_month_df['year'].astype(str) + '-' + avg_by_month_df['month'].astype(str)
+avg_by_month_df.to_csv(
+    os.getcwd() + '/data/Results/avg_numstations_by_month.csv'
+)
 
-avg_by_month_df.plot(x='date', y='avg',
-                            kind='bar',
-                            figsize=(15,10))
-selected_ticks = [0] + list(range(12, avg_by_month_df['date'].shape[0], 12))  # First, 13th, 26th, etc.
+avg_by_month_df['date'] = (
+    avg_by_month_df['year'].astype(str)
+    + '-'
+    + avg_by_month_df['month'].astype(str)
+)
+
+avg_by_month_df.plot(
+    x='date',
+    y='avg',
+    kind='bar',
+    figsize=(15, 10)
+)
+
+selected_ticks = [
+    0
+] + list(range(12, avg_by_month_df['date'].shape[0], 12))
+
 plt.xticks(selected_ticks, fontweight='bold', rotation=0, fontsize=15)
 plt.yticks(fontweight='bold', fontsize=15)
 plt.xlabel('Month', fontweight='bold', fontsize=20)
 plt.ylabel('Average number of Stations', fontweight='bold', fontsize=20)
-plt.title('Average number of  Monitoring Stations', fontsize=25, fontweight='bold')
+plt.title('Average number of Monitoring Stations', fontsize=25, fontweight='bold')
 plt.tight_layout()
-# Remove legend box
 plt.legend().remove()
 plt.savefig(os.getcwd() + '/plots/Results/avg_numstations_by_month.png')
 plt.close()
 
-# 7. Number of cities with 1,2,3,4,5-10,10-20,20+ stations by year (a table) 
-df_1 = df.drop_duplicates(subset=['city','year'], keep='last')
-df_1['#stations/city'] = pd.cut(df_1['no_stations'], [0, 1, 2, 3, 4, 10, 20, 50], labels=['1s', '2s', '3s', '4s',
-                                                                                          '5-10s', '10-20s', '20s+'])
-city_type_yearly_counts = df_1.groupby(['year','#stations/city'])['city'].nunique()
+
+# Station-count categories used in sections 7 and 8
+# Zero stations are excluded; values above 50 are included in 20s+.
+bins = [0, 1, 2, 3, 4, 10, 20, np.inf]
+
+labels = [
+    '1s',
+    '2s',
+    '3s',
+    '4s',
+    '5-10s',
+    '10-20s',
+    '20s+'
+]
+
+
+# 7. Number of cities with 1, 2, 3, 4, 5-10, 10-20, 20+ stations by year
+## "LATEST" LOGIC
+# df_1 = df.drop_duplicates(
+#     subset=['city', 'year'],
+#     keep='last'
+# ).copy()
+
+## MAX LOGIC
+df_1 = (df.groupby(['city', 'year'])['no_stations'].max().reset_index().copy() )
+
+## MODE LOGIC
+def get_mode(series):
+    modes=series.mode()
+    return modes.max()
+
+df_1 = (df.groupby(['city', 'year'])['no_stations'].agg(get_mode).reset_index().copy() )
+
+df_1['#stations/city'] = pd.cut(
+    df_1['no_stations'],
+    bins=bins,
+    labels=labels
+)
+
+city_type_yearly_counts = (
+    df_1.groupby(
+        ['year', '#stations/city'],
+        observed=False
+    )['city']
+    .nunique()
+)
+
 city_type_yearly_counts = city_type_yearly_counts.reset_index()
 
-city_type_yearly_counts = city_type_yearly_counts.pivot_table(columns='#stations/city', index='year', values='city').reset_index()
+city_type_yearly_counts = city_type_yearly_counts.pivot_table(
+    columns='#stations/city',
+    index='year',
+    values='city',
+    observed=False
+).reset_index()
 
-city_type_yearly_counts.to_csv(os.getcwd() + '/data/Results/city_type_yearly_counts.csv', index=False)
+city_type_yearly_counts.to_csv(
+    os.getcwd() + '/data/Results/city_type_yearly_counts.csv',
+    index=False
+)
 
-# 8. Number of cities with 1,2,3,4,5-10,10-20,20+ stations by month (a table)
-df_1 = df.drop_duplicates(subset=['city','year','month'], keep='last')
-df_1['#stations/city'] = pd.cut(df_1['no_stations'], [0, 1, 2, 3, 4, 10, 20, 50], labels=['1s', '2s', '3s', '4s',
-                                                                                          '5-10s', '10-20s', '20s+'])
-city_type_monthly_counts = df_1.groupby(['year','month', '#stations/city'])['city'].nunique()
+
+# 8. Number of cities with 1, 2, 3, 4, 5-10, 10-20, 20+ stations by month
+
+df_1 = df.drop_duplicates(
+    subset=['city', 'year', 'month'],
+    keep='last'
+).copy()
+
+df_1['#stations/city'] = pd.cut(
+    df_1['no_stations'],
+    bins=bins,
+    labels=labels
+)
+
+city_type_monthly_counts = (
+    df_1.groupby(
+        ['year', 'month', '#stations/city'],
+        observed=False
+    )['city']
+    .nunique()
+)
+
 city_type_monthly_counts = city_type_monthly_counts.reset_index()
-#city_type_monthly_counts['date'] = city_type_monthly_counts['year'].astype(str) + '-' + city_type_monthly_counts['month'].astype(str)
 
-city_type_monthly_counts = city_type_monthly_counts.pivot_table(columns='#stations/city', index=['year','month'], values='city').reset_index()
-city_type_monthly_counts.to_csv(os.getcwd() + '/data/Results/city_type_monthly_counts.csv', index=False)
+city_type_monthly_counts = city_type_monthly_counts.pivot_table(
+    columns='#stations/city',
+    index=['year', 'month'],
+    values='city',
+    observed=False
+).reset_index()
+
+city_type_monthly_counts.to_csv(
+    os.getcwd() + '/data/Results/city_type_monthly_counts.csv',
+    index=False
+)
