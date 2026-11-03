@@ -161,7 +161,7 @@ if n_years % 2 == 1:
     axes[n_rows - 1, 1].axis('off')
 
 # Add main title
-fig.suptitle(f'Air Quality Index Calendar Heatmap: {city} (2015-2026)', 
+fig.suptitle(f'Air Quality Index Calendar Heatmap: {city} ({years[0]}-{years[-1]})', 
              fontsize=28, fontweight='bold', y=0.998)
 
 # Add legend
