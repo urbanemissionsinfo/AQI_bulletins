@@ -132,10 +132,17 @@ if n_rows == 1:
     axes = axes.reshape(1, 2)
 
 # Plot years in pairs (2015, 2016 in row 0; 2017, 2018 in row 1; etc.)
+# years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
 for i, year in enumerate(years):
     row = i // 2  # Integer division to get row number
-    col = i % 2   # Modulo to get column (0 or 1)
-    
+
+    #col = i % 2   # Modulo to get column (0 or 1)
+    if i <n_rows:
+        col=0
+        row = i
+    else:
+        col=1 
+        row = i-n_rows
     print(f"Plotting year {year} at position ({row}, {col})")
     
     # Get data for this specific year
@@ -154,7 +161,7 @@ if n_years % 2 == 1:
     axes[n_rows - 1, 1].axis('off')
 
 # Add main title
-fig.suptitle(f'Air Quality Index Calendar Heatmap: {city} (2015-2025)', 
+fig.suptitle(f'Air Quality Index Calendar Heatmap: {city} (2015-2026)', 
              fontsize=28, fontweight='bold', y=0.998)
 
 # Add legend
