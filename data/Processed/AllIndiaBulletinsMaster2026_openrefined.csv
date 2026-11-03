@@ -492521,7 +492521,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-03-31,Bundi,1,Satisfactory,63,O3
 2026-03-31,Buxar,1,Satisfactory,67,PM2.5
 2026-03-31,Byasanagar,1,Satisfactory,88,PM2.5
-2026-03-31,Byrnihat (Assam),1,Satisfactory,98,PM2.5
+2026-03-31,Byrnihat,1,Satisfactory,98,PM2.5
 2026-03-31,Byrnihat (Meghalaya),1,Moderate,115,PM2.5
 2026-03-31,Barmer,1,Satisfactory,84,PM10
 2026-03-31,Chamarajanagar,1,Good,44,PM10
@@ -492769,7 +492769,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-01,Bundi,1,Satisfactory,91,O3
 2026-04-01,Buxar,1,Satisfactory,73,PM2.5
 2026-04-01,Byasanagar,1,Moderate,177,PM2.5
-2026-04-01,Byrnihat (Assam),1,Moderate,115,PM2.5
+2026-04-01,Byrnihat,1,Moderate,115,PM2.5
 2026-04-01,Baripada,1,Satisfactory,86,PM10
 2026-04-01,Byrnihat (Meghalaya),1,Poor,269,PM10
 2026-04-01,Bareilly,2,Satisfactory,69,"PM10, SO2"
@@ -493017,7 +493017,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-02,Bundi,1,Satisfactory,82,O3
 2026-04-02,Buxar,1,Good,50,PM2.5
 2026-04-02,Byasanagar,1,Satisfactory,82,O3
-2026-04-02,Byrnihat (Assam),1,Moderate,143,PM2.5
+2026-04-02,Byrnihat,1,Moderate,143,PM2.5
 2026-04-02,Barrackpore,1,Satisfactory,59,PM10
 2026-04-02,Barmer,1,Satisfactory,74,PM10
 2026-04-02,Bareilly,2,Satisfactory,78,"PM10, SO2"
@@ -493267,7 +493267,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-03,Buxar,1,Satisfactory,59,PM2.5
 2026-04-03,Byasanagar,1,Moderate,154,O3
 2026-04-03,Barbil,1,Poor,263,O3
-2026-04-03,Byrnihat (Assam),1,Moderate,146,PM2.5
+2026-04-03,Byrnihat,1,Moderate,146,PM2.5
 2026-04-03,Baran,1,Moderate,107,O3
 2026-04-03,Ballabgarh,1,Moderate,200,PM2.5
 2026-04-03,Kanpur,3,Satisfactory,82,"PM10, PM2.5"
@@ -493512,7 +493512,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-04,Bundi,1,Moderate,104,PM10
 2026-04-04,Buxar,1,Satisfactory,53,PM2.5
 2026-04-04,Byasanagar,1,Moderate,130,O3
-2026-04-04,Byrnihat (Assam),1,Moderate,144,PM2.5
+2026-04-04,Byrnihat,1,Moderate,144,PM2.5
 2026-04-04,Baripada,1,Satisfactory,98,PM10
 2026-04-04,Byrnihat (Meghalaya),1,Moderate,136,PM10
 2026-04-04,Bareilly,2,Satisfactory,77,"PM10, SO2"
@@ -493787,7 +493787,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-05,Balasore,1,Satisfactory,96,O3
 2026-04-05,Ballabgarh,1,Poor,225,PM10
 2026-04-05,Byasanagar,1,Moderate,103,O3
-2026-04-05,Byrnihat (Assam),1,Poor,217,PM2.5
+2026-04-05,Byrnihat,1,Poor,217,PM2.5
 2026-04-05,Agartala,1,Moderate,107,PM10
 2026-04-05,Chamarajanagar,1,Good,32,PM10
 2026-04-05,Gorakhpur,1,Satisfactory,88,PM2.5
@@ -494028,7 +494028,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-06,Bahadurgarh,1,Satisfactory,64,PM10
 2026-04-06,Balasore,1,Moderate,102,O3
 2026-04-06,Byasanagar,1,Satisfactory,85,O3
-2026-04-06,Byrnihat (Assam),1,Poor,217,PM2.5
+2026-04-06,Byrnihat,1,Poor,217,PM2.5
 2026-04-06,Barbil,1,Satisfactory,100,O3
 2026-04-06,Chamarajanagar,1,Satisfactory,74,PM10
 2026-04-06,Greater Noida,2,Moderate,192,"PM10, PM2.5"
@@ -494279,7 +494279,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-07,Balasore,1,Satisfactory,60,O3
 2026-04-07,Ballabgarh,1,Moderate,197,PM2.5
 2026-04-07,Angul,1,Moderate,147,PM10
-2026-04-07,Byrnihat (Assam),1,Moderate,138,PM2.5
+2026-04-07,Byrnihat,1,Moderate,138,PM2.5
 2026-04-07,Ahmedabad,8,Satisfactory,91,PM10
 2026-04-07,Chandigarh,3,Satisfactory,62,"NO2, O3, PM10"
 2026-04-07,Greater Noida,2,Moderate,126,"O3, PM10"
@@ -495046,7 +495046,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-10,Kadapa,1,Satisfactory,89,PM2.5
 2026-04-10,Kaithal,1,Satisfactory,56,PM10
 2026-04-10,Kalaburagi,1,Satisfactory,53,PM10
-2026-04-10,Byrnihat (Assam),1,Satisfactory,84,CO
+2026-04-10,Byrnihat,1,Satisfactory,84,CO
 2026-04-10,Guntur,1,Satisfactory,57,PM2.5
 2026-04-10,Gummidipoondi,1,Moderate,104,PM10
 2026-04-10,Indore,5,Moderate,116,"PM10, PM2.5"
@@ -495232,7 +495232,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-11,Bundi,1,Moderate,171,O3
 2026-04-11,Buxar,1,Satisfactory,54,PM2.5
 2026-04-11,Byasanagar,1,Moderate,197,O3
-2026-04-11,Byrnihat (Assam),1,Satisfactory,86,PM2.5
+2026-04-11,Byrnihat,1,Satisfactory,86,PM2.5
 2026-04-11,Byrnihat (Meghalaya),1,Moderate,108,PM10
 2026-04-11,Bhopal,3,Moderate,117,"O3, PM10"
 2026-04-11,Chamarajanagar,1,Good,28,PM2.5
@@ -495487,7 +495487,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-12,Bulandshahr,1,Moderate,161,PM10
 2026-04-12,Bundi,1,Moderate,133,O3
 2026-04-12,Byasanagar,1,Moderate,174,O3
-2026-04-12,Byrnihat (Assam),1,Moderate,120,PM2.5
+2026-04-12,Byrnihat,1,Moderate,120,PM2.5
 2026-04-12,Bhiwandi,1,Moderate,119,PM10
 2026-04-12,Byrnihat (Meghalaya),1,Moderate,172,PM10
 2026-04-12,Bareilly,2,Satisfactory,67,PM10
@@ -495980,7 +495980,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-14,Bundi,1,Moderate,116,PM10
 2026-04-14,Buxar,1,Satisfactory,55,PM2.5
 2026-04-14,Byasanagar,1,Satisfactory,93,O3
-2026-04-14,Byrnihat (Assam),1,Moderate,123,PM2.5
+2026-04-14,Byrnihat,1,Moderate,123,PM2.5
 2026-04-14,Barmer,1,Satisfactory,90,PM10
 2026-04-14,Baripada,1,Satisfactory,95,PM10
 2026-04-14,Bareilly,2,Satisfactory,70,PM10
@@ -496262,7 +496262,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-15,Balasore,1,Satisfactory,89,PM10
 2026-04-15,Ballabgarh,1,Poor,257,PM10
 2026-04-15,Angul,1,Satisfactory,64,PM2.5
-2026-04-15,Byrnihat (Assam),1,Moderate,102,PM2.5
+2026-04-15,Byrnihat,1,Moderate,102,PM2.5
 2026-04-15,Ahmedabad,8,Moderate,130,PM10
 2026-04-15,Chamarajanagar,1,Satisfactory,55,PM10
 2026-04-15,Gurugram,4,Poor,262,PM2.5
@@ -496472,7 +496472,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-16,Bulandshahr,1,Poor,214,PM10
 2026-04-16,Buxar,1,Satisfactory,62,PM2.5
 2026-04-16,Byasanagar,1,Satisfactory,64,O3
-2026-04-16,Byrnihat (Assam),1,Moderate,109,PM2.5
+2026-04-16,Byrnihat,1,Moderate,109,PM2.5
 2026-04-16,Bhiwani,1,Good,30,PM2.5
 2026-04-16,Barbil,1,Moderate,162,PM10
 2026-04-16,Baran,1,Moderate,173,O3
@@ -496775,7 +496775,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-17,Jind,1,Moderate,182,PM2.5
 2026-04-17,Jodhpur,4,Satisfactory,85,PM10
 2026-04-17,Jorapokhar,1,Satisfactory,100,PM10
-2026-04-17,Byrnihat (Assam),1,Moderate,129,PM2.5
+2026-04-17,Byrnihat,1,Moderate,129,PM2.5
 2026-04-17,Gorakhpur,1,Satisfactory,90,PM2.5
 2026-04-17,Ghaziabad,5,Very Poor,346,PM10
 2026-04-17,Howrah,5,Satisfactory,53,"CO, PM10"
@@ -496993,7 +496993,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-18,Balasore,1,Satisfactory,60,PM10
 2026-04-18,Ballabgarh,1,Moderate,192,PM10
 2026-04-18,Angul,1,Satisfactory,86,O3
-2026-04-18,Byrnihat (Assam),1,Moderate,135,PM2.5
+2026-04-18,Byrnihat,1,Moderate,135,PM2.5
 2026-04-18,Bareilly,2,Satisfactory,68,"PM10, SO2"
 2026-04-18,Chamarajanagar,1,Good,30,PM2.5
 2026-04-18,Greater Noida,2,Moderate,180,PM10
@@ -497207,7 +497207,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-19,Bundi,1,Satisfactory,97,O3
 2026-04-19,Buxar,1,Satisfactory,81,PM2.5
 2026-04-19,Byasanagar,1,Satisfactory,93,CO
-2026-04-19,Byrnihat (Assam),1,Satisfactory,91,PM2.5
+2026-04-19,Byrnihat,1,Satisfactory,91,PM2.5
 2026-04-19,Byrnihat (Meghalaya),1,Poor,243,PM10
 2026-04-19,Barrackpore,1,Satisfactory,59,PM10
 2026-04-19,Barmer,1,Satisfactory,68,O3
@@ -497695,7 +497695,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-21,Bundi,1,Satisfactory,99,O3
 2026-04-21,Buxar,1,Satisfactory,60,PM2.5
 2026-04-21,Byasanagar,1,Moderate,179,O3
-2026-04-21,Byrnihat (Assam),1,Moderate,104,PM2.5
+2026-04-21,Byrnihat,1,Moderate,104,PM2.5
 2026-04-21,Chamarajanagar,1,Satisfactory,53,PM10
 2026-04-21,Baripada,1,Satisfactory,84,PM10
 2026-04-21,Barbil,1,Moderate,150,O3
@@ -497978,7 +497978,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-22,Bahadurgarh,1,Poor,219,PM2.5
 2026-04-22,Balasore,1,Satisfactory,94,O3
 2026-04-22,Banswara,1,Satisfactory,91,PM10
-2026-04-22,Byrnihat (Assam),1,Moderate,117,PM2.5
+2026-04-22,Byrnihat,1,Moderate,117,PM2.5
 2026-04-22,Agartala,1,Satisfactory,74,PM10
 2026-04-22,Chamarajanagar,1,Moderate,108,PM10
 2026-04-22,Gurugram,4,Moderate,184,"PM10, PM2.5"
@@ -498431,7 +498431,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-24,Bundi,1,Satisfactory,86,O3
 2026-04-24,Buxar,1,Satisfactory,76,PM2.5
 2026-04-24,Byasanagar,1,Moderate,103,CO
-2026-04-24,Byrnihat (Assam),1,Moderate,133,PM2.5
+2026-04-24,Byrnihat,1,Moderate,133,PM2.5
 2026-04-24,Byrnihat (Meghalaya),1,Moderate,147,PM10
 2026-04-24,Bhopal,3,Satisfactory,95,"O3, PM10"
 2026-04-24,Barmer,1,Moderate,105,PM10
@@ -498705,7 +498705,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-25,Baghpat,1,Poor,282,PM10
 2026-04-25,Bahadurgarh,1,Poor,212,PM2.5
 2026-04-25,Balasore,1,Good,46,O3
-2026-04-25,Byrnihat (Assam),1,Moderate,143,PM2.5
+2026-04-25,Byrnihat,1,Moderate,143,PM2.5
 2026-04-25,Chamarajanagar,1,Good,45,PM10
 2026-04-25,Agartala,1,Moderate,137,PM10
 2026-04-25,Chandrapur,2,Moderate,160,"O3, PM10"
@@ -498927,7 +498927,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-26,Ambernath,1,Satisfactory,60,NO2
 2026-04-26,Amravati,2,Satisfactory,100,PM10
 2026-04-26,Amritsar,1,Satisfactory,85,PM10
-2026-04-26,Byrnihat (Assam),1,Satisfactory,89,PM2.5
+2026-04-26,Byrnihat,1,Satisfactory,89,PM2.5
 2026-04-26,Anantapur,1,Satisfactory,89,PM2.5
 2026-04-26,Ankleshwar,1,Moderate,128,PM10
 2026-04-26,Arrah,1,Satisfactory,53,PM2.5
@@ -499136,7 +499136,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-27,Bulandshahr,1,Poor,204,PM10
 2026-04-27,Bundi,1,Satisfactory,88,PM10
 2026-04-27,Buxar,1,Good,47,PM2.5
-2026-04-27,Byrnihat (Assam),1,Satisfactory,72,PM2.5
+2026-04-27,Byrnihat,1,Satisfactory,72,PM2.5
 2026-04-27,Byrnihat (Meghalaya),1,Poor,205,PM10
 2026-04-27,Chamarajanagar,1,Good,46,PM10
 2026-04-27,Chandigarh,3,Satisfactory,68,"CO, NO2, O3"
@@ -499377,7 +499377,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-28,Bundi,1,Moderate,115,PM10
 2026-04-28,Buxar,1,Satisfactory,100,PM2.5
 2026-04-28,Byasanagar,1,Satisfactory,94,CO
-2026-04-28,Byrnihat (Assam),1,Satisfactory,93,PM2.5
+2026-04-28,Byrnihat,1,Satisfactory,93,PM2.5
 2026-04-28,Bhiwandi,1,Satisfactory,78,PM10
 2026-04-28,Chamarajanagar,1,Good,44,PM10
 2026-04-28,Bareilly,2,Satisfactory,86,"PM10, SO2"
@@ -499613,7 +499613,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-29,Bundi,1,Moderate,114,PM10
 2026-04-29,Buxar,1,Poor,215,PM2.5
 2026-04-29,Byasanagar,1,Moderate,109,O3
-2026-04-29,Byrnihat (Assam),1,Moderate,146,PM2.5
+2026-04-29,Byrnihat,1,Moderate,146,PM2.5
 2026-04-29,Chamarajanagar,1,Good,47,PM10
 2026-04-29,Chandigarh,2,Satisfactory,78,"CO, PM10"
 2026-04-29,Chandrapur,2,Moderate,128,"O3, PM10"
@@ -499847,7 +499847,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-04-30,Bulandshahr,1,Moderate,121,PM10
 2026-04-30,Bundi,1,Moderate,106,PM10
 2026-04-30,Byasanagar,1,Satisfactory,93,O3
-2026-04-30,Byrnihat (Assam),1,Moderate,145,PM2.5
+2026-04-30,Byrnihat,1,Moderate,145,PM2.5
 2026-04-30,Byrnihat (Meghalaya),1,Satisfactory,86,PM10
 2026-04-30,Chamarajanagar,1,Good,48,PM10
 2026-04-30,Barmer,1,Moderate,161,PM10
@@ -500079,7 +500079,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-01,Buxar,1,Satisfactory,51,PM2.5
 2026-05-01,Byasanagar,1,Satisfactory,84,CO
 2026-05-01,Barmer,1,Moderate,125,PM10
-2026-05-01,Byrnihat (Assam),1,Moderate,113,PM2.5
+2026-05-01,Byrnihat,1,Moderate,113,PM2.5
 2026-05-01,Bareilly,2,Good,44,"O3, SO2"
 2026-05-01,Baran,1,Satisfactory,96,PM10
 2026-05-01,Karauli,1,Satisfactory,89,PM10
@@ -500340,7 +500340,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-02,Ballabgarh,1,Moderate,136,PM10
 2026-05-02,Banswara,1,Satisfactory,95,PM10
 2026-05-02,Ankleshwar,1,Satisfactory,67,PM10
-2026-05-02,Byrnihat (Assam),1,Moderate,105,PM2.5
+2026-05-02,Byrnihat,1,Moderate,105,PM2.5
 2026-05-02,Ahmedabad,8,Satisfactory,91,PM10
 2026-05-02,Chamarajanagar,1,Good,33,PM2.5
 2026-05-02,Guntur,1,Satisfactory,90,PM2.5
@@ -500541,7 +500541,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-03,Bulandshahr,1,Moderate,119,PM10
 2026-05-03,Buxar,1,Good,46,PM2.5
 2026-05-03,Bareilly,2,Good,48,SO2
-2026-05-03,Byrnihat (Assam),1,Moderate,111,PM2.5
+2026-05-03,Byrnihat,1,Moderate,111,PM2.5
 2026-05-03,Barbil,1,Moderate,121,CO
 2026-05-03,Banswara,1,Moderate,189,O3
 2026-05-03,Agartala,1,Satisfactory,54,PM10
@@ -500821,7 +500821,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-04,Jhunjhunu,1,Moderate,117,O3
 2026-05-04,Jodhpur,4,Moderate,120,"PM10, PM2.5"
 2026-05-04,Kadapa,1,Satisfactory,64,PM2.5
-2026-05-04,Byrnihat (Assam),1,Moderate,153,PM2.5
+2026-05-04,Byrnihat,1,Moderate,153,PM2.5
 2026-05-04,Jabalpur,4,Satisfactory,88,"O3, PM10"
 2026-05-04,Gorakhpur,1,Satisfactory,71,PM10
 2026-05-04,Jorapokhar,1,Moderate,128,PM10
@@ -501046,7 +501046,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-05,Gangtok,1,Good,26,O3
 2026-05-05,Hanumangarh,1,Satisfactory,95,O3
 2026-05-05,Gandhinagar,3,Satisfactory,91,PM10
-2026-05-05,Byrnihat (Assam),1,Moderate,171,PM2.5
+2026-05-05,Byrnihat,1,Moderate,171,PM2.5
 2026-05-05,Byrnihat (Meghalaya),1,Moderate,159,PM10
 2026-05-05,Chamarajanagar,1,Satisfactory,52,PM10
 2026-05-05,Chandigarh,1,Satisfactory,69,CO
@@ -501213,7 +501213,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-06,Bundi,1,Moderate,159,O3
 2026-05-06,Buxar,1,Good,46,PM2.5
 2026-05-06,Byasanagar,1,Moderate,179,O3
-2026-05-06,Byrnihat (Assam),1,Moderate,168,PM2.5
+2026-05-06,Byrnihat,1,Moderate,168,PM2.5
 2026-05-06,Baripada,1,Good,44,PM10
 2026-05-06,Barbil,1,Satisfactory,66,O3
 2026-05-06,Baran,1,Moderate,170,O3
@@ -501448,7 +501448,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-07,Bulandshahr,1,Satisfactory,79,PM10
 2026-05-07,Bundi,1,Moderate,130,O3
 2026-05-07,Buxar,1,Good,38,PM2.5
-2026-05-07,Byrnihat (Assam),1,Moderate,163,PM2.5
+2026-05-07,Byrnihat,1,Moderate,163,PM2.5
 2026-05-07,Bhiwadi,2,Moderate,132,"PM10, PM2.5"
 2026-05-07,Byrnihat (Meghalaya),1,Moderate,120,PM10
 2026-05-07,Baran,1,Moderate,125,O3
@@ -501689,7 +501689,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-08,Bulandshahr,1,Satisfactory,65,PM10
 2026-05-08,Bundi,1,Moderate,123,O3
 2026-05-08,Buxar,1,Satisfactory,54,PM2.5
-2026-05-08,Byrnihat (Assam),1,Moderate,177,PM2.5
+2026-05-08,Byrnihat,1,Moderate,177,PM2.5
 2026-05-08,Bareilly,2,Satisfactory,56,"CO, O3"
 2026-05-08,Byrnihat (Meghalaya),1,Moderate,146,PM10
 2026-05-08,Barbil,1,Satisfactory,72,PM10
@@ -501963,7 +501963,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-09,Balasore,1,Satisfactory,66,O3
 2026-05-09,Ballabgarh,1,Moderate,125,PM10
 2026-05-09,Banswara,1,Moderate,128,PM10
-2026-05-09,Byrnihat (Assam),1,Moderate,161,PM2.5
+2026-05-09,Byrnihat,1,Moderate,161,PM2.5
 2026-05-09,Byrnihat (Meghalaya),1,Moderate,145,PM10
 2026-05-09,Agra,6,Satisfactory,87,"O3, PM10"
 2026-05-09,Chandigarh,2,Satisfactory,64,"CO, PM10"
@@ -502169,7 +502169,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-10,Bundi,1,Poor,212,O3
 2026-05-10,Buxar,1,Satisfactory,62,O3
 2026-05-10,Byasanagar,1,Satisfactory,91,CO
-2026-05-10,Byrnihat (Assam),1,Moderate,168,PM2.5
+2026-05-10,Byrnihat,1,Moderate,168,PM2.5
 2026-05-10,Barbil,1,Satisfactory,86,O3
 2026-05-10,Baran,1,Moderate,161,O3
 2026-05-10,Banswara,1,Moderate,107,PM10
@@ -502408,7 +502408,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-11,Bundi,1,Moderate,158,O3
 2026-05-11,Buxar,1,Good,50,O3
 2026-05-11,Byasanagar,1,Satisfactory,88,CO
-2026-05-11,Byrnihat (Assam),1,Moderate,153,PM2.5
+2026-05-11,Byrnihat,1,Moderate,153,PM2.5
 2026-05-11,Bhiwandi,1,Satisfactory,82,PM10
 2026-05-11,Chamarajanagar,1,Good,32,PM10
 2026-05-11,Barbil,1,Satisfactory,70,PM10
@@ -502650,7 +502650,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-12,Bulandshahr,1,Moderate,149,PM10
 2026-05-12,Buxar,1,Satisfactory,55,PM2.5
 2026-05-12,Byasanagar,1,Moderate,113,CO
-2026-05-12,Byrnihat (Assam),1,Moderate,162,PM2.5
+2026-05-12,Byrnihat,1,Moderate,162,PM2.5
 2026-05-12,Chamarajanagar,1,Good,35,PM10
 2026-05-12,Bareilly,2,Good,45,"CO, PM10"
 2026-05-12,Chandigarh,2,Satisfactory,74,"CO, PM2.5"
@@ -502926,7 +502926,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-13,Bahadurgarh,1,Moderate,168,PM2.5
 2026-05-13,Balasore,1,Good,40,CO
 2026-05-13,Ballabgarh,1,Moderate,113,PM10
-2026-05-13,Byrnihat (Assam),1,Moderate,175,PM2.5
+2026-05-13,Byrnihat,1,Moderate,175,PM2.5
 2026-05-13,Byrnihat (Meghalaya),1,Moderate,167,PM10
 2026-05-13,Ahmedabad,8,Moderate,117,PM10
 2026-05-13,Chandigarh,2,Satisfactory,74,"CO, PM2.5"
@@ -503128,7 +503128,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-14,Bundi,1,Moderate,138,O3
 2026-05-14,Buxar,1,Good,48,PM2.5
 2026-05-14,Byasanagar,1,Satisfactory,94,CO
-2026-05-14,Byrnihat (Assam),1,Moderate,174,PM2.5
+2026-05-14,Byrnihat,1,Moderate,174,PM2.5
 2026-05-14,Byrnihat (Meghalaya),1,Moderate,149,PM10
 2026-05-14,Baripada,1,Satisfactory,58,O3
 2026-05-14,Barbil,1,Satisfactory,79,O3
@@ -503365,7 +503365,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-15,Bundi,1,Moderate,103,O3
 2026-05-15,Buxar,1,Satisfactory,55,PM2.5
 2026-05-15,Byasanagar,1,Satisfactory,91,CO
-2026-05-15,Byrnihat (Assam),1,Moderate,167,PM2.5
+2026-05-15,Byrnihat,1,Moderate,167,PM2.5
 2026-05-15,Bhiwandi,1,Satisfactory,58,O3
 2026-05-15,Chamarajanagar,1,Good,39,PM10
 2026-05-15,Barbil,1,Satisfactory,56,O3
@@ -503606,7 +503606,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-16,Bundi,1,Moderate,108,O3
 2026-05-16,Buxar,1,Satisfactory,57,PM2.5
 2026-05-16,Byasanagar,1,Satisfactory,95,CO
-2026-05-16,Byrnihat (Assam),1,Moderate,179,PM2.5
+2026-05-16,Byrnihat,1,Moderate,179,PM2.5
 2026-05-16,Bhiwani,1,Satisfactory,78,PM2.5
 2026-05-16,Baripada,1,Satisfactory,58,PM10
 2026-05-16,Bareilly,2,Satisfactory,55,"CO, PM10"
@@ -503873,7 +503873,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-17,Bahadurgarh,1,Moderate,149,PM2.5
 2026-05-17,Balasore,1,Satisfactory,78,O3
 2026-05-17,Baran,1,Moderate,142,O3
-2026-05-17,Byrnihat (Assam),1,Moderate,157,PM2.5
+2026-05-17,Byrnihat,1,Moderate,157,PM2.5
 2026-05-17,Agra,5,Moderate,135,PM10
 2026-05-17,Chandigarh,2,Satisfactory,72,"CO, PM10"
 2026-05-17,Gummidipoondi,1,Moderate,115,PM2.5
@@ -504103,7 +504103,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-18,Bundi,1,Moderate,112,O3
 2026-05-18,Buxar,1,Satisfactory,69,PM2.5
 2026-05-18,Baran,1,Moderate,120,PM10
-2026-05-18,Byrnihat (Assam),1,Moderate,194,PM2.5
+2026-05-18,Byrnihat,1,Moderate,194,PM2.5
 2026-05-18,Gaya,3,Satisfactory,99,"O3, PM10, PM2.5"
 2026-05-18,Ghaziabad,6,Poor,212,PM10
 2026-05-18,Gorakhpur,1,Satisfactory,84,PM10
@@ -504304,7 +504304,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-19,Bundi,1,Moderate,101,O3
 2026-05-19,Buxar,1,Moderate,149,PM2.5
 2026-05-19,Byasanagar,1,Poor,237,O3
-2026-05-19,Byrnihat (Assam),1,Moderate,194,PM2.5
+2026-05-19,Byrnihat,1,Moderate,194,PM2.5
 2026-05-19,Chamarajanagar,1,Good,45,PM10
 2026-05-19,Bhiwani,1,Moderate,167,PM2.5
 2026-05-19,Chandigarh,2,Satisfactory,90,"CO, PM10"
@@ -504578,7 +504578,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-20,Bahadurgarh,1,Moderate,141,PM2.5
 2026-05-20,Balasore,1,Satisfactory,84,PM10
 2026-05-20,Ballabgarh,1,Moderate,186,PM2.5
-2026-05-20,Byrnihat (Assam),1,Moderate,187,PM2.5
+2026-05-20,Byrnihat,1,Moderate,187,PM2.5
 2026-05-20,Chamarajanagar,1,Good,43,PM10
 2026-05-20,Baripada,1,Satisfactory,75,PM10
 2026-05-20,Chandrapur,2,Moderate,136,"O3, PM10"
@@ -504846,7 +504846,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-21,Jind,1,Poor,204,PM2.5
 2026-05-21,Jodhpur,5,Moderate,137,PM10
 2026-05-21,Jorapokhar,1,Moderate,150,PM10
-2026-05-21,Byrnihat (Assam),1,Moderate,175,PM2.5
+2026-05-21,Byrnihat,1,Moderate,175,PM2.5
 2026-05-21,Jabalpur,4,Satisfactory,85,"O3, PM10"
 2026-05-21,Gorakhpur,1,Moderate,104,PM10
 2026-05-21,Kadapa,1,Good,50,PM2.5
@@ -505019,7 +505019,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-22,Bulandshahr,1,Moderate,189,PM10
 2026-05-22,Bundi,1,Satisfactory,88,O3
 2026-05-22,Byasanagar,1,Moderate,113,CO
-2026-05-22,Byrnihat (Assam),1,Moderate,179,PM2.5
+2026-05-22,Byrnihat,1,Moderate,179,PM2.5
 2026-05-22,Chamarajanagar,1,Good,41,PM10
 2026-05-22,Chandigarh,2,Moderate,102,PM10
 2026-05-22,Baripada,1,Moderate,111,PM10
@@ -505289,7 +505289,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-23,Ballabgarh,1,Poor,216,PM10
 2026-05-23,Banswara,1,Moderate,110,PM10
 2026-05-23,Ankleshwar,1,Good,47,PM10
-2026-05-23,Byrnihat (Assam),1,Poor,204,PM2.5
+2026-05-23,Byrnihat,1,Poor,204,PM2.5
 2026-05-23,Agra,6,Moderate,134,"PM10, PM2.5"
 2026-05-23,Chandigarh,2,Satisfactory,76,"CO, PM10"
 2026-05-23,Gorakhpur,1,Satisfactory,90,PM10
@@ -505489,7 +505489,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-24,Bundi,1,Satisfactory,96,PM10
 2026-05-24,Buxar,1,Satisfactory,62,PM2.5
 2026-05-24,Byasanagar,1,Moderate,102,O3
-2026-05-24,Byrnihat (Assam),1,Moderate,168,PM2.5
+2026-05-24,Byrnihat,1,Moderate,168,PM2.5
 2026-05-24,Chamarajanagar,1,Good,45,PM10
 2026-05-24,Chandigarh,2,Satisfactory,74,"CO, PM10"
 2026-05-24,Barrackpore,1,Satisfactory,62,PM10
@@ -505721,7 +505721,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-25,Bundi,1,Satisfactory,81,PM10
 2026-05-25,Buxar,1,Satisfactory,71,PM2.5
 2026-05-25,Byasanagar,1,Satisfactory,96,O3
-2026-05-25,Byrnihat (Assam),1,Moderate,155,PM2.5
+2026-05-25,Byrnihat,1,Moderate,155,PM2.5
 2026-05-25,Byrnihat (Meghalaya),1,Moderate,152,PM10
 2026-05-25,Baripada,1,Satisfactory,98,PM10
 2026-05-25,Chamarajanagar,1,Good,42,PM10
@@ -506187,7 +506187,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-27,Bulandshahr,1,Moderate,151,PM10
 2026-05-27,Bundi,1,Satisfactory,91,PM10
 2026-05-27,Buxar,1,Good,46,PM2.5
-2026-05-27,Byrnihat (Assam),1,Moderate,185,PM2.5
+2026-05-27,Byrnihat,1,Moderate,185,PM2.5
 2026-05-27,Chamarajanagar,1,Good,46,PM10
 2026-05-27,Chandigarh,2,Moderate,118,"O3, PM10"
 2026-05-27,Chandrapur,2,Moderate,102,"O3, PM10"
@@ -506426,7 +506426,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-28,Bulandshahr,1,Moderate,120,PM10
 2026-05-28,Bundi,1,Satisfactory,98,CO
 2026-05-28,Buxar,1,Satisfactory,92,O3
-2026-05-28,Byrnihat (Assam),1,Satisfactory,70,PM2.5
+2026-05-28,Byrnihat,1,Satisfactory,70,PM2.5
 2026-05-28,Chamarajanagar,1,Good,43,PM10
 2026-05-28,Chandigarh,2,Moderate,106,"O3, PM10"
 2026-05-28,Bhopal,3,Moderate,113,PM10
@@ -506657,7 +506657,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-29,Bundi,1,Moderate,101,CO
 2026-05-29,Buxar,1,Good,46,O3
 2026-05-29,Byasanagar,1,Satisfactory,90,CO
-2026-05-29,Byrnihat (Assam),1,Moderate,150,PM2.5
+2026-05-29,Byrnihat,1,Moderate,150,PM2.5
 2026-05-29,Byrnihat (Meghalaya),1,Moderate,163,PM10
 2026-05-29,Chamarajanagar,1,Good,44,PM10
 2026-05-29,Chandigarh,2,Moderate,103,"O3, PM10"
@@ -506891,7 +506891,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-30,Bundi,1,Moderate,146,PM10
 2026-05-30,Buxar,1,Satisfactory,68,O3
 2026-05-30,Byasanagar,1,Satisfactory,75,CO
-2026-05-30,Byrnihat (Assam),1,Moderate,175,PM2.5
+2026-05-30,Byrnihat,1,Moderate,175,PM2.5
 2026-05-30,Chamarajanagar,1,Good,45,PM10
 2026-05-30,Belapur,1,Satisfactory,57,PM10
 2026-05-30,Bathinda,1,Moderate,123,PM10
@@ -507129,7 +507129,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-05-31,Bulandshahr,1,Satisfactory,67,PM10
 2026-05-31,Bundi,1,Satisfactory,88,O3
 2026-05-31,Byasanagar,1,Satisfactory,85,O3
-2026-05-31,Byrnihat (Assam),1,Moderate,159,PM2.5
+2026-05-31,Byrnihat,1,Moderate,159,PM2.5
 2026-05-31,Bhiwandi,1,Satisfactory,87,PM10
 2026-05-31,Byrnihat (Meghalaya),1,Moderate,128,PM10
 2026-05-31,Bareilly,2,Moderate,130,"O3, SO2"
@@ -507362,7 +507362,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-01,Brajrajnagar,1,Satisfactory,69,PM10
 2026-06-01,Bulandshahr,1,Satisfactory,57,CO
 2026-06-01,Byasanagar,1,Satisfactory,79,O3
-2026-06-01,Byrnihat (Assam),1,Moderate,162,PM2.5
+2026-06-01,Byrnihat,1,Moderate,162,PM2.5
 2026-06-01,Baripada,1,Satisfactory,54,PM10
 2026-06-01,Chamarajanagar,1,Good,44,PM10
 2026-06-01,Bareilly,2,Good,43,SO2
@@ -507593,7 +507593,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-02,Bundi,1,Satisfactory,84,O3
 2026-06-02,Buxar,1,Satisfactory,70,O3
 2026-06-02,Byasanagar,1,Satisfactory,94,O3
-2026-06-02,Byrnihat (Assam),1,Poor,201,PM2.5
+2026-06-02,Byrnihat,1,Poor,201,PM2.5
 2026-06-02,Bathinda,1,Satisfactory,78,CO
 2026-06-02,Chamarajanagar,1,Good,40,PM10
 2026-06-02,Baripada,1,Satisfactory,81,PM10
@@ -507830,7 +507830,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-03,Buxar,1,Moderate,120,O3
 2026-06-03,Byasanagar,1,Satisfactory,98,O3
 2026-06-03,Bhiwani,1,Moderate,181,PM2.5
-2026-06-03,Byrnihat (Assam),1,Poor,210,PM2.5
+2026-06-03,Byrnihat,1,Poor,210,PM2.5
 2026-06-03,Baripada,1,Satisfactory,68,PM10
 2026-06-03,Barbil,1,Satisfactory,99,PM10
 2026-06-03,Jodhpur,4,Poor,245,"PM10, PM2.5"
@@ -508098,7 +508098,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-04,Bahadurgarh,1,Moderate,142,PM2.5
 2026-06-04,Balasore,1,Satisfactory,93,PM10
 2026-06-04,Ballabgarh,1,Moderate,184,PM10
-2026-06-04,Byrnihat (Assam),1,Moderate,160,PM2.5
+2026-06-04,Byrnihat,1,Moderate,160,PM2.5
 2026-06-04,Byrnihat (Meghalaya),1,Moderate,182,PM2.5
 2026-06-04,Baripada,1,Satisfactory,76,PM10
 2026-06-04,Chandigarh,3,Satisfactory,71,"O3, PM10"
@@ -508308,7 +508308,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-05,Bundi,1,Satisfactory,74,O3
 2026-06-05,Buxar,1,Moderate,109,O3
 2026-06-05,Byasanagar,1,Moderate,118,O3
-2026-06-05,Byrnihat (Assam),1,Moderate,120,PM2.5
+2026-06-05,Byrnihat,1,Moderate,120,PM2.5
 2026-06-05,Bhopal,1,Good,44,PM10
 2026-06-05,Barrackpore,1,Good,47,PM10
 2026-06-05,Barmer,1,Moderate,182,PM10
@@ -508546,7 +508546,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-06,Bundi,1,Satisfactory,75,PM10
 2026-06-06,Buxar,1,Moderate,118,O3
 2026-06-06,Byasanagar,1,Satisfactory,88,O3
-2026-06-06,Byrnihat (Assam),1,Moderate,119,PM2.5
+2026-06-06,Byrnihat,1,Moderate,119,PM2.5
 2026-06-06,Barrackpore,1,Good,50,PM10
 2026-06-06,Barmer,1,Moderate,104,PM10
 2026-06-06,Bareilly,2,Satisfactory,58,SO2
@@ -508777,7 +508777,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-07,Bulandshahr,1,Moderate,174,PM10
 2026-06-07,Bundi,1,Satisfactory,59,PM10
 2026-06-07,Byasanagar,1,Satisfactory,90,O3
-2026-06-07,Byrnihat (Assam),1,Moderate,106,PM2.5
+2026-06-07,Byrnihat,1,Moderate,106,PM2.5
 2026-06-07,Byrnihat (Meghalaya),1,Moderate,173,PM2.5
 2026-06-07,Chamarajanagar,1,Good,43,PM10
 2026-06-07,Chandigarh,2,Satisfactory,86,"O3, PM10"
@@ -509016,7 +509016,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-08,Brajrajnagar,1,Satisfactory,79,PM10
 2026-06-08,Bulandshahr,1,Moderate,187,PM10
 2026-06-08,Bundi,1,Satisfactory,75,PM10
-2026-06-08,Byrnihat (Assam),1,Moderate,142,PM2.5
+2026-06-08,Byrnihat,1,Moderate,142,PM2.5
 2026-06-08,Byrnihat (Meghalaya),1,Moderate,147,PM2.5
 2026-06-08,Chamarajanagar,1,Good,40,PM10
 2026-06-08,Bhiwani,1,Moderate,165,PM2.5
@@ -509259,7 +509259,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-09,Bulandshahr,1,Moderate,194,PM10
 2026-06-09,Bundi,1,Satisfactory,87,PM10
 2026-06-09,Buxar,1,Satisfactory,56,O3
-2026-06-09,Byrnihat (Assam),1,Moderate,102,PM2.5
+2026-06-09,Byrnihat,1,Moderate,102,PM2.5
 2026-06-09,Byrnihat (Meghalaya),1,Poor,218,PM2.5
 2026-06-09,Bhiwani,1,Moderate,162,PM2.5
 2026-06-09,Baripada,1,Satisfactory,90,PM10
@@ -509533,7 +509533,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-10,Ballabgarh,1,Moderate,154,PM10
 2026-06-10,Banswara,1,Moderate,127,PM10
 2026-06-10,Baran,1,Satisfactory,100,PM10
-2026-06-10,Byrnihat (Assam),1,Satisfactory,92,PM2.5
+2026-06-10,Byrnihat,1,Satisfactory,92,PM2.5
 2026-06-10,Byrnihat (Meghalaya),1,Moderate,187,PM2.5
 2026-06-10,Agra,6,Satisfactory,99,PM10
 2026-06-10,Chandigarh,2,Satisfactory,94,"O3, PM10"
@@ -509733,7 +509733,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-11,Bundi,1,Satisfactory,82,PM10
 2026-06-11,Buxar,1,Satisfactory,90,O3
 2026-06-11,Byasanagar,1,Satisfactory,100,O3
-2026-06-11,Byrnihat (Assam),1,Moderate,114,PM2.5
+2026-06-11,Byrnihat,1,Moderate,114,PM2.5
 2026-06-11,Byrnihat (Meghalaya),1,Poor,207,PM2.5
 2026-06-11,Chamarajanagar,1,Good,40,PM10
 2026-06-11,Chandigarh,2,Satisfactory,90,PM10
@@ -509974,7 +509974,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-12,Bundi,1,Satisfactory,83,PM10
 2026-06-12,Buxar,1,Good,37,PM2.5
 2026-06-12,Byasanagar,1,Satisfactory,82,O3
-2026-06-12,Byrnihat (Assam),1,Moderate,114,PM2.5
+2026-06-12,Byrnihat,1,Moderate,114,PM2.5
 2026-06-12,Byrnihat (Meghalaya),1,Moderate,142,PM2.5
 2026-06-12,Bhopal,3,Moderate,105,PM10
 2026-06-12,Baripada,1,Satisfactory,52,PM10
@@ -510216,7 +510216,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-13,Buxar,1,Satisfactory,100,PM2.5
 2026-06-13,Byasanagar,1,Satisfactory,87,O3
 2026-06-13,Bhiwandi,1,Satisfactory,71,PM10
-2026-06-13,Byrnihat (Assam),1,Moderate,111,PM2.5
+2026-06-13,Byrnihat,1,Moderate,111,PM2.5
 2026-06-13,Barbil,1,Moderate,122,PM10
 2026-06-13,Banswara,1,Moderate,106,PM10
 2026-06-13,Jorapokhar,1,Satisfactory,60,PM10
@@ -510456,7 +510456,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-14,Bundi,1,Satisfactory,67,PM10
 2026-06-14,Buxar,1,Satisfactory,91,O3
 2026-06-14,Byasanagar,1,Satisfactory,92,O3
-2026-06-14,Byrnihat (Assam),1,Satisfactory,69,PM2.5
+2026-06-14,Byrnihat,1,Satisfactory,69,PM2.5
 2026-06-14,Bhiwani,1,Satisfactory,100,PM2.5
 2026-06-14,Barmer,1,Moderate,154,PM10
 2026-06-14,Baripada,1,Satisfactory,62,PM10
@@ -510695,7 +510695,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-15,Bulandshahr,1,Moderate,186,PM10
 2026-06-15,Bundi,1,Satisfactory,72,O3
 2026-06-15,Buxar,1,Moderate,138,O3
-2026-06-15,Byrnihat (Assam),1,Satisfactory,82,PM2.5
+2026-06-15,Byrnihat,1,Satisfactory,82,PM2.5
 2026-06-15,Byrnihat (Meghalaya),1,Poor,207,PM2.5
 2026-06-15,Chamarajanagar,1,Good,39,PM10
 2026-06-15,Bhiwani,1,Satisfactory,98,PM2.5
@@ -510940,7 +510940,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-16,Bundi,1,Moderate,105,PM10
 2026-06-16,Buxar,1,Moderate,141,O3
 2026-06-16,Byasanagar,1,Satisfactory,81,O3
-2026-06-16,Byrnihat (Assam),1,Moderate,146,PM2.5
+2026-06-16,Byrnihat,1,Moderate,146,PM2.5
 2026-06-16,Byrnihat (Meghalaya),1,Moderate,170,PM2.5
 2026-06-16,Bareilly,2,Satisfactory,72,"PM10, SO2"
 2026-06-16,Chamarajanagar,1,Good,40,PM10
@@ -511185,7 +511185,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-17,Bundi,1,Satisfactory,62,O3
 2026-06-17,Buxar,1,Satisfactory,53,O3
 2026-06-17,Byasanagar,1,Satisfactory,70,O3
-2026-06-17,Byrnihat (Assam),1,Satisfactory,84,PM2.5
+2026-06-17,Byrnihat,1,Satisfactory,84,PM2.5
 2026-06-17,Byrnihat (Meghalaya),1,Poor,253,PM2.5
 2026-06-17,Chamarajanagar,1,Good,43,PM10
 2026-06-17,Chandigarh,3,Satisfactory,71,"O3, PM10"
@@ -511429,7 +511429,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-18,Bundi,1,Good,50,O3
 2026-06-18,Buxar,1,Satisfactory,59,O3
 2026-06-18,Byasanagar,1,Moderate,121,O3
-2026-06-18,Byrnihat (Assam),1,Satisfactory,85,PM2.5
+2026-06-18,Byrnihat,1,Satisfactory,85,PM2.5
 2026-06-18,Chamarajanagar,1,Good,41,PM10
 2026-06-18,Chandigarh,3,Satisfactory,74,"O3, PM2.5"
 2026-06-18,Bhubaneswar,2,Satisfactory,90,O3
@@ -511669,7 +511669,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-19,Bundi,1,Satisfactory,53,O3
 2026-06-19,Buxar,1,Moderate,112,O3
 2026-06-19,Byasanagar,1,Satisfactory,70,O3
-2026-06-19,Byrnihat (Assam),1,Moderate,112,PM2.5
+2026-06-19,Byrnihat,1,Moderate,112,PM2.5
 2026-06-19,Chamarajanagar,1,Good,42,PM10
 2026-06-19,Chandigarh,3,Satisfactory,74,"CO, PM10"
 2026-06-19,Chandrapur,2,Satisfactory,76,PM10
@@ -511920,7 +511920,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-20,Bulandshahr,1,Moderate,199,PM10
 2026-06-20,Bundi,1,Good,45,PM10
 2026-06-20,Buxar,1,Moderate,110,O3
-2026-06-20,Byrnihat (Assam),1,Satisfactory,89,PM2.5
+2026-06-20,Byrnihat,1,Satisfactory,89,PM2.5
 2026-06-20,Chamarajanagar,1,Good,38,PM10
 2026-06-20,Chandigarh,3,Satisfactory,76,"O3, PM10"
 2026-06-20,Chandrapur,2,Satisfactory,72,PM10
@@ -512168,7 +512168,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-21,Bulandshahr,1,Moderate,160,PM10
 2026-06-21,Bundi,1,Good,47,PM10
 2026-06-21,Byasanagar,1,Satisfactory,65,CO
-2026-06-21,Byrnihat (Assam),1,Satisfactory,71,PM2.5
+2026-06-21,Byrnihat,1,Satisfactory,71,PM2.5
 2026-06-21,Chamarajanagar,1,Good,45,PM10
 2026-06-21,Chandigarh,3,Satisfactory,81,"O3, PM10"
 2026-06-21,Barmer,1,Moderate,112,PM10
@@ -512410,7 +512410,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-22,Bulandshahr,1,Poor,258,PM10
 2026-06-22,Bundi,1,Satisfactory,69,PM10
 2026-06-22,Byasanagar,1,Satisfactory,66,CO
-2026-06-22,Byrnihat (Assam),1,Moderate,106,PM2.5
+2026-06-22,Byrnihat,1,Moderate,106,PM2.5
 2026-06-22,Bhiwandi,1,Satisfactory,51,O3
 2026-06-22,Chamarajanagar,1,Good,44,PM10
 2026-06-22,Banswara,1,Satisfactory,82,PM10
@@ -512653,7 +512653,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-23,Bundi,1,Satisfactory,69,PM10
 2026-06-23,Buxar,1,Satisfactory,55,O3
 2026-06-23,Byasanagar,1,Satisfactory,92,CO
-2026-06-23,Byrnihat (Assam),1,Satisfactory,86,PM2.5
+2026-06-23,Byrnihat,1,Satisfactory,86,PM2.5
 2026-06-23,Chamarajanagar,1,Good,42,PM10
 2026-06-23,Barmer,1,Moderate,105,PM10
 2026-06-23,Baripada,1,Satisfactory,89,PM10
@@ -512896,7 +512896,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-24,Bulandshahr,1,Moderate,153,PM10
 2026-06-24,Bundi,1,Satisfactory,57,PM10
 2026-06-24,Buxar,1,Moderate,121,O3
-2026-06-24,Byrnihat (Assam),1,Moderate,111,PM2.5
+2026-06-24,Byrnihat,1,Moderate,111,PM2.5
 2026-06-24,Chamarajanagar,1,Satisfactory,61,O3
 2026-06-24,Chandigarh,2,Satisfactory,64,"CO, O3"
 2026-06-24,Chandrapur,1,Good,31,NO2
@@ -513148,7 +513148,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-25,Buxar,1,Satisfactory,82,O3
 2026-06-25,Byasanagar,1,Satisfactory,84,O3
 2026-06-25,Barbil,1,Satisfactory,67,O3
-2026-06-25,Byrnihat (Assam),1,Moderate,132,PM2.5
+2026-06-25,Byrnihat,1,Moderate,132,PM2.5
 2026-06-25,Baran,1,Satisfactory,71,PM10
 2026-06-25,Ballabgarh,1,Moderate,159,PM10
 2026-06-25,Kanpur,3,Satisfactory,66,"CO, PM10"
@@ -513391,7 +513391,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-26,Bundi,1,Satisfactory,51,PM10
 2026-06-26,Buxar,1,Moderate,114,O3
 2026-06-26,Byasanagar,1,Satisfactory,70,O3
-2026-06-26,Byrnihat (Assam),1,Moderate,123,PM2.5
+2026-06-26,Byrnihat,1,Moderate,123,PM2.5
 2026-06-26,Byrnihat (Meghalaya),1,Moderate,120,PM2.5
 2026-06-26,Bareilly,2,Satisfactory,57,PM10
 2026-06-26,Chamarajanagar,1,Good,45,PM10
@@ -513641,7 +513641,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-27,Buxar,1,Moderate,106,O3
 2026-06-27,Byasanagar,1,Satisfactory,69,O3
 2026-06-27,Bareilly,2,Satisfactory,67,PM10
-2026-06-27,Byrnihat (Assam),1,Moderate,106,PM2.5
+2026-06-27,Byrnihat,1,Moderate,106,PM2.5
 2026-06-27,Barbil,1,Satisfactory,87,PM10
 2026-06-27,Banswara,1,Satisfactory,89,PM10
 2026-06-27,Agartala,1,Satisfactory,100,PM10
@@ -513885,7 +513885,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-28,Bundi,1,Good,47,O3
 2026-06-28,Buxar,1,Moderate,165,PM2.5
 2026-06-28,Byasanagar,1,Satisfactory,77,O3
-2026-06-28,Byrnihat (Assam),1,Satisfactory,91,PM2.5
+2026-06-28,Byrnihat,1,Satisfactory,91,PM2.5
 2026-06-28,Baripada,1,Satisfactory,67,PM10
 2026-06-28,Byrnihat (Meghalaya),1,Moderate,116,PM2.5
 2026-06-28,Bareilly,2,Satisfactory,51,PM10
@@ -514125,7 +514125,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-06-29,Bulandshahr,1,Moderate,170,PM10
 2026-06-29,Bundi,1,Good,47,PM10
 2026-06-29,Byasanagar,1,Satisfactory,67,O3
-2026-06-29,Byrnihat (Assam),1,Satisfactory,80,PM2.5
+2026-06-29,Byrnihat,1,Satisfactory,80,PM2.5
 2026-06-29,Byrnihat (Meghalaya),1,Moderate,114,PM2.5
 2026-06-29,Chamarajanagar,1,Good,40,PM10
 2026-06-29,Bhopal,2,Good,48,PM10
@@ -514370,7 +514370,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-01,Bundi,1,Satisfactory,51,PM10
 2026-07-01,Buxar,1,Moderate,197,PM2.5
 2026-07-01,Byasanagar,1,Satisfactory,71,O3
-2026-07-01,Byrnihat (Assam),1,Satisfactory,96,PM2.5
+2026-07-01,Byrnihat,1,Satisfactory,96,PM2.5
 2026-07-01,Bareilly,2,Good,34,"CO, PM10"
 2026-07-01,Chamarajanagar,1,Good,46,PM10
 2026-07-01,Barbil,1,Satisfactory,56,PM10
@@ -514615,7 +514615,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-02,Bundi,1,Good,35,PM10
 2026-07-02,Buxar,1,Moderate,174,PM2.5
 2026-07-02,Byasanagar,1,Satisfactory,91,CO
-2026-07-02,Byrnihat (Assam),1,Satisfactory,72,PM2.5
+2026-07-02,Byrnihat,1,Satisfactory,72,PM2.5
 2026-07-02,Byrnihat (Meghalaya),1,Moderate,121,PM2.5
 2026-07-02,Barmer,1,Satisfactory,100,PM10
 2026-07-02,Chamarajanagar,1,Good,48,PM10
@@ -514892,7 +514892,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-03,Balasore,1,Good,37,CO
 2026-07-03,Ballabgarh,1,Moderate,164,PM10
 2026-07-03,Byasanagar,1,Satisfactory,55,O3
-2026-07-03,Byrnihat (Assam),1,Satisfactory,83,PM2.5
+2026-07-03,Byrnihat,1,Satisfactory,83,PM2.5
 2026-07-03,Agra,6,Moderate,106,"PM10, PM2.5"
 2026-07-03,Chamarajanagar,1,Good,40,PM10
 2026-07-03,Guntur,1,Satisfactory,66,PM10
@@ -514980,7 +514980,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-04,Bikaner,1,Satisfactory,97,PM10
 2026-07-04,Bihar Sharif,1,Moderate,104,CO
 2026-07-04,Charkhi Dadri,1,Moderate,101,PM2.5
-2026-07-04,Byrnihat (Assam),1,Satisfactory,87,PM2.5
+2026-07-04,Byrnihat,1,Satisfactory,87,PM2.5
 2026-07-04,Dholpur,1,Poor,234,PM10
 2026-07-04,Dewas,1,Satisfactory,94,NO2
 2026-07-04,Hapur,1,Satisfactory,64,PM10
@@ -515560,7 +515560,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-06,Bulandshahr,1,Satisfactory,68,PM10
 2026-07-06,Bundi,1,Poor,227,PM10
 2026-07-06,Byasanagar,1,Good,46,CO
-2026-07-06,Byrnihat (Assam),1,Satisfactory,67,PM2.5
+2026-07-06,Byrnihat,1,Satisfactory,67,PM2.5
 2026-07-06,Chamarajanagar,1,Good,43,PM10
 2026-07-06,Chandigarh,3,Satisfactory,57,"CO, O3"
 2026-07-06,Bathinda,1,Satisfactory,78,CO
@@ -515705,7 +515705,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-07,Charkhi Dadri,1,Moderate,102,PM2.5
 2026-07-07,Chandrapur,2,Good,37,"CO, PM10"
 2026-07-07,Chandigarh,3,Good,49,"CO, PM10"
-2026-07-07,Byrnihat (Assam),1,Satisfactory,75,PM2.5
+2026-07-07,Byrnihat,1,Satisfactory,75,PM2.5
 2026-07-07,Banswara,1,Satisfactory,79,PM10
 2026-07-07,Ballabgarh,1,Moderate,156,PM2.5
 2026-07-07,Balasore,1,Satisfactory,74,PM10
@@ -516612,7 +516612,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-11,Dehradun,1,Good,21,PM2.5
 2026-07-11,Dausa,1,Moderate,133,PM10
 2026-07-11,Byasanagar,1,Satisfactory,75,PM10
-2026-07-11,Byrnihat (Assam),1,Satisfactory,81,PM2.5
+2026-07-11,Byrnihat,1,Satisfactory,81,PM2.5
 2026-07-11,Chamarajanagar,1,Good,45,PM10
 2026-07-11,Chandigarh,2,Good,44,"CO, PM10"
 2026-07-11,Chandrapur,2,Satisfactory,77,PM10
@@ -516975,7 +516975,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-12,Amravati,2,Satisfactory,66,PM10
 2026-07-12,Ambala,1,Poor,240,PM10
 2026-07-12,Amaravati,1,Moderate,125,PM10
-2026-07-12,Byrnihat (Assam),1,Satisfactory,78,PM2.5
+2026-07-12,Byrnihat,1,Satisfactory,78,PM2.5
 2026-07-12,Koppal,1,Good,31,NO2
 2026-07-12,Lucknow,6,Satisfactory,91,"PM10, PM2.5"
 2026-07-12,Kota,3,Satisfactory,85,PM10
@@ -517672,7 +517672,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-15,Chandrapur,2,Satisfactory,68,PM10
 2026-07-15,Chandigarh,3,Satisfactory,75,"PM10, PM2.5"
 2026-07-15,Chamarajanagar,1,Good,42,PM10
-2026-07-15,Byrnihat (Assam),1,Satisfactory,86,PM2.5
+2026-07-15,Byrnihat,1,Satisfactory,86,PM2.5
 2026-07-15,Buxar,1,Satisfactory,95,O3
 2026-07-15,Bundi,1,Satisfactory,80,PM10
 2026-07-15,Bulandshahr,1,Moderate,126,PM10
@@ -517839,7 +517839,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-16,Chandigarh,3,Satisfactory,56,"CO, PM10"
 2026-07-16,Chamarajanagar,1,Good,43,PM10
 2026-07-16,Byrnihat (Meghalaya),1,Moderate,116,PM2.5
-2026-07-16,Byrnihat (Assam),1,Satisfactory,92,PM2.5
+2026-07-16,Byrnihat,1,Satisfactory,92,PM2.5
 2026-07-16,Byasanagar,1,Good,41,PM10
 2026-07-16,Buxar,1,Satisfactory,55,PM2.5
 2026-07-16,Bundi,1,Satisfactory,78,PM10
@@ -518206,7 +518206,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-17,Chandigarh,3,Satisfactory,62,"CO, PM10"
 2026-07-17,Chamarajanagar,1,Good,45,PM10
 2026-07-17,Byrnihat (Meghalaya),1,Moderate,115,PM2.5
-2026-07-17,Byrnihat (Assam),1,Satisfactory,78,PM2.5
+2026-07-17,Byrnihat,1,Satisfactory,78,PM2.5
 2026-07-17,Byasanagar,1,Satisfactory,56,PM10
 2026-07-17,Buxar,1,Good,38,PM2.5
 2026-07-17,Ahmednagar,1,Good,47,PM10
@@ -518438,7 +518438,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-18,Chandigarh,3,Satisfactory,69,PM10
 2026-07-18,Chamarajanagar,1,Good,49,PM10
 2026-07-18,Byrnihat (Meghalaya),1,Satisfactory,77,PM2.5
-2026-07-18,Byrnihat (Assam),1,Satisfactory,71,PM2.5
+2026-07-18,Byrnihat,1,Satisfactory,71,PM2.5
 2026-07-18,Churu,1,Moderate,126,PM10
 2026-07-18,Kurnool,1,Good,40,PM10
 2026-07-18,Machilipatnam,1,Satisfactory,51,PM10
@@ -518667,7 +518667,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-19,Chandigarh,3,Satisfactory,68,PM10
 2026-07-19,Chamarajanagar,1,Good,45,PM10
 2026-07-19,Byrnihat (Meghalaya),1,Moderate,122,PM2.5
-2026-07-19,Byrnihat (Assam),1,Satisfactory,71,PM2.5
+2026-07-19,Byrnihat,1,Satisfactory,71,PM2.5
 2026-07-19,Byasanagar,1,Satisfactory,65,PM2.5
 2026-07-19,Bundi,1,Satisfactory,73,PM10
 2026-07-19,Bulandshahr,1,Moderate,148,PM10
@@ -518955,7 +518955,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-20,Bulandshahr,1,Satisfactory,73,PM10
 2026-07-20,Bundi,1,Satisfactory,69,PM10
 2026-07-20,Byasanagar,1,Satisfactory,66,PM2.5
-2026-07-20,Byrnihat (Assam),1,Satisfactory,73,PM2.5
+2026-07-20,Byrnihat,1,Satisfactory,73,PM2.5
 2026-07-20,Bareilly,2,Good,49,"O3, PM10"
 2026-07-20,Chamarajanagar,1,Good,36,PM10
 2026-07-20,Barbil,1,Satisfactory,60,PM10
@@ -519416,7 +519416,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-22,Chandrapur,2,Good,36,CO
 2026-07-22,Chandigarh,3,Good,32,"CO, PM2.5"
 2026-07-22,Byrnihat (Meghalaya),1,Moderate,142,PM2.5
-2026-07-22,Byrnihat (Assam),1,Satisfactory,63,PM2.5
+2026-07-22,Byrnihat,1,Satisfactory,63,PM2.5
 2026-07-22,Byasanagar,1,Satisfactory,54,PM2.5
 2026-07-22,Bundi,1,Good,36,NO2
 2026-07-22,Bulandshahr,1,Good,33,PM10
@@ -519625,7 +519625,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-23,Chandrapur,2,Good,37,"CO, PM10"
 2026-07-23,Chandigarh,3,Good,32,"CO, NO2, O3"
 2026-07-23,Chamarajanagar,1,Good,36,PM10
-2026-07-23,Byrnihat (Assam),1,Satisfactory,61,PM2.5
+2026-07-23,Byrnihat,1,Satisfactory,61,PM2.5
 2026-07-23,Byasanagar,1,Satisfactory,54,PM2.5
 2026-07-23,Bundi,1,Good,38,O3
 2026-07-23,Bulandshahr,1,Good,48,PM10
@@ -520168,7 +520168,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-25,Bulandshahr,1,Good,47,PM10
 2026-07-25,Bundi,1,Satisfactory,51,PM10
 2026-07-25,Byasanagar,1,Satisfactory,77,PM10
-2026-07-25,Byrnihat (Assam),1,Satisfactory,64,PM2.5
+2026-07-25,Byrnihat,1,Satisfactory,64,PM2.5
 2026-07-25,Byrnihat (Meghalaya),1,Moderate,147,PM2.5
 2026-07-25,Chamarajanagar,1,Good,48,PM10
 2026-07-25,Chandigarh,3,Good,32,"CO, PM2.5"
@@ -520360,7 +520360,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-26,Barmer,1,Good,36,O3
 2026-07-26,Chamarajanagar,1,Good,45,PM10
 2026-07-26,Byrnihat (Meghalaya),1,Moderate,168,PM2.5
-2026-07-26,Byrnihat (Assam),1,Satisfactory,67,PM2.5
+2026-07-26,Byrnihat,1,Satisfactory,67,PM2.5
 2026-07-26,Byasanagar,1,Satisfactory,67,PM2.5
 2026-07-26,Buxar,1,Satisfactory,56,PM2.5
 2026-07-26,Bundi,1,Good,41,PM10
@@ -520660,7 +520660,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-27,Bundi,1,Satisfactory,57,PM10
 2026-07-27,Buxar,1,Satisfactory,58,PM2.5
 2026-07-27,Byasanagar,1,Satisfactory,84,PM2.5
-2026-07-27,Byrnihat (Assam),1,Satisfactory,74,PM2.5
+2026-07-27,Byrnihat,1,Satisfactory,74,PM2.5
 2026-07-27,Bhiwani,1,Satisfactory,52,PM2.5
 2026-07-27,Bareilly,1,Good,46,SO2
 2026-07-27,Barbil,1,Good,50,PM10
@@ -520815,7 +520815,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-28,Chandrapur,2,Good,40,"CO, PM10"
 2026-07-28,Chandigarh,3,Good,49,"CO, PM2.5"
 2026-07-28,Byrnihat (Meghalaya),1,Moderate,168,PM2.5
-2026-07-28,Byrnihat (Assam),1,Satisfactory,90,PM2.5
+2026-07-28,Byrnihat,1,Satisfactory,90,PM2.5
 2026-07-28,Byasanagar,1,Satisfactory,60,PM2.5
 2026-07-28,Bundi,1,Good,45,PM10
 2026-07-28,Bulandshahr,1,Good,45,PM10
@@ -521031,7 +521031,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-07-29,Chandigarh,2,Good,44,"CO, PM10"
 2026-07-29,Chamarajanagar,1,Good,39,PM10
 2026-07-29,Byrnihat (Meghalaya),1,Satisfactory,69,PM2.5
-2026-07-29,Byrnihat (Assam),1,Satisfactory,90,CO
+2026-07-29,Byrnihat,1,Satisfactory,90,CO
 2026-07-29,Byasanagar,1,Good,46,O3
 2026-07-29,Bundi,1,Satisfactory,55,PM10
 2026-07-29,Bulandshahr,1,Good,40,PM10
@@ -521905,7 +521905,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-01,Chandigarh,3,Good,40,"CO, NO2, PM2.5"
 2026-08-01,Chamarajanagar,1,Good,42,PM10
 2026-08-01,Byrnihat (Meghalaya),1,Moderate,151,PM2.5
-2026-08-01,Byrnihat (Assam),1,Moderate,101,PM2.5
+2026-08-01,Byrnihat,1,Moderate,101,PM2.5
 2026-08-01,Chennai,7,Satisfactory,76,PM10
 2026-08-01,Byasanagar,1,Good,48,O3
 2026-08-01,Bundi,1,Good,34,O3
@@ -522069,7 +522069,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-02,Bileipada,1,Moderate,196,PM10
 2026-08-02,Bilaspur,1,Satisfactory,76,PM10
 2026-08-02,Bikaner,1,Moderate,102,PM10
-2026-08-02,Byrnihat (Assam),1,Satisfactory,86,PM2.5
+2026-08-02,Byrnihat,1,Satisfactory,86,PM2.5
 2026-08-02,Bihar Sharif,1,Poor,278,PM2.5
 2026-08-02,Churu,1,Satisfactory,57,PM10
 2026-08-02,Cuddalore,1,Good,40,PM10
@@ -522322,7 +522322,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-03,Fatehpur sikri,1,Good,29,PM10
 2026-08-03,Faridabad,3,Satisfactory,75,"CO, PM10, PM2.5"
 2026-08-03,Jalandhar,1,Satisfactory,60,PM10
-2026-08-03,Byrnihat (Assam),1,Satisfactory,86,PM2.5
+2026-08-03,Byrnihat,1,Satisfactory,86,PM2.5
 2026-08-03,Bundi,1,Good,44,PM10
 2026-08-03,Ballabgarh,1,Satisfactory,51,PM2.5
 2026-08-03,Banswara,1,Satisfactory,66,PM10
@@ -522866,7 +522866,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-05,Bhavnagar,1,Satisfactory,64,PM10
 2026-08-05,Bareilly,1,Good,38,SO2
 2026-08-05,Bundi,1,Satisfactory,70,PM10
-2026-08-05,Byrnihat (Assam),1,Satisfactory,94,PM2.5
+2026-08-05,Byrnihat,1,Satisfactory,94,PM2.5
 2026-08-05,Dombivli,1,Good,34,O3
 2026-08-05,Dhule,1,Satisfactory,54,PM10
 2026-08-05,Dholpur,1,Poor,298,PM2.5
@@ -523082,7 +523082,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-06,Chandigarh,3,Good,38,"CO, NO2, PM10"
 2026-08-06,Chamarajanagar,1,Good,44,PM10
 2026-08-06,Byrnihat (Meghalaya),1,Satisfactory,94,PM2.5
-2026-08-06,Byrnihat (Assam),1,Satisfactory,95,PM2.5
+2026-08-06,Byrnihat,1,Satisfactory,95,PM2.5
 2026-08-06,Bundi,1,Satisfactory,77,PM10
 2026-08-06,Bulandshahr,1,Good,41,PM10
 2026-08-06,Brajrajnagar,1,Good,49,CO
@@ -523371,7 +523371,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-07,Brajrajnagar,1,Good,44,O3
 2026-08-07,Bulandshahr,1,Good,38,CO
 2026-08-07,Bundi,1,Satisfactory,72,PM10
-2026-08-07,Byrnihat (Assam),1,Satisfactory,86,PM2.5
+2026-08-07,Byrnihat,1,Satisfactory,86,PM2.5
 2026-08-07,Byrnihat (Meghalaya),1,Moderate,181,PM2.5
 2026-08-07,Chamarajanagar,1,Good,43,PM10
 2026-08-07,Chandigarh,1,Good,21,O3
@@ -523574,7 +523574,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-08,Chandigarh,3,Good,42,"CO, PM10"
 2026-08-08,Chamarajanagar,1,Good,45,PM10
 2026-08-08,Byrnihat (Meghalaya),1,Moderate,158,PM2.5
-2026-08-08,Byrnihat (Assam),1,Moderate,106,PM2.5
+2026-08-08,Byrnihat,1,Moderate,106,PM2.5
 2026-08-08,Bundi,1,Satisfactory,87,PM10
 2026-08-08,Bulandshahr,1,Good,32,O3
 2026-08-08,Boisar,1,Good,50,PM10
@@ -523867,7 +523867,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-09,Bulandshahr,1,Satisfactory,61,PM10
 2026-08-09,Bundi,1,Satisfactory,61,PM10
 2026-08-09,Byasanagar,1,Good,39,PM2.5
-2026-08-09,Byrnihat (Assam),1,Satisfactory,90,PM2.5
+2026-08-09,Byrnihat,1,Satisfactory,90,PM2.5
 2026-08-09,Byrnihat (Meghalaya),1,Satisfactory,89,PM2.5
 2026-08-09,Chamarajanagar,1,Good,45,PM10
 2026-08-09,Chandigarh,2,Good,35,"NO2, PM10"
@@ -524011,7 +524011,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-10,Bundi,1,Satisfactory,64,PM10
 2026-08-10,Byasanagar,1,Good,46,PM2.5
 2026-08-10,Damoh,1,Good,49,SO2
-2026-08-10,Byrnihat (Assam),1,Satisfactory,82,PM2.5
+2026-08-10,Byrnihat,1,Satisfactory,82,PM2.5
 2026-08-10,Chamarajanagar,1,Good,37,PM10
 2026-08-10,Chandigarh,2,Good,33,"NO2, O3"
 2026-08-10,Chandrapur,2,Satisfactory,73,PM10
@@ -524269,7 +524269,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-11,Chandigarh,3,Good,43,"CO, PM2.5"
 2026-08-11,Chamarajanagar,1,Good,45,PM10
 2026-08-11,Byrnihat (Meghalaya),1,Moderate,134,PM2.5
-2026-08-11,Byrnihat (Assam),1,Satisfactory,83,PM2.5
+2026-08-11,Byrnihat,1,Satisfactory,83,PM2.5
 2026-08-11,Byasanagar,1,Good,48,O3
 2026-08-11,Bundi,1,Satisfactory,57,PM10
 2026-08-11,Bulandshahr,1,Good,41,PM10
@@ -524609,7 +524609,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-12,Bundi,1,Good,47,PM10
 2026-08-12,Buxar,1,Moderate,168,PM2.5
 2026-08-12,Byasanagar,1,Satisfactory,60,PM10
-2026-08-12,Byrnihat (Assam),1,Satisfactory,82,PM2.5
+2026-08-12,Byrnihat,1,Satisfactory,82,PM2.5
 2026-08-12,Byrnihat (Meghalaya),1,Moderate,161,PM2.5
 2026-08-12,Barmer,1,Satisfactory,58,PM10
 2026-08-12,Chamarajanagar,1,Good,42,PM10
@@ -524855,7 +524855,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-13,Bulandshahr,1,Satisfactory,98,PM10
 2026-08-13,Bundi,1,Good,47,PM10
 2026-08-13,Byasanagar,1,Satisfactory,54,PM10
-2026-08-13,Byrnihat (Assam),1,Satisfactory,96,PM2.5
+2026-08-13,Byrnihat,1,Satisfactory,96,PM2.5
 2026-08-13,Byrnihat (Meghalaya),1,Moderate,153,PM2.5
 2026-08-13,Chamarajanagar,1,Good,43,PM10
 2026-08-13,Chandigarh,3,Good,46,"NO2, PM10"
@@ -525090,7 +525090,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-14,Damoh,1,Satisfactory,51,SO2
 2026-08-14,Chikkamagaluru,1,Good,37,PM10
 2026-08-14,Delhi,43,Satisfactory,98,"PM10, PM2.5"
-2026-08-14,Byrnihat (Assam),1,Satisfactory,96,PM2.5
+2026-08-14,Byrnihat,1,Satisfactory,96,PM2.5
 2026-08-14,Bulandshahr,1,Moderate,108,PM10
 2026-08-14,Bengaluru,9,Satisfactory,66,"NO2, PM10, PM2.5"
 2026-08-14,Bettiah,1,Good,29,NO2
@@ -525315,7 +525315,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-15,Chandigarh,3,Good,42,"CO, NO2, PM10"
 2026-08-15,Chamarajanagar,1,Good,46,PM10
 2026-08-15,Byrnihat (Meghalaya),1,Moderate,133,PM2.5
-2026-08-15,Byrnihat (Assam),1,Satisfactory,94,PM2.5
+2026-08-15,Byrnihat,1,Satisfactory,94,PM2.5
 2026-08-15,Byasanagar,1,Good,50,PM2.5
 2026-08-15,Bundi,1,Good,35,PM10
 2026-08-15,Bulandshahr,1,Good,49,PM10
@@ -525525,7 +525525,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-16,Greater Noida,2,Moderate,126,PM10
 2026-08-16,Chamarajanagar,1,Good,45,PM10
 2026-08-16,Brajrajnagar,1,Good,50,CO
-2026-08-16,Byrnihat (Assam),1,Satisfactory,95,PM2.5
+2026-08-16,Byrnihat,1,Satisfactory,95,PM2.5
 2026-08-16,Baghpat,1,Satisfactory,75,PM10
 2026-08-16,Bahadurgarh,1,Satisfactory,61,PM10
 2026-08-16,Balasore,1,Good,39,CO
@@ -525925,7 +525925,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-17,Chandigarh,3,Good,35,"CO, PM10"
 2026-08-17,Chamarajanagar,1,Good,42,PM10
 2026-08-17,Byrnihat (Meghalaya),1,Good,41,PM10
-2026-08-17,Byrnihat (Assam),1,Satisfactory,95,PM2.5
+2026-08-17,Byrnihat,1,Satisfactory,95,PM2.5
 2026-08-17,Bundi,1,Satisfactory,68,PM10
 2026-08-17,Eloor,1,Satisfactory,90,CO
 2026-08-17,Aizawl,1,Good,14,SO2
@@ -526145,7 +526145,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-18,Fatehabad,1,Good,47,CO
 2026-08-18,Fatehpur sikri,1,Good,43,PM10
 2026-08-18,Firozabad,2,Good,43,"CO, PM10"
-2026-08-18,Byrnihat (Assam),1,Moderate,104,PM2.5
+2026-08-18,Byrnihat,1,Moderate,104,PM2.5
 2026-08-18,Bhiwani,1,Satisfactory,54,PM10
 2026-08-18,Bhiwandi,1,Good,36,PM10
 2026-08-18,Bhiwadi,2,Moderate,122,"PM10, PM2.5"
@@ -526226,7 +526226,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-19,Boisar,1,Good,38,PM10
 2026-08-19,Brajrajnagar,1,Good,43,O3
 2026-08-19,Bulandshahr,1,Satisfactory,92,PM10
-2026-08-19,Byrnihat (Assam),1,Moderate,112,PM2.5
+2026-08-19,Byrnihat,1,Moderate,112,PM2.5
 2026-08-19,Palwal,1,Moderate,106,PM10
 2026-08-19,Rishikesh,1,Good,38,O3
 2026-08-19,Ratlam,1,Satisfactory,53,PM10
@@ -526682,7 +526682,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-20,Brajrajnagar,1,Good,43,O3
 2026-08-20,Bundi,1,Satisfactory,78,PM10
 2026-08-20,Byasanagar,1,Satisfactory,52,O3
-2026-08-20,Byrnihat (Assam),1,Moderate,117,PM2.5
+2026-08-20,Byrnihat,1,Moderate,117,PM2.5
 2026-08-20,Chamarajanagar,1,Good,44,PM10
 2026-08-20,Chandigarh,3,Good,46,"CO, NO2, PM10"
 2026-08-20,Ludhiana,1,Satisfactory,90,PM10
@@ -526768,7 +526768,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-21,Brajrajnagar,1,Good,48,CO
 2026-08-21,Boisar,1,Good,37,PM10
 2026-08-21,Bileipada,1,Satisfactory,85,PM10
-2026-08-21,Byrnihat (Assam),1,Moderate,114,PM2.5
+2026-08-21,Byrnihat,1,Moderate,114,PM2.5
 2026-08-21,Chikkamagaluru,1,Satisfactory,59,PM10
 2026-08-21,Baripada,1,Satisfactory,78,PM10
 2026-08-21,Barbil,1,Satisfactory,70,PM10
@@ -527148,7 +527148,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-22,Bahadurgarh,1,Satisfactory,57,PM10
 2026-08-22,Eluru,1,Satisfactory,56,PM10
 2026-08-22,Faridabad,2,Moderate,115,"PM10, PM2.5"
-2026-08-22,Byrnihat (Assam),1,Moderate,113,PM2.5
+2026-08-22,Byrnihat,1,Moderate,113,PM2.5
 2026-08-22,Fatehpur sikri,1,Satisfactory,66,PM10
 2026-08-22,Ludhiana,1,Moderate,158,PM2.5
 2026-08-22,Lucknow,6,Good,47,"O3, PM10, PM2.5"
@@ -527311,7 +527311,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-23,Chandrapur,1,Good,31,PM10
 2026-08-23,Chandigarh,3,Good,34,"CO, PM10"
 2026-08-23,Chamarajanagar,1,Good,45,PM10
-2026-08-23,Byrnihat (Assam),1,Satisfactory,97,PM2.5
+2026-08-23,Byrnihat,1,Satisfactory,97,PM2.5
 2026-08-23,Byasanagar,1,Good,44,CO
 2026-08-23,Bundi,1,Satisfactory,69,PM10
 2026-08-23,Bulandshahr,1,Satisfactory,66,PM10
@@ -527522,7 +527522,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-24,Bulandshahr,1,Satisfactory,57,PM10
 2026-08-24,Bundi,1,Satisfactory,82,PM10
 2026-08-24,Byasanagar,1,Good,42,CO
-2026-08-24,Byrnihat (Assam),1,Moderate,108,PM2.5
+2026-08-24,Byrnihat,1,Moderate,108,PM2.5
 2026-08-24,Chamarajanagar,1,Good,37,PM10
 2026-08-24,Chandigarh,3,Good,45,"CO, PM10"
 2026-08-24,Chandrapur,1,Good,41,PM10
@@ -527839,7 +527839,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-25,Begusarai,1,Satisfactory,52,PM10
 2026-08-25,Belapur,1,Satisfactory,53,PM10
 2026-08-25,Belgaum,1,Good,37,NO2
-2026-08-25,Byrnihat (Assam),1,Moderate,121,PM2.5
+2026-08-25,Byrnihat,1,Moderate,121,PM2.5
 2026-08-25,Chamarajanagar,1,Good,43,PM10
 2026-08-25,Chandigarh,3,Satisfactory,53,"CO, NO2, PM10"
 2026-08-25,Chandrapur,1,Satisfactory,78,PM10
@@ -528146,7 +528146,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-26,Chandrapur,1,Satisfactory,100,PM10
 2026-08-26,Chandigarh,3,Good,42,"CO, NO2, PM10"
 2026-08-26,Chamarajanagar,1,Good,46,PM10
-2026-08-26,Byrnihat (Assam),1,Moderate,105,PM2.5
+2026-08-26,Byrnihat,1,Moderate,105,PM2.5
 2026-08-26,Byasanagar,1,Satisfactory,63,PM10
 2026-08-26,Bundi,1,Satisfactory,60,PM10
 2026-08-26,Bulandshahr,1,Satisfactory,62,PM10
@@ -528278,7 +528278,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-27,Chandrapur,1,Satisfactory,75,PM10
 2026-08-27,Chandigarh,3,Good,48,PM10
 2026-08-27,Chamarajanagar,1,Good,44,PM10
-2026-08-27,Byrnihat (Assam),1,Satisfactory,92,PM2.5
+2026-08-27,Byrnihat,1,Satisfactory,92,PM2.5
 2026-08-27,Byasanagar,1,Satisfactory,71,PM10
 2026-08-27,Chhal,1,Satisfactory,70,PM10
 2026-08-27,Bundi,1,Satisfactory,81,PM10
@@ -528736,7 +528736,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-28,Khurja,1,Satisfactory,89,PM10
 2026-08-29,Navi Mumbai,6,Good,36,PM10
 2026-08-29,Dombivli,1,Good,38,O3
-2026-08-29,Byrnihat (Assam),1,Satisfactory,85,PM2.5
+2026-08-29,Byrnihat,1,Satisfactory,85,PM2.5
 2026-08-29,Byasanagar,1,Satisfactory,99,PM10
 2026-08-29,Bundi,1,Satisfactory,80,PM10
 2026-08-29,Bulandshahr,1,Poor,202,PM10
@@ -529003,7 +529003,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-30,Chandrapur,2,Satisfactory,69,PM10
 2026-08-30,Chandigarh,2,Satisfactory,77,PM10
 2026-08-30,Chamarajanagar,1,Good,46,PM10
-2026-08-30,Byrnihat (Assam),1,Satisfactory,88,PM2.5
+2026-08-30,Byrnihat,1,Satisfactory,88,PM2.5
 2026-08-30,Byasanagar,1,Satisfactory,59,PM10
 2026-08-30,Bundi,1,Satisfactory,75,PM10
 2026-08-30,Chikkamagaluru,1,Good,39,PM10
@@ -529314,7 +529314,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-08-31,Chandrapur,2,Satisfactory,61,"PM10, PM2.5"
 2026-08-31,Chandigarh,2,Satisfactory,53,PM10
 2026-08-31,Chamarajanagar,1,Good,37,PM10
-2026-08-31,Byrnihat (Assam),1,Satisfactory,83,PM2.5
+2026-08-31,Byrnihat,1,Satisfactory,83,PM2.5
 2026-08-31,Byasanagar,1,Good,44,PM10
 2026-08-31,Bundi,1,Satisfactory,71,PM10
 2026-08-31,Bulandshahr,1,Moderate,187,PM10
@@ -529702,7 +529702,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-01,Cuttack,1,Satisfactory,52,PM10
 2026-09-01,Bulandshahr,1,Poor,222,PM10
 2026-09-01,Bundi,1,Satisfactory,64,PM10
-2026-09-01,Byrnihat (Assam),1,Satisfactory,85,PM2.5
+2026-09-01,Byrnihat,1,Satisfactory,85,PM2.5
 2026-09-01,Byrnihat (Meghalaya),1,Good,40,PM10
 2026-09-01,Chamarajanagar,1,Good,45,PM10
 2026-09-01,Chandigarh,2,Good,49,PM10
@@ -529761,7 +529761,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-02,Bulandshahr,1,Satisfactory,81,PM10
 2026-09-02,Bundi,1,Satisfactory,73,PM10
 2026-09-02,Byasanagar,1,Satisfactory,85,PM10
-2026-09-02,Byrnihat (Assam),1,Satisfactory,82,PM2.5
+2026-09-02,Byrnihat,1,Satisfactory,82,PM2.5
 2026-09-02,Byrnihat (Meghalaya),1,Good,37,PM10
 2026-09-02,Chamarajanagar,1,Good,46,PM10
 2026-09-02,Chandigarh,3,Satisfactory,58,"CO, O3"
@@ -530071,7 +530071,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-03,Bathinda,1,Satisfactory,55,PM10
 2026-09-03,Chandigarh,3,Good,33,"CO, PM10"
 2026-09-03,Kadapa,1,Satisfactory,59,PM2.5
-2026-09-03,Byrnihat (Assam),1,Satisfactory,85,PM2.5
+2026-09-03,Byrnihat,1,Satisfactory,85,PM2.5
 2026-09-03,Byasanagar,1,Satisfactory,83,PM10
 2026-09-03,Bundi,1,Satisfactory,60,PM10
 2026-09-03,Bulandshahr,1,Satisfactory,58,CO
@@ -530283,7 +530283,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-04,Fatehpur sikri,1,Good,24,PM2.5
 2026-09-04,Faridabad,3,Moderate,122,"PM10, PM2.5"
 2026-09-04,Eluru,1,Satisfactory,64,PM10
-2026-09-04,Byrnihat (Assam),1,Satisfactory,83,PM2.5
+2026-09-04,Byrnihat,1,Satisfactory,83,PM2.5
 2026-09-04,Byasanagar,1,Satisfactory,65,O3
 2026-09-04,Bundi,1,Good,46,PM10
 2026-09-04,Bulandshahr,1,Good,43,PM10
@@ -530635,7 +530635,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-05,Bulandshahr,1,Good,36,CO
 2026-09-05,Bundi,1,Good,49,PM10
 2026-09-05,Byasanagar,1,Satisfactory,64,O3
-2026-09-05,Byrnihat (Assam),1,Moderate,102,PM2.5
+2026-09-05,Byrnihat,1,Moderate,102,PM2.5
 2026-09-05,Barrackpore,1,Satisfactory,67,PM10
 2026-09-05,Barmer,1,Satisfactory,70,PM10
 2026-09-05,Bareilly,2,Good,38,"PM10, PM2.5"
@@ -530922,7 +530922,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-06,Dewas,1,Satisfactory,60,NO2
 2026-09-06,Churu,1,Satisfactory,60,O3
 2026-09-06,Chamarajanagar,1,Good,45,PM10
-2026-09-06,Byrnihat (Assam),1,Satisfactory,86,PM2.5
+2026-09-06,Byrnihat,1,Satisfactory,86,PM2.5
 2026-09-06,Byasanagar,1,Satisfactory,65,O3
 2026-09-06,Bengaluru,6,Satisfactory,77,PM10
 2026-09-06,Bettiah,1,Good,29,CO
@@ -531012,7 +531012,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-07,Bengaluru,5,Moderate,102,"NO2, PM10"
 2026-09-07,Bareilly,1,Good,31,PM2.5
 2026-09-07,Chamarajanagar,1,Good,41,PM10
-2026-09-07,Byrnihat (Assam),1,Satisfactory,86,PM2.5
+2026-09-07,Byrnihat,1,Satisfactory,86,PM2.5
 2026-09-07,Byasanagar,1,Satisfactory,52,PM10
 2026-09-07,Bulandshahr,1,Good,49,PM10
 2026-09-07,Brajrajnagar,1,Moderate,104,PM10
@@ -531362,7 +531362,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-08,Chandrapur,2,Moderate,101,PM10
 2026-09-08,Chandigarh,2,Good,46,"CO, PM10"
 2026-09-08,Chamarajanagar,1,Good,43,PM10
-2026-09-08,Byrnihat (Assam),1,Moderate,111,PM2.5
+2026-09-08,Byrnihat,1,Moderate,111,PM2.5
 2026-09-08,Byasanagar,1,Satisfactory,62,PM10
 2026-09-08,Bundi,1,Satisfactory,80,PM10
 2026-09-08,Bulandshahr,1,Moderate,133,PM10
@@ -531523,7 +531523,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-09,Chennai,6,Satisfactory,82,PM10
 2026-09-09,Chandrapur,2,Satisfactory,94,PM10
 2026-09-09,Chamarajanagar,1,Good,42,PM10
-2026-09-09,Byrnihat (Assam),1,Satisfactory,85,PM2.5
+2026-09-09,Byrnihat,1,Satisfactory,85,PM2.5
 2026-09-09,Byasanagar,1,Satisfactory,74,PM2.5
 2026-09-09,Bulandshahr,1,Poor,241,PM10
 2026-09-09,Brajrajnagar,1,Moderate,152,PM2.5
@@ -531876,7 +531876,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-10,Bulandshahr,1,Poor,277,PM10
 2026-09-10,Bundi,1,Satisfactory,62,PM10
 2026-09-10,Byasanagar,1,Good,46,O3
-2026-09-10,Byrnihat (Assam),1,Satisfactory,88,PM2.5
+2026-09-10,Byrnihat,1,Satisfactory,88,PM2.5
 2026-09-10,Bhiwadi,2,Moderate,143,"PM10, PM2.5"
 2026-09-10,Byrnihat (Meghalaya),1,Moderate,163,PM2.5
 2026-09-10,Bareilly,2,Satisfactory,90,"PM10, SO2"
@@ -532117,7 +532117,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-11,Brajrajnagar,1,Satisfactory,56,CO
 2026-09-11,Bulandshahr,1,Satisfactory,99,PM10
 2026-09-11,Bundi,1,Satisfactory,68,PM10
-2026-09-11,Byrnihat (Assam),1,Satisfactory,94,PM2.5
+2026-09-11,Byrnihat,1,Satisfactory,94,PM2.5
 2026-09-11,Byrnihat (Meghalaya),1,Moderate,140,PM2.5
 2026-09-11,Chamarajanagar,1,Good,46,PM10
 2026-09-11,Bhiwandi,1,Good,45,PM10
@@ -533286,7 +533286,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-16,Bulandshahr,1,Moderate,105,PM10
 2026-09-16,Bundi,1,Good,40,O3
 2026-09-16,Byasanagar,1,Satisfactory,82,PM2.5
-2026-09-16,Byrnihat (Assam),1,Satisfactory,90,PM2.5
+2026-09-16,Byrnihat,1,Satisfactory,90,PM2.5
 2026-09-16,Chamarajanagar,1,Good,42,PM10
 2026-09-16,Chandigarh,2,Good,49,"PM10, PM2.5"
 2026-09-16,Chandrapur,2,Satisfactory,90,PM10
@@ -533534,7 +533534,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-17,Bulandshahr,1,Moderate,151,PM10
 2026-09-17,Bundi,1,Satisfactory,52,PM10
 2026-09-17,Byasanagar,1,Satisfactory,95,PM2.5
-2026-09-17,Byrnihat (Assam),1,Satisfactory,85,PM2.5
+2026-09-17,Byrnihat,1,Satisfactory,85,PM2.5
 2026-09-17,Barrackpore,1,Satisfactory,65,PM10
 2026-09-17,Barmer,1,Good,42,O3
 2026-09-17,Baripada,1,Satisfactory,66,PM10
@@ -533767,7 +533767,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-18,Bulandshahr,1,Moderate,139,PM10
 2026-09-18,Bundi,1,Good,31,O3
 2026-09-18,Byasanagar,1,Moderate,111,PM2.5
-2026-09-18,Byrnihat (Assam),1,Satisfactory,85,PM2.5
+2026-09-18,Byrnihat,1,Satisfactory,85,PM2.5
 2026-09-18,Byrnihat (Meghalaya),1,Moderate,116,PM2.5
 2026-09-18,Chamarajanagar,1,Good,45,PM10
 2026-09-18,Chandigarh,3,Good,36,"CO, O3, PM10"
@@ -534032,7 +534032,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-19,Bulandshahr,1,Moderate,135,PM10
 2026-09-19,Bundi,1,Good,47,O3
 2026-09-19,Byasanagar,1,Satisfactory,60,PM2.5
-2026-09-19,Byrnihat (Assam),1,Satisfactory,94,PM2.5
+2026-09-19,Byrnihat,1,Satisfactory,94,PM2.5
 2026-09-19,Bhiwani,1,Satisfactory,72,PM2.5
 2026-09-19,Baripada,1,Good,42,O3
 2026-09-19,Bareilly,2,Satisfactory,86,"PM10, SO2"
@@ -534180,7 +534180,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-20,Chandigarh,3,Good,49,"O3, PM10"
 2026-09-20,Chamarajanagar,1,Good,45,PM10
 2026-09-20,Byrnihat (Meghalaya),1,Moderate,146,PM10
-2026-09-20,Byrnihat (Assam),1,Satisfactory,86,PM2.5
+2026-09-20,Byrnihat,1,Satisfactory,86,PM2.5
 2026-09-20,Byasanagar,1,Satisfactory,68,PM2.5
 2026-09-20,Bulandshahr,1,Moderate,132,PM10
 2026-09-20,Brajrajnagar,1,Satisfactory,58,PM10
@@ -534554,7 +534554,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-21,Durgapur,2,Satisfactory,90,"CO, PM10"
 2026-09-21,Bundi,1,Satisfactory,64,PM2.5
 2026-09-21,Byasanagar,1,Good,41,CO
-2026-09-21,Byrnihat (Assam),1,Satisfactory,83,PM2.5
+2026-09-21,Byrnihat,1,Satisfactory,83,PM2.5
 2026-09-21,Byrnihat (Meghalaya),1,Moderate,146,PM10
 2026-09-21,Chamarajanagar,1,Good,45,PM10
 2026-09-21,Chandigarh,1,Good,41,PM10
@@ -534706,7 +534706,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-22,Chandigarh,2,Satisfactory,53,PM10
 2026-09-22,Chamarajanagar,1,Good,45,PM10
 2026-09-22,Byrnihat (Meghalaya),1,Moderate,169,PM2.5
-2026-09-22,Byrnihat (Assam),1,Satisfactory,83,PM2.5
+2026-09-22,Byrnihat,1,Satisfactory,83,PM2.5
 2026-09-22,Byasanagar,1,Good,39,CO
 2026-09-22,Bundi,1,Satisfactory,73,PM2.5
 2026-09-22,Bulandshahr,1,Moderate,137,PM10
@@ -534939,7 +534939,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-23,Brajrajnagar,1,Satisfactory,57,CO
 2026-09-23,Bundi,1,Satisfactory,87,PM10
 2026-09-23,Byasanagar,1,Good,46,O3
-2026-09-23,Byrnihat (Assam),1,Satisfactory,81,PM2.5
+2026-09-23,Byrnihat,1,Satisfactory,81,PM2.5
 2026-09-23,Byrnihat (Meghalaya),1,Moderate,146,PM10
 2026-09-23,Chamarajanagar,1,Good,43,PM10
 2026-09-23,Chandigarh,2,Good,50,"CO, PM10"
@@ -535244,7 +535244,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-24,Charkhi Dadri,1,Moderate,153,PM2.5
 2026-09-24,Chandigarh,3,Satisfactory,57,"NO2, PM10"
 2026-09-24,Byrnihat (Meghalaya),1,Satisfactory,97,PM10
-2026-09-24,Byrnihat (Assam),1,Satisfactory,83,PM2.5
+2026-09-24,Byrnihat,1,Satisfactory,83,PM2.5
 2026-09-24,Byasanagar,1,Good,43,O3
 2026-09-24,Bundi,1,Moderate,120,PM10
 2026-09-24,Bulandshahr,1,Satisfactory,73,PM2.5
@@ -535428,7 +535428,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-25,Chandrapur,2,Good,36,PM10
 2026-09-25,Chandigarh,3,Good,48,"NO2, PM10, PM2.5"
 2026-09-25,Chamarajanagar,1,Good,41,PM10
-2026-09-25,Byrnihat (Assam),1,Satisfactory,97,PM2.5
+2026-09-25,Byrnihat,1,Satisfactory,97,PM2.5
 2026-09-25,Byasanagar,1,Good,44,O3
 2026-09-25,Bundi,1,Satisfactory,55,O3
 2026-09-25,Bulandshahr,1,Good,44,O3
@@ -535728,7 +535728,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-26,Bulandshahr,1,Satisfactory,54,O3
 2026-09-26,Bundi,1,Satisfactory,59,O3
 2026-09-26,Byasanagar,1,Satisfactory,55,O3
-2026-09-26,Byrnihat (Assam),1,Satisfactory,92,PM2.5
+2026-09-26,Byrnihat,1,Satisfactory,92,PM2.5
 2026-09-26,Chamarajanagar,1,Good,46,PM10
 2026-09-26,Chandigarh,3,Satisfactory,63,"CO, PM10"
 2026-09-26,Chandrapur,2,Satisfactory,64,PM10
@@ -535926,7 +535926,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-27,Chandigarh,3,Good,37,"CO, O3, PM10"
 2026-09-27,Dewas,1,Satisfactory,67,NO2
 2026-09-27,Chamarajanagar,1,Good,45,PM10
-2026-09-27,Byrnihat (Assam),1,Satisfactory,93,PM2.5
+2026-09-27,Byrnihat,1,Satisfactory,93,PM2.5
 2026-09-27,Byasanagar,1,Satisfactory,62,O3
 2026-09-27,Bundi,1,Satisfactory,61,O3
 2026-09-27,Brajrajnagar,1,Good,44,O3
@@ -536197,7 +536197,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-28,Bulandshahr,1,Satisfactory,51,CO
 2026-09-28,Bundi,1,Satisfactory,90,PM10
 2026-09-28,Byasanagar,1,Satisfactory,76,PM10
-2026-09-28,Byrnihat (Assam),1,Satisfactory,98,PM2.5
+2026-09-28,Byrnihat,1,Satisfactory,98,PM2.5
 2026-09-28,Byrnihat (Meghalaya),1,Moderate,149,PM10
 2026-09-28,Chamarajanagar,1,Good,41,PM10
 2026-09-28,Chandigarh,2,Good,28,"NO2, PM10"
@@ -536305,7 +536305,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-29,Chandigarh,2,Good,28,"CO, O3"
 2026-09-29,Chamarajanagar,1,Good,41,PM10
 2026-09-29,Byrnihat (Meghalaya),1,Moderate,149,PM10
-2026-09-29,Byrnihat (Assam),1,Satisfactory,96,PM2.5
+2026-09-29,Byrnihat,1,Satisfactory,96,PM2.5
 2026-09-29,Byasanagar,1,Satisfactory,87,PM2.5
 2026-09-29,Bundi,1,Satisfactory,85,PM10
 2026-09-29,Bulandshahr,1,Satisfactory,93,PM10
@@ -536706,7 +536706,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-09-30,Bulandshahr,1,Moderate,183,PM10
 2026-09-30,Bundi,1,Moderate,110,PM10
 2026-09-30,Byasanagar,1,Satisfactory,73,PM10
-2026-09-30,Byrnihat (Assam),1,Moderate,107,PM2.5
+2026-09-30,Byrnihat,1,Moderate,107,PM2.5
 2026-09-30,Barmer,1,Satisfactory,91,PM10
 2026-09-30,Baripada,1,Moderate,101,PM10
 2026-09-30,Bareilly,1,Moderate,107,PM10
@@ -536955,7 +536955,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-01,Bulandshahr,1,Poor,239,PM10
 2026-10-01,Bundi,1,Moderate,108,PM10
 2026-10-01,Byasanagar,1,Satisfactory,73,O3
-2026-10-01,Byrnihat (Assam),1,Satisfactory,97,PM2.5
+2026-10-01,Byrnihat,1,Satisfactory,97,PM2.5
 2026-10-01,Byrnihat (Meghalaya),1,Moderate,155,PM10
 2026-10-01,Chamarajanagar,1,Good,40,PM10
 2026-10-01,Barrackpore,1,Moderate,101,PM10
@@ -537276,7 +537276,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-02,Eluru,1,Good,46,PM10
 2026-10-02,Guwahati,4,Satisfactory,55,"CO, PM10, SO2"
 2026-10-02,Durgapur,3,Moderate,107,"CO, PM10, PM2.5"
-2026-10-02,Byrnihat (Assam),1,Moderate,103,PM2.5
+2026-10-02,Byrnihat,1,Moderate,103,PM2.5
 2026-10-02,Byrnihat (Meghalaya),1,Moderate,116,PM2.5
 2026-10-02,Eloor,1,Moderate,110,CO
 2026-10-02,Chamarajanagar,1,Good,45,PM10
@@ -537319,7 +537319,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-03,Bulandshahr,1,Moderate,191,PM10
 2026-10-03,Chandigarh,3,Satisfactory,81,PM10
 2026-10-03,Chamarajanagar,1,Good,37,PM10
-2026-10-03,Byrnihat (Assam),1,Moderate,101,PM2.5
+2026-10-03,Byrnihat,1,Moderate,101,PM2.5
 2026-10-03,Byasanagar,1,Satisfactory,100,O3
 2026-10-03,Bundi,1,Satisfactory,99,PM10
 2026-10-03,Brajrajnagar,1,Moderate,166,PM2.5
@@ -537569,7 +537569,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-04,Chandigarh,3,Satisfactory,89,PM10
 2026-10-04,Damoh,1,Good,48,PM10
 2026-10-04,Chamarajanagar,1,Good,45,PM10
-2026-10-04,Byrnihat (Assam),1,Satisfactory,95,PM2.5
+2026-10-04,Byrnihat,1,Satisfactory,95,PM2.5
 2026-10-04,Bundi,1,Moderate,107,PM10
 2026-10-04,Bulandshahr,1,Poor,260,PM10
 2026-10-04,Brajrajnagar,1,Moderate,155,PM10
@@ -538007,7 +538007,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-05,Brajrajnagar,1,Moderate,154,PM2.5
 2026-10-05,Bulandshahr,1,Poor,244,PM10
 2026-10-05,Bundi,1,Satisfactory,85,O3
-2026-10-05,Byrnihat (Assam),1,Satisfactory,92,PM2.5
+2026-10-05,Byrnihat,1,Satisfactory,92,PM2.5
 2026-10-05,Byrnihat (Meghalaya),1,Moderate,113,PM10
 2026-10-05,Chandigarh,3,Satisfactory,87,PM10
 2026-10-05,Chandrapur,2,Moderate,128,PM10
@@ -538079,7 +538079,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-06,Bulandshahr,1,Moderate,153,PM10
 2026-10-06,Bundi,1,Satisfactory,90,O3
 2026-10-06,Byasanagar,1,Moderate,116,O3
-2026-10-06,Byrnihat (Assam),1,Satisfactory,92,PM2.5
+2026-10-06,Byrnihat,1,Satisfactory,92,PM2.5
 2026-10-06,Byrnihat (Meghalaya),1,Satisfactory,100,PM10
 2026-10-06,Chamarajanagar,1,Good,44,PM10
 2026-10-06,Chandigarh,3,Moderate,102,PM10
@@ -538444,7 +538444,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-07,Bundi,1,Moderate,110,PM10
 2026-10-07,Buxar,1,Good,32,SO2
 2026-10-07,Byasanagar,1,Satisfactory,87,O3
-2026-10-07,Byrnihat (Assam),1,Satisfactory,93,PM2.5
+2026-10-07,Byrnihat,1,Satisfactory,93,PM2.5
 2026-10-07,Byrnihat (Meghalaya),1,Moderate,123,PM10
 2026-10-07,Chamarajanagar,1,Good,46,PM10
 2026-10-07,Chandigarh,3,Satisfactory,61,PM10
@@ -538698,7 +538698,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-08,Chandigarh,3,Good,49,"NO2, PM10"
 2026-10-08,Chamarajanagar,1,Good,45,PM10
 2026-10-08,Byrnihat (Meghalaya),1,Moderate,131,PM10
-2026-10-08,Byrnihat (Assam),1,Satisfactory,91,PM2.5
+2026-10-08,Byrnihat,1,Satisfactory,91,PM2.5
 2026-10-08,Buxar,1,Good,32,SO2
 2026-10-08,Bundi,1,Moderate,107,PM10
 2026-10-08,Bulandshahr,1,Moderate,107,PM10
@@ -538911,7 +538911,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-09,Chandrapur,2,Moderate,134,"PM10, PM2.5"
 2026-10-09,Chandigarh,3,Satisfactory,67,PM10
 2026-10-09,Chamarajanagar,1,Good,44,PM10
-2026-10-09,Byrnihat (Assam),1,Satisfactory,91,PM2.5
+2026-10-09,Byrnihat,1,Satisfactory,91,PM2.5
 2026-10-09,Byasanagar,1,Satisfactory,90,O3
 2026-10-09,Buxar,1,Good,32,SO2
 2026-10-09,Bundi,1,Moderate,111,PM10
@@ -539187,7 +539187,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-10,Belapur,1,Moderate,110,PM10
 2026-10-10,Bengaluru,10,Satisfactory,81,PM10
 2026-10-10,Byasanagar,1,Moderate,104,O3
-2026-10-10,Byrnihat (Assam),1,Satisfactory,90,PM2.5
+2026-10-10,Byrnihat,1,Satisfactory,90,PM2.5
 2026-10-10,Chamarajanagar,1,Good,49,PM10
 2026-10-10,Chandigarh,3,Good,49,PM10
 2026-10-10,Chandrapur,2,Moderate,125,PM10
@@ -539492,7 +539492,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-11,Bundi,1,Satisfactory,99,PM10
 2026-10-11,Buxar,1,Good,31,SO2
 2026-10-11,Byasanagar,1,Satisfactory,95,O3
-2026-10-11,Byrnihat (Assam),1,Satisfactory,90,PM2.5
+2026-10-11,Byrnihat,1,Satisfactory,90,PM2.5
 2026-10-11,Chamarajanagar,1,Good,49,PM10
 2026-10-11,Chandigarh,3,Good,42,"NO2, PM10"
 2026-10-11,Chandrapur,2,Moderate,122,"PM10, PM2.5"
@@ -539632,7 +539632,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-12,Chandrapur,2,Moderate,103,PM10
 2026-10-12,Chandigarh,3,Good,36,"O3, PM10"
 2026-10-12,Chamarajanagar,1,Good,39,PM10
-2026-10-12,Byrnihat (Assam),1,Satisfactory,97,PM2.5
+2026-10-12,Byrnihat,1,Satisfactory,97,PM2.5
 2026-10-12,Byasanagar,1,Moderate,108,O3
 2026-10-12,Buxar,1,Good,41,SO2
 2026-10-12,Bundi,1,Moderate,119,PM10
@@ -539973,7 +539973,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-13,Bundi,1,Moderate,145,PM10
 2026-10-13,Buxar,1,Good,30,SO2
 2026-10-13,Byasanagar,1,Satisfactory,83,O3
-2026-10-13,Byrnihat (Assam),1,Moderate,101,PM2.5
+2026-10-13,Byrnihat,1,Moderate,101,PM2.5
 2026-10-13,Chamarajanagar,1,Good,48,PM10
 2026-10-13,Chandigarh,3,Satisfactory,57,"O3, PM10"
 2026-10-13,Bulandshahr,1,Moderate,142,PM10
@@ -540189,7 +540189,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-14,Chandigarh,3,Satisfactory,58,"NO2, O3, PM10"
 2026-10-14,Chamarajanagar,1,Good,45,PM10
 2026-10-14,Byrnihat (Meghalaya),1,Moderate,123,PM10
-2026-10-14,Byrnihat (Assam),1,Satisfactory,94,PM2.5
+2026-10-14,Byrnihat,1,Satisfactory,94,PM2.5
 2026-10-14,Byasanagar,1,Satisfactory,73,O3
 2026-10-14,Bundi,1,Moderate,131,PM10
 2026-10-14,Bulandshahr,1,Moderate,137,PM10
@@ -540596,7 +540596,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-15,Gandhinagar,3,Moderate,103,"PM10, PM2.5"
 2026-10-15,Gajraula,1,Poor,244,PM2.5
 2026-10-15,Haldia,1,Good,46,PM10
-2026-10-15,Byrnihat (Assam),1,Satisfactory,96,PM2.5
+2026-10-15,Byrnihat,1,Satisfactory,96,PM2.5
 2026-10-15,Delhi,56,Moderate,149,PM2.5
 2026-10-15,Buxar,1,Good,33,SO2
 2026-10-15,Baran,1,Satisfactory,83,PM10
@@ -540869,7 +540869,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-16,Chhal,1,Satisfactory,81,PM10
 2026-10-16,Chhapra,1,Moderate,105,PM10
 2026-10-16,Chikkaballapur,1,Good,35,CO
-2026-10-16,Byrnihat (Assam),1,Satisfactory,95,PM2.5
+2026-10-16,Byrnihat,1,Satisfactory,95,PM2.5
 2026-10-16,Bhopal,3,Moderate,121,PM10
 2026-10-16,Gaya,3,Moderate,137,"PM10, PM2.5"
 2026-10-16,Greater Noida,2,Satisfactory,77,"PM10, PM2.5"
@@ -541026,7 +541026,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-17,Chandigarh,3,Satisfactory,59,"O3, PM10"
 2026-10-17,Chamarajanagar,1,Good,44,PM10
 2026-10-17,Byrnihat (Meghalaya),1,Moderate,163,PM10
-2026-10-17,Byrnihat (Assam),1,Satisfactory,94,PM2.5
+2026-10-17,Byrnihat,1,Satisfactory,94,PM2.5
 2026-10-17,Byasanagar,1,Satisfactory,62,O3
 2026-10-17,Buxar,1,Good,31,SO2
 2026-10-17,Bundi,1,Moderate,110,O3
@@ -541271,7 +541271,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-18,Bikaner,1,Moderate,180,PM10
 2026-10-18,Bihar Sharif,1,Satisfactory,56,PM10
 2026-10-18,Bhubaneswar,2,Good,50,O3
-2026-10-18,Byrnihat (Assam),1,Satisfactory,93,PM2.5
+2026-10-18,Byrnihat,1,Satisfactory,93,PM2.5
 2026-10-18,Kurnool,1,Satisfactory,64,PM10
 2026-10-18,Cuddalore,1,Good,19,NO2
 2026-10-18,Damoh,1,Satisfactory,92,PM10
@@ -541489,7 +541489,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-19,Bundi,1,Moderate,112,O3
 2026-10-19,Buxar,1,Good,33,SO2
 2026-10-19,Byasanagar,1,Moderate,123,O3
-2026-10-19,Byrnihat (Assam),1,Satisfactory,90,PM2.5
+2026-10-19,Byrnihat,1,Satisfactory,90,PM2.5
 2026-10-19,Byrnihat (Meghalaya),1,Moderate,126,PM10
 2026-10-19,Chamarajanagar,1,Good,44,PM10
 2026-10-19,Cuttack,1,Satisfactory,66,O3
@@ -541969,7 +541969,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-20,Bundi,1,Moderate,122,O3
 2026-10-20,Buxar,1,Good,32,SO2
 2026-10-20,Byasanagar,1,Moderate,118,O3
-2026-10-20,Byrnihat (Assam),1,Satisfactory,91,PM2.5
+2026-10-20,Byrnihat,1,Satisfactory,91,PM2.5
 2026-10-20,Byrnihat (Meghalaya),1,Moderate,107,PM10
 2026-10-20,Chamarajanagar,1,Good,46,PM10
 2026-10-20,Chandigarh,2,Satisfactory,57,"O3, PM10"
@@ -542153,7 +542153,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-21,Bundi,1,Moderate,139,PM10
 2026-10-21,Buxar,1,Good,32,SO2
 2026-10-21,Byasanagar,1,Moderate,135,O3
-2026-10-21,Byrnihat (Assam),1,Satisfactory,100,PM2.5
+2026-10-21,Byrnihat,1,Satisfactory,100,PM2.5
 2026-10-21,Bhilwara,1,Moderate,112,PM10
 2026-10-21,Vrindavan,2,Moderate,170,"PM10, PM2.5"
 2026-10-21,Baraut,1,Poor,288,PM2.5
@@ -542414,7 +542414,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-22,Barrackpore,1,Satisfactory,83,PM10
 2026-10-22,Chamarajanagar,1,Good,40,PM10
 2026-10-22,Byrnihat (Meghalaya),1,Moderate,179,PM10
-2026-10-22,Byrnihat (Assam),1,Satisfactory,95,PM2.5
+2026-10-22,Byrnihat,1,Satisfactory,95,PM2.5
 2026-10-22,Byasanagar,1,Moderate,115,O3
 2026-10-22,Buxar,1,Good,29,SO2
 2026-10-22,Bundi,1,Moderate,128,PM10
@@ -542663,7 +542663,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-23,Bundi,1,Moderate,139,PM10
 2026-10-23,Buxar,1,Good,30,SO2
 2026-10-23,Byasanagar,1,Moderate,108,O3
-2026-10-23,Byrnihat (Assam),1,Satisfactory,92,PM2.5
+2026-10-23,Byrnihat,1,Satisfactory,92,PM2.5
 2026-10-23,Bathinda,1,Moderate,144,PM2.5
 2026-10-23,Byrnihat (Meghalaya),1,Moderate,174,PM10
 2026-10-23,Barrackpore,1,Satisfactory,87,PM10
@@ -542878,7 +542878,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-24,Chandrapur,1,Satisfactory,97,PM2.5
 2026-10-24,Charkhi Dadri,1,Satisfactory,92,PM10
 2026-10-24,Chennai,7,Satisfactory,61,"O3, PM10"
-2026-10-24,Byrnihat (Assam),1,Moderate,104,PM2.5
+2026-10-24,Byrnihat,1,Moderate,104,PM2.5
 2026-10-24,Barmer,1,Moderate,101,PM10
 2026-10-24,Bikaner,1,Poor,201,PM10
 2026-10-24,Bhopal,2,Moderate,112,PM10
@@ -543268,7 +543268,7 @@ date,city,no_stations,aqi_category,aqi,prominent_pollutant
 2026-10-25,Bundi,1,Moderate,131,PM10
 2026-10-25,Buxar,1,Good,32,SO2
 2026-10-25,Byasanagar,1,Moderate,110,O3
-2026-10-25,Byrnihat (Assam),1,Satisfactory,94,PM2.5
+2026-10-25,Byrnihat,1,Satisfactory,94,PM2.5
 2026-10-25,Byrnihat (Meghalaya),1,Poor,207,PM10
 2026-10-25,Chamarajanagar,1,Good,44,PM10
 2026-10-25,Chandigarh,1,Satisfactory,74,PM10
