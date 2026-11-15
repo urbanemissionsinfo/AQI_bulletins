@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Bulletins Explorer & SQL Playground</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- sql.js WASM distribution -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+</head>
+<body>
+    <header class="app-header">
+        <div>
+            <h1>AQI Bulletins Explorer</h1>
+            <p>Table: <code>aqi_bulletins</code> | Columns: <code>date</code>, <code>city</code>, <code>no_stations</code>, <code>aqi_category</code>, <code>aqi</code>, <code>prominent_pollutant</code></p>
+        </div>
+        <span id="dbStatus" class="status-badge loading">Loading database...</span>
+    </header>
+
+    <main class="app-container">
+        <!-- Left Sidebar: Visual Question Builder & Presets -->
+        <aside class="sidebar">
+            <!-- Visual Query Builder -->
+            <div class="panel">
+                <h3>Interactive Filter Builder</h3>
+                <p class="hint">Build a query without writing SQL:</p>
+                
+                <div class="form-group">
+                    <label for="cityFilter">City</label>
+                    <select id="cityFilter">
+                        <option value="ALL">All Cities</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoryFilter">AQI Category</label>
+                    <select id="categoryFilter">
+                        <option value="ALL">All Categories</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pollutantFilter">Prominent Pollutant</label>
+                    <select id="pollutantFilter">
+                        <option value="ALL">All Pollutants</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="minAqiFilter">Minimum AQI: <span id="minAqiVal">0</span></label>
+                    <input type="range" id="minAqiFilter" min="0" max="500" step="10" value="0">
+                </div>
+
+                <button id="applyFiltersBtn" class="secondary-btn" disabled>Generate & Run Query</button>
+            </div>
+
+            <!-- Analytical Presets -->
+            <div class="panel">
+                <h3>Analytical Questions</h3>
+                <p class="hint">Click to explore complex aggregations:</p>
+                <div class="preset-buttons" id="presetContainer">
+                    <button class="preset-btn" data-query="SELECT city, COUNT(*) AS days_recorded, ROUND(AVG(aqi), 1) AS mean_aqi, MAX(aqi) AS max_aqi, MAX(no_stations) AS stations FROM aqi_bulletins GROUP BY city ORDER BY mean_aqi DESC;">
+                        City Rankings (Mean & Peak AQI)
+                    </button>
+                    <button class="preset-btn" data-query="SELECT city, aqi_category, COUNT(*) AS days FROM aqi_bulletins GROUP BY city, aqi_category ORDER BY city, days DESC;">
+                        Category Breakdown per City
+                    </button>
+                    <button class="preset-btn" data-query="SELECT SUBSTR(date, 1, 7) AS year_month, ROUND(AVG(aqi), 1) AS monthly_avg_aqi, COUNT(*) AS records FROM aqi_bulletins GROUP BY year_month ORDER BY year_month DESC;">
+                        Monthly AQI Trend (All Cities)
+                    </button>
+                    <button class="preset-btn" data-query="SELECT prominent_pollutant, COUNT(*) AS occurrences, ROUND(AVG(aqi), 1) AS avg_aqi_when_prominent FROM aqi_bulletins WHERE prominent_pollutant IS NOT NULL GROUP BY prominent_pollutant ORDER BY occurrences DESC;">
+                        Dominant Pollutants & Severity
+                    </button>
+                    <button class="preset-btn" data-query="SELECT date, city, aqi, aqi_category, prominent_pollutant, no_stations FROM aqi_bulletins WHERE aqi >= 400 ORDER BY aqi DESC LIMIT 50;">
+                        Severe Episodes (AQI &ge; 400)
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace: SQL Editor + Data Table -->
+        <section class="workspace">
+            <div class="query-box">
+                <div class="query-header">
+                    <label for="sqlInput">SQL Query Editor</label>
+                    <div class="btn-group">
+                        <button id="resetBtn" class="ghost-btn" disabled>Reset</button>
+                        <button id="runBtn" class="primary-btn" disabled>Run SQL (Ctrl + Enter)</button>
+                    </div>
+                </div>
+                <textarea id="sqlInput" rows="4" disabled spellcheck="false"></textarea>
+            </div>
+
+            <div class="results-box">
+                <div class="results-header">
+                    <div>
+                        <h3>Query Output</h3>
+                        <span id="resultsMeta"></span>
+                    </div>
+                    <button id="exportCsvBtn" class="ghost-btn" disabled>Export CSV</button>
+                </div>
+                <div id="resultsContent" class="table-container">
+                    <div class="placeholder-text">Initializing database...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
