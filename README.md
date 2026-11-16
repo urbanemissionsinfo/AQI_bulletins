@@ -47,7 +47,7 @@ This research project is presented at the iCACGP-IGAC Conference 2024, Kuala Lum
 
 6. Calendar plot of the AQI values is produced for each city, along with the average number of stations reporting AQI value in each year. The following is a sample calendar plot for the city of Hyderabad.
 
-![Calendar-Plot Hyderabad](assets/hyd_calendar_aqi.png)
+![Calendar-Plot Hyderabad](plots/calendarheats/Hyderabad_calendarhm_2col.png)
 
 To produce such calendar heat maps, refer to our Climate Visuals repository: [Calendar Heatmap](https://github.com/urbanemissions-info/ClimateVisuals/blob/main/Calendar%20Heatmap.ipynb)
 

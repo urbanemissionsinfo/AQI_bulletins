@@ -4,14 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AQI timeseries | Urban Emissions</title>
+<!-- WhatsApp / Open Graph Social Media Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AQI Bulletins" />
+  <meta property="og:description" content="Dashboard of CPCB's AQI Bulletins" />
+  <meta property="og:url" content="https://urbanemissionsinfo.github.io/AQI_bulletins/" />
+  
+  <!-- The Thumbnail Image -->
+  <meta property="og:image" content="https://urbanemissionsinfo.github.io/AQI_bulletins/scrollytale/ue.jpeg" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://urbanemissions.info/wp-content/uploads/2016/04/cropped-Big_Grid_512-164D12-32x32.png" type="image/jpeg">
 </head>
 <body data-tool="select">
 <header class="top">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="https://urbanemissions.info">Urban Emissions</a>
+      <a class="brand" href="https://urbanemissions.info">Urban Emissions Info</a>
     </div>
     <h1>Daily AQI across Indian cities</h1>
     <p>Pick a city, filter by prominent pollutant, and drag on the chart to select a stretch of days.</p>
@@ -25,6 +38,7 @@
       <div><span class="lbl">Prominent pollutant <button type="button" id="pall" class="lnk">All</button><button type="button" id="pnone" class="lnk">None</button></span><div id="chips" class="chips"></div></div>
     </div>
 
+    <p class="scope" id="scope" aria-live="polite"></p>
     <dl class="stats" id="stats" aria-live="polite"></dl>
 
     <div class="head">
@@ -35,6 +49,7 @@
           <button class="tool rng" data-range="90" title="Last 90 days">3M</button>
           <button class="tool rng" data-range="365" title="Last year">1Y</button>
           <button class="tool rng" data-range="0" title="Full record">All</button>
+          <button class="tool rng" id="custom-btn" aria-pressed="false" aria-expanded="false" aria-controls="custom" title="Choose your own dates">Custom</button>
         </div>
         <div class="grp">
           <button class="tool" data-tool="select" aria-pressed="true" title="Box select" aria-label="Box select"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg></button>
@@ -48,25 +63,30 @@
       </div>
     </div>
 
+    <div class="custom" id="custom" hidden>
+      <label>From <input type="date" id="d0"></label>
+      <label>To <input type="date" id="d1"></label>
+      <span id="derr" class="derr" role="alert"></span>
+    </div>
+
     <div class="plot" id="p1" role="img" aria-label="Scatter plot of daily AQI by date"><canvas></canvas><div id="msg" class="msg">Loading bulletins…</div></div>
+    <ul id="legend" class="legend"></ul>
+
     <div class="cov" id="cov" hidden>
       <h3>Station coverage</h3>
       <dl class="stats" id="stats2" aria-live="polite"></dl>
     </div>
     <div class="plot small" id="p2" role="img" aria-label="Number of stations reporting by date"><canvas></canvas></div>
-    <p class="hint">Drag to select days. Shift adds to a selection, a click clears it. Ctrl or ⌘ with scroll zooms. Click a category below to dim it.</p>
+    <p class="hint">Drag to select days. Shift adds to a selection, a click clears it. Ctrl or ⌘ with scroll zooms. Click a category below to dim it. The figures follow the dates in view.</p>
 
-    <div class="foot">
-      <ul id="legend" class="legend"></ul>
-      <div class="acts">
-        <button id="clr" class="btn quiet" hidden>Clear selection</button>
+    <div class="heat" id="heatwrap" hidden>
+      <div class="heat-header">
+        <h3>Calendar heatmap</h3>
         <a id="hm" class="btn quiet" target="_blank" rel="noopener">Download heatmap</a>
       </div>
-    </div>
-    <div class="heat" id="heatwrap" hidden>
-      <h3>Calendar heatmap</h3>
-      <img id="heat" alt="" loading="lazy">
-    </div>
+    <button id="clr" class="btn quiet" hidden>Clear selection</button>
+    <img id="heat" alt="" loading="lazy">
+  </div>
   </section>
 </main>
 <footer class="wrap src">

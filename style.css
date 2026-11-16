@@ -41,6 +41,12 @@ select{width:100%;height:44px;padding:0 10px;border:1px solid var(--line2);borde
 .cov{margin-top:12px;padding-top:16px;border-top:1px solid var(--line)}
 .cov h3{margin:0 24px;font:600 22px var(--serif)}
 .cov .stats{padding-top:12px;padding-bottom:8px;border-bottom:0}
+.scope{margin:0;padding:16px 24px 0;font-size:15px;color:var(--mute)}
+.scope+.stats{padding-top:12px}
+.custom{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:4px 24px 12px}
+.custom label{display:flex;align-items:center;gap:8px;margin:0;font-size:15px;color:var(--ink)}
+input[type=date]{height:40px;padding:0 10px;border:1px solid var(--line2);border-radius:6px;background:#fff;color:var(--ink);font:inherit}
+.derr{font-size:15px;color:#a4281c}
 .lnk{margin-left:10px;padding:0;border:0;background:none;color:var(--g);font:500 15px var(--sans);text-decoration:underline;cursor:pointer}
 .head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;padding:20px 24px 8px}
 h2{font:600 28px/1.25 var(--serif);margin:0}
@@ -80,8 +86,20 @@ canvas{display:block;width:100%;height:100%;touch-action:pan-y}
 #tip{position:fixed;left:0;top:0;z-index:20;min-width:240px;padding:12px 14px;border-radius:6px;background:var(--ink);color:#fff;font-size:15px;pointer-events:none}
 #tip div{display:flex;justify-content:space-between;gap:16px}
 #tip span{color:#b9c4b4}
+.heat-header {display: flex;justify-content: space-between;align-items: center;}
+.heat-header h3 {margin: 0;}
+/* legend: always one line; type size follows the width of the row */
+.foot{container-type:inline-size}
+.legend{flex:1 0 100%;flex-wrap:nowrap;justify-content:center;gap:1em;white-space:nowrap;font-size:clamp(11px,1.7cqw,15px)}
+.legend button{flex:0 0 auto;gap:.4em;padding:.3em .4em}
+.legend i{width:.8em;height:.8em}
+.rg{display:none}
+.acts{margin-left:auto}
+@container (min-width:1130px){.legend{font-size:min(14px,1.2cqw)}.rg{display:inline}}
+@container (max-width:699px){.nm{display:none}.legend{font-size:clamp(8px,3cqw,14px)}}
 
 @media (max-width:720px){
+  .foot{padding-left:12px;padding-right:12px}
   .wrap{padding:0 16px}
   .controls{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}

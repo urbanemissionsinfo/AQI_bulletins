@@ -6,11 +6,12 @@ const CATS = [['Good','#274e13','0–50'],['Satisfactory','#93c47d','51–100'],
   ['Poor','#f59042','201–300'],['Very Poor','#ff0000','301–400'],['Severe','#753b3b','401+']];
 const EDGES = [0,50,100,200,300,400,1e9];
 const POLS = ['CO','NH3','NO2','O3','PM10','PM2.5','SO2'];
+const MIN_STATIONS = 5;   // days with fewer stations than this count as low coverage
 const INK = '#1d271b', MUTE = '#5e6b5a', YMAX = 550, DAY = 864e5;
 const MON = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
 const $ = s => document.querySelector(s);
 const fd = t => { const d = new Date(t); return d.getDate() + ' ' + MON[d.getMonth()] + ' ' + d.getFullYear(); };
-const S = { by: new Map(), pts: [], city: '', pols: new Set(), opts: [], tool: 'select', sel: false, cats: new Set([0, 1, 2, 3, 4, 5]) };
+const S = { by: new Map(), pts: [], city: '', pols: new Set(), opts: [], tool: 'select', sel: false, rng: null, cats: new Set([0, 1, 2, 3, 4, 5]) };
 const V = { x0: 0, x1: 1, f0: 0, f1: 1 };   // x view shared by both charts
 let charts = [];
 const all = () => charts.forEach(c => c.draw());
@@ -90,18 +91,66 @@ function filt() {   // points without a selected pollutant are dimmed; all pollu
   all();
 }
 function info() {
-  const set = S.pts.filter(p => !S.sel || p.s);
+  const w = win(), set = S.pts.filter(p => (!S.sel || p.s) && p.t >= w[0] && p.t <= w[1]);
+  scope(set, w);
   $('#legend').replaceChildren(...CATS.map((c, i) => {
-    const li = document.createElement('li'), bt = document.createElement('button'), sw = document.createElement('i'), s = document.createElement('span'), b = document.createElement('b');
-    sw.style.background = c[1]; s.textContent = c[0] + ' (' + c[2] + ')';
+    const li = document.createElement('li'), bt = document.createElement('button'), sw = document.createElement('i'), s = document.createElement('span'), rg = document.createElement('span'), b = document.createElement('b');
+    sw.style.background = c[1]; s.className = 'nm'; s.textContent = c[0]; rg.className = 'rg'; rg.textContent = ' (' + c[2] + ')';
     b.textContent = set.filter(p => p.g === i).length.toLocaleString('en-IN');
+    bt.title = c[0] + ' (' + c[2] + ')'; bt.setAttribute('aria-label', c[0] + ' (' + c[2] + '), ' + b.textContent + ' days');
     bt.type = 'button'; bt.setAttribute('aria-pressed', S.cats.has(i));
     bt.onclick = () => { S.cats.has(i) ? S.cats.delete(i) : S.cats.add(i); filt(); info(); };
-    bt.append(sw, s, b); li.append(bt); return li;
+    bt.append(sw, s, rg, b); li.append(bt); return li;
   }));
   stats(set);
   $('#clr').hidden = !S.sel;
   $('#clr').textContent = 'Clear selection (' + set.length.toLocaleString('en-IN') + ' days)';
+}
+function bounds(r) {   // [from, to] in ms for the active time period, or null for the full record
+  if (!r || !S.pts.length) return null;
+  const last = S.pts[S.pts.length - 1].t;
+  return r.n ? [last - (r.n - 1) * DAY, last] : [r.a, r.b];
+}
+const iso = t => { const d = new Date(t); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+function setRange(r) {
+  S.rng = r || null;
+  S.pts.forEach(p => p.s = 0); S.sel = false;
+  const w = bounds(S.rng);
+  V.x0 = V.f0; V.x1 = V.f1;
+  if (w) {
+    const pad = Math.max((w[1] - w[0]) * .02, DAY), x0 = Math.max(V.f0, w[0] - pad), x1 = Math.min(V.f1, w[1] + pad);
+    if (x1 > x0) { V.x0 = x0; V.x1 = x1; }
+  }
+  rangeUI();
+  all(); info();
+}
+const win = () => S.rng ? bounds(S.rng) : [V.x0, V.x1];   // dates the summary figures cover
+const isFull = () => Math.abs(V.x0 - V.f0) < DAY / 2 && Math.abs(V.x1 - V.f1) < DAY / 2;
+function rangeUI() {   // highlight the matching period button and keep the From/To boxes in step
+  document.querySelectorAll('[data-range]').forEach(b => { const n = +b.dataset.range; b.setAttribute('aria-pressed', S.rng ? S.rng.n === n : n === 0 && isFull()); });
+  $('#custom-btn').setAttribute('aria-pressed', !!(S.rng && !S.rng.n));
+  if (!S.pts.length) return;
+  const w = win(), a = Math.max(w[0], S.pts[0].t), b = Math.min(w[1], S.pts[S.pts.length - 1].t);
+  const [x, y] = S.rng && !S.rng.n ? w : a <= b ? [a, b] : w;
+  $('#d0').value = iso(x); $('#d1').value = iso(y); $('#derr').textContent = '';
+}
+let raf = 0;
+function viewChanged() {   // pan or zoom: the figures now follow whatever dates are on screen
+  S.rng = null;
+  if (!raf) raf = requestAnimationFrame(() => { raf = 0; rangeUI(); info(); });
+}
+function scope(set, w) {   // one line saying what the summary figures cover
+  const f = x => x.toLocaleString('en-IN'), el = $('#scope');
+  if (!S.pts.length) { el.textContent = ''; return; }
+  const a = Math.max(w[0], S.pts[0].t), b = Math.min(w[1], S.pts[S.pts.length - 1].t);
+  const span = S.rng && !S.rng.n || a > b ? fd(w[0]) + ' to ' + fd(w[1]) : fd(a) + ' to ' + fd(b);
+  const names = { 30: 'the last 30 days', 90: 'the last 90 days', 365: 'the last year' }, full = !S.rng && isFull();
+  const preset = S.rng && S.rng.n;
+  const lab = preset ? (names[S.rng.n] || 'the last ' + S.rng.n + ' days') + ' (' + span + ')'
+    : S.rng ? span : full ? 'the full record (' + span + ')' : 'the visible dates (' + span + ')';
+  el.textContent = S.sel ? 'Your selection: ' + f(set.length) + ' days' + (full ? '' : ', within ' + lab)
+    : !set.length ? 'No bulletins in ' + (full ? 'the data' : 'the visible dates') + '.'
+    : 'Showing ' + lab + (preset ? '' : ', ' + f(set.length) + ' days');
 }
 function render(el, items) {
   el.replaceChildren(...items.map(([k, v, s, g]) => {
@@ -129,12 +178,12 @@ function stats(set) {
     ['Worst day', Math.round(worst.a), fd(worst.t) + ', ' + CATS[worst.g][0], worst.g],
     ['Poor or worse', Math.round(bad / n * 100) + '%', f(bad) + ' of ' + f(n) + ' days', -1]]);
   if (!ns.length) return;
-  const first = ns[0], end = ns[ns.length - 1], avg = ns.reduce((t, p) => t + p.n, 0) / ns.length;
-  const thin = ns.filter(p => p.n < avg / 2).length, d = end.n - first.n;
+  const end = ns[ns.length - 1], avg = ns.reduce((t, p) => t + p.n, 0) / ns.length;
+  const thin = ns.filter(p => p.n < avg / 2).length, low = ns.filter(p => p.n < MIN_STATIONS).length;
   render($('#stats2'), [
     ['Stations, latest day', end.n, fd(end.t), -1],
     ['Average stations', Math.round(avg * 10) / 10, 'across ' + f(ns.length) + ' days', -1],
-    ['Stations, first to latest', first.n + ' to ' + end.n, d ? (d > 0 ? '+' : '−') + Math.abs(d) + ' stations' : 'No change', -1],
+    ['Days under ' + MIN_STATIONS + ' stations', Math.round(low / ns.length * 100) + '%', f(low) + ' of ' + f(ns.length) + ' days', -1],
     ['Thin-coverage days', f(thin), Math.round(thin / ns.length * 100) + '% of days under half the average', -1]]);
 }
 function setCity(c) {
@@ -145,12 +194,12 @@ function setCity(c) {
   charts[0].full = [0, YMAX]; charts[1].full = [0, Math.max(5, Math.ceil(mx * 1.15))];
   charts.forEach(h => h.y = [...h.full]);
   $('#title').textContent = 'AQI values for ' + c;
-  $('#sub').textContent = S.pts.length.toLocaleString('en-IN') + ' bulletins, ' + fd(a) + ' to ' + fd(b);
+  // $('#sub').textContent = S.pts.length.toLocaleString('en-IN') + ' bulletins, ' + fd(a) + ' to ' + fd(b);
   $('#hm').href = HEATMAP + encodeURIComponent(c) + '_calendarhm_2col.png';
   $('#hm').setAttribute('aria-label', 'Download calendar heatmap for ' + c);
   const im = $('#heat'); $('#heatwrap').hidden = false; im.alt = 'Calendar heatmap of daily AQI for ' + c;
   im.src = HEATMAP + encodeURIComponent(c) + '_calendarhm_2col.png';
-  filt(); info();
+  filt(); setRange(S.rng);
 }
 function clearSel() { S.pts.forEach(p => p.s = 0); S.sel = false; info(); all(); }
 
@@ -203,7 +252,7 @@ class Chart {
   size() {
     const b = this.r.getBoundingClientRect(); this.dpr = window.devicePixelRatio || 1;
     this.W = b.width; this.H = b.height; this.c.width = b.width * this.dpr; this.c.height = b.height * this.dpr;
-    this.m = { l: 70, r: b.width >= 640 ? 132 : 14, t: 10, b: 38 };
+    this.m = { l: 70, r: 14, t: 10, b: 38 };
     this.draw();
   }
   sx(t) { return this.m.l + (t - V.x0) / (V.x1 - V.x0) * (this.W - this.m.l - this.m.r); }
@@ -263,16 +312,6 @@ class Chart {
     });
     g.save(); g.translate(16, m.t + ph / 2); g.rotate(-Math.PI / 2); g.textBaseline = 'middle';
     g.font = '600 14px Inter,system-ui,sans-serif'; g.fillText(o.lbl, 0, 0); g.restore();
-    if (o.bands && W >= 640) {
-      g.textAlign = 'left'; g.textBaseline = 'middle';
-      for (let i = 0; i < 6; i++) {
-        const lo = Math.max(EDGES[i], y0), hi = Math.min(EDGES[i + 1], y1);
-        if (hi <= lo || this.sy(lo) - this.sy(hi) < 18) continue;
-        const cy = (this.sy(lo) + this.sy(hi)) / 2;
-        g.fillStyle = CATS[i][1]; g.fillRect(W - m.r + 12, cy - 5, 10, 10);
-        g.fillStyle = INK; g.fillText(CATS[i][0], W - m.r + 28, cy);
-      }
-    }
   }
   P(e) { const b = this.c.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; }
   IN(x, y) { const m = this.m; return x >= m.l && x <= this.W - m.r && y >= m.t && y <= this.H - m.b; }
@@ -290,7 +329,7 @@ class Chart {
     if (d.mode === 'pan' && d.moved) {
       const dx = (x - d.x) / (this.W - this.m.l - this.m.r) * (d.a[1] - d.a[0]);
       const dy = (y - d.y) / (this.H - this.m.t - this.m.b) * (d.b[1] - d.b[0]);
-      V.x0 = d.a[0] - dx; V.x1 = d.a[1] - dx; this.y = [d.b[0] + dy, d.b[1] + dy]; all();
+      V.x0 = d.a[0] - dx; V.x1 = d.a[1] - dx; this.y = [d.b[0] + dy, d.b[1] + dy]; viewChanged(); all();
     } else this.draw();
   }
   up() {
@@ -304,7 +343,7 @@ class Chart {
       }
       S.sel = S.pts.some(p => p.s); info();
     } else if (d.mode === 'zoom' && xb - xa > 6 && yb - ya > 6) {
-      V.x0 = this.ix(xa); V.x1 = this.ix(xb); this.y = [this.iy(yb), this.iy(ya)];
+      V.x0 = this.ix(xa); V.x1 = this.ix(xb); this.y = [this.iy(yb), this.iy(ya)]; viewChanged();
     }
     all();
   }
@@ -314,7 +353,7 @@ class Chart {
     e.preventDefault();
     const f = Math.exp(e.deltaY * .002), t = this.ix(x), v = this.iy(y);
     const a = t - (t - V.x0) * f, b = t + (V.x1 - t) * f;
-    if (b - a > 3 * DAY && b - a < (V.f1 - V.f0) * 2) { V.x0 = a; V.x1 = b; }
+    if (b - a > 3 * DAY && b - a < (V.f1 - V.f0) * 2) { V.x0 = a; V.x1 = b; viewChanged(); }
     const c = v - (v - this.y[0]) * f, d = v + (this.y[1] - v) * f;
     if (d - c > (this.o.int ? 2 : 20) && d - c < (this.full[1] - this.full[0]) * 3) this.y = [c, d];
     all();
@@ -342,7 +381,7 @@ document.querySelectorAll('[data-tool]').forEach(b => b.onclick = () => {
 });
 $('#city').onchange = e => setCity(e.target.value);
 $('#clr').onclick = clearSel;
-$('#reset').onclick = () => { V.x0 = V.f0; V.x1 = V.f1; charts.forEach(c => c.y = [...c.full]); clearSel(); };
+$('#reset').onclick = () => { charts.forEach(c => c.y = [...c.full]); setRange(null); };
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && S.sel) clearSel(); });
 $('#save').onclick = () => {
   if (!S.pts.length) return;
@@ -357,10 +396,17 @@ $('#heat').onerror = () => { $('#heatwrap').hidden = true; };
 $('#pall').onclick = () => { S.pols = new Set(S.opts); chips(); filt(); };
 $('#pnone').onclick = () => { S.pols = new Set(); chips(); filt(); };
 document.querySelectorAll('[data-range]').forEach(b => b.onclick = () => {
-  if (!S.pts.length) return;
-  const n = +b.dataset.range, last = S.pts[S.pts.length - 1].t;
-  V.x1 = V.f1; V.x0 = n ? Math.max(V.f0, last - n * DAY - 2 * DAY) : V.f0; all();
+  if (S.pts.length) setRange(+b.dataset.range ? { n: +b.dataset.range } : null);
 });
+$('#custom-btn').onclick = e => {
+  const c = $('#custom'); c.hidden = !c.hidden; e.currentTarget.setAttribute('aria-expanded', !c.hidden);
+};
+$('#d0').onchange = $('#d1').onchange = () => {
+  const a = pdate($('#d0').value), b = pdate($('#d1').value);
+  if (isNaN(a) || isNaN(b) || !S.pts.length) return;
+  if (a > b) { $('#derr').textContent = 'The start date must be on or before the end date.'; return; }
+  setRange({ a, b });
+};
 info();
 fetch(CSV_URL).then(r => { if (!r.ok) throw Error('HTTP ' + r.status); return r.text(); }).then(ingest)
   .catch(e => msg('Couldn’t load ' + CSV_URL + ' (' + e.message + '). Check that the file is in the repository at that path.'));
