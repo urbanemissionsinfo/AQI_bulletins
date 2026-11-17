@@ -416,7 +416,7 @@ function buildPollutantChecks() {
 
         const range = document.createElement('span');
         range.className = 'range';
-        range.textContent = count === 0 ? 'none in data' : ` ${count.toLocaleString()} days`;
+        range.textContent = count === 0 ? 'none in data' : ``;
 
         label.title = count === 0 ? `${p.label} does not appear in this dataset` : '';
         label.append(input, name, range);
