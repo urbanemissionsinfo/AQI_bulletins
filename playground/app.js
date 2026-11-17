@@ -1,11 +1,11 @@
 // === CONFIGURATION ===
 // Primary location of the SQLite file, relative to index.html.
 // If it is not found there, the fallbacks below are tried in order.
-const DB_FILE_PATH = '../data/Processed/aqi_bulletins.db';
+const DB_FILE_PATH = '../data/Processed/aqi-bulletins.db';
 const DB_FALLBACK_PATHS = [
-    'aqi_bulletins.db',
-    'data/aqi_bulletins.db',
-    'data/Processed/aqi_bulletins.db'
+    'aqi-bulletins.db',
+    'data/aqi-bulletins.db',
+    'data/Processed/aqi-bulletins.db'
 ];
 
 const DEFAULT_QUERY = `SELECT *
@@ -22,49 +22,124 @@ const CATEGORY_ORDER = ['good', 'satisfactory', 'moderate', 'poor', 'very poor',
 
 const PRESETS = [
     {
-        label: 'City rankings (mean and peak AQI)',
+        // Compares cities fairly: only days with at least 5 reporting stations count,
+        // and cities need 100+ such days. CPCB "Poor" starts at AQI 201.
+        label: 'Most polluted cities (share of Poor or worse days)',
         sql: `SELECT city,
-       COUNT(*) AS days_recorded,
+       COUNT(*) AS well_covered_days,
+       SUM(aqi >= 201) AS poor_or_worse_days,
+       ROUND(100.0 * SUM(aqi >= 201) / COUNT(*), 1) AS pct_poor_or_worse,
+       SUM(aqi >= 401) AS severe_days,
        ROUND(AVG(aqi), 1) AS mean_aqi,
-       MAX(aqi) AS max_aqi,
-       MAX(no_stations) AS stations
+       MAX(aqi) AS peak_aqi
 FROM aqi_bulletins
+WHERE no_stations >= 5 AND aqi IS NOT NULL
 GROUP BY city
-ORDER BY mean_aqi DESC;`
+HAVING COUNT(*) >= 100
+ORDER BY pct_poor_or_worse DESC
+LIMIT 25;`
     },
     {
-        label: 'Category breakdown per city',
-        sql: `SELECT city, aqi_category, COUNT(*) AS days
+        // Pivots month of year into columns, so winter peaks and monsoon dips show up per city.
+        label: 'Seasonal fingerprint (mean AQI by month, per city)',
+        sql: `SELECT city,
+       COUNT(*) AS days,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '01' THEN aqi END)) AS jan,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '02' THEN aqi END)) AS feb,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '03' THEN aqi END)) AS mar,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '04' THEN aqi END)) AS apr,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '05' THEN aqi END)) AS may,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '06' THEN aqi END)) AS jun,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '07' THEN aqi END)) AS jul,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '08' THEN aqi END)) AS aug,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '09' THEN aqi END)) AS sep,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '10' THEN aqi END)) AS oct,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '11' THEN aqi END)) AS nov,
+       ROUND(AVG(CASE WHEN SUBSTR(date, 6, 2) = '12' THEN aqi END)) AS dec
 FROM aqi_bulletins
-GROUP BY city, aqi_category
-ORDER BY city, days DESC;`
+WHERE aqi IS NOT NULL AND no_stations >= 5
+GROUP BY city
+HAVING COUNT(*) >= 365
+ORDER BY AVG(aqi) DESC
+LIMIT 20;`
     },
     {
-        label: 'Monthly AQI trend (all cities)',
-        sql: `SELECT SUBSTR(date, 1, 7) AS year_month,
-       ROUND(AVG(aqi), 1) AS monthly_avg_aqi,
-       COUNT(*) AS records
-FROM aqi_bulletins
-GROUP BY year_month
-ORDER BY year_month DESC;`
+        // Only years with 300+ daily records are used, so partial years do not
+        // distort the first-versus-latest comparison.
+        label: 'Who improved? Earliest vs latest full year',
+        sql: `WITH yearly AS (
+    SELECT city,
+           SUBSTR(date, 1, 4) AS year,
+           COUNT(*) AS days,
+           AVG(aqi) AS mean_aqi
+    FROM aqi_bulletins
+    WHERE aqi IS NOT NULL
+    GROUP BY city, year
+    HAVING COUNT(*) >= 300
+),
+bounds AS (
+    SELECT city, MIN(year) AS first_year, MAX(year) AS last_year
+    FROM yearly
+    GROUP BY city
+    HAVING MIN(year) < MAX(year)
+)
+SELECT b.city,
+       b.first_year,
+       ROUND(f.mean_aqi, 1) AS first_year_mean,
+       b.last_year,
+       ROUND(l.mean_aqi, 1) AS last_year_mean,
+       ROUND(l.mean_aqi - f.mean_aqi, 1) AS change_in_aqi,
+       ROUND(100.0 * (l.mean_aqi - f.mean_aqi) / f.mean_aqi, 1) AS pct_change
+FROM bounds b
+JOIN yearly f ON f.city = b.city AND f.year = b.first_year
+JOIN yearly l ON l.city = b.city AND l.year = b.last_year
+ORDER BY change_in_aqi;`
     },
     {
-        label: 'Dominant pollutants and severity',
-        sql: `SELECT prominent_pollutant,
-       COUNT(*) AS occurrences,
-       ROUND(AVG(aqi), 1) AS avg_aqi_when_prominent
-FROM aqi_bulletins
-WHERE prominent_pollutant IS NOT NULL
-GROUP BY prominent_pollutant
-ORDER BY occurrences DESC;`
+        // Looks only at Poor-or-worse days and finds each city's leading pollutant on them.
+        label: 'What drives bad days in each city?',
+        sql: `WITH bad_days AS (
+    SELECT city, prominent_pollutant, COUNT(*) AS days
+    FROM aqi_bulletins
+    WHERE aqi >= 201 AND prominent_pollutant IS NOT NULL
+    GROUP BY city, prominent_pollutant
+),
+ranked AS (
+    SELECT city,
+           prominent_pollutant,
+           days,
+           SUM(days) OVER (PARTITION BY city) AS total_bad_days,
+           RANK() OVER (PARTITION BY city ORDER BY days DESC) AS rnk
+    FROM bad_days
+)
+SELECT city,
+       prominent_pollutant AS leading_pollutant,
+       days AS days_as_leading,
+       total_bad_days AS poor_or_worse_days,
+       ROUND(100.0 * days / total_bad_days, 1) AS share_pct
+FROM ranked
+WHERE rnk = 1 AND total_bad_days >= 30
+ORDER BY total_bad_days DESC;`
     },
     {
-        label: 'Severe episodes (AQI 400 or more)',
-        sql: `SELECT date, city, aqi, aqi_category, prominent_pollutant, no_stations
-FROM aqi_bulletins
-WHERE aqi >= 400
-ORDER BY aqi DESC
-LIMIT 50;`
+        // Gaps-and-islands: consecutive dates share the same (date number minus row number),
+        // so grouping on that value gives each unbroken run of bad days.
+        label: 'Longest runs of Very Poor or Severe days',
+        sql: `WITH bad AS (
+    SELECT city,
+           date,
+           julianday(date) - ROW_NUMBER() OVER (PARTITION BY city ORDER BY date) AS run_id
+    FROM aqi_bulletins
+    WHERE aqi >= 301
+)
+SELECT city,
+       MIN(date) AS run_start,
+       MAX(date) AS run_end,
+       COUNT(*) AS consecutive_days
+FROM bad
+GROUP BY city, run_id
+ORDER BY consecutive_days DESC, run_start DESC
+LIMIT 25;`
     }
 ];
 
