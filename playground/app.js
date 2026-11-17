@@ -369,18 +369,23 @@ function buildCategoryChecks() {
             input.type = 'checkbox';
             input.value = val;
 
+            // Wrapper to keep chip and range on the same line together
+            const content = document.createElement('span');
+            content.className = 'check-content';
+
             const chip = document.createElement('span');
             chip.className = `chip cat-${lower.replace(/\s+/g, '-')}`;
             chip.textContent = val;
-
-            label.append(input, chip);
+            content.append(chip);
 
             if (CATEGORY_RANGES[lower]) {
                 const range = document.createElement('span');
                 range.className = 'range';
                 range.textContent = `AQI ${CATEGORY_RANGES[lower]}`;
-                label.append(range);
+                content.append(range);
             }
+
+            label.append(input, content);
             categoryChecks.appendChild(label);
         });
     } catch (e) {
@@ -411,7 +416,7 @@ function buildPollutantChecks() {
 
         const range = document.createElement('span');
         range.className = 'range';
-        range.textContent = count === 0 ? 'none in data' : `${count.toLocaleString()} days`;
+        range.textContent = count === 0 ? 'none in data' : ` ${count.toLocaleString()} days`;
 
         label.title = count === 0 ? `${p.label} does not appear in this dataset` : '';
         label.append(input, name, range);

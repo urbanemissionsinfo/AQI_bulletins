@@ -39,90 +39,91 @@
     </header>
 
     <main class="app-container">
-        <!-- Sidebar now contains ONLY the filter builder with no vertical scrolling required -->
         <aside class="sidebar" aria-label="Query helpers">
             <section class="panel" id="filterPanel">
                 <h2>Query builder</h2>
                 <p class="hint">Choose what you want to see. The SQL is written for you and shown in the editor.</p>
 
-                <div class="form-group">
-                    <label for="cityFilter">City</label>
-                    <select id="cityFilter">
-                        <option value="ALL">All cities</option>
-                    </select>
-                </div>
-
-                <div class="form-group" id="dateGroup">
-                    <span class="field-label">Dates</span>
-                    <div class="date-row">
-                        <label class="sub-label" for="dateFrom">From
-                            <input type="date" id="dateFrom">
-                        </label>
-                        <label class="sub-label" for="dateTo">To
-                            <input type="date" id="dateTo">
-                        </label>
-                    </div>
-                </div>
-
-                <fieldset class="form-group">
-                    <legend>Air quality category</legend>
-                    <p class="field-help">Tick one or more. Leave all unticked to include every category.</p>
-                    <div class="check-list" id="categoryChecks"></div>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <legend>Main pollutant</legend>
-                    <p class="field-help">Tick one or more. A day is included when any ticked pollutant was among its main pollutants. Leave all unticked to include every day.</p>
-                    <div class="check-grid" id="pollutantChecks"></div>
-                </fieldset>
-
-                <div class="form-group">
-                    <label for="stationsFilter">Stations reporting</label>
-                    <select id="stationsFilter">
-                        <option value="0">Any number of stations</option>
-                        <option value="3">3 or more stations</option>
-                        <option value="5">5 or more stations (more reliable)</option>
-                        <option value="10">10 or more stations</option>
-                    </select>
-                </div>
-
-                <div class="form-group two-col">
-                    <div>
-                        <label for="sortFilter">Sort by</label>
-                        <select id="sortFilter">
-                            <option value="newest">Newest first</option>
-                            <option value="oldest">Oldest first</option>
-                            <option value="highest">Highest AQI first</option>
-                            <option value="lowest">Lowest AQI first</option>
-                            <option value="city">City, A to Z</option>
+                <div class="filter-scroll-area">
+                    <div class="form-group">
+                        <label for="cityFilter">City</label>
+                        <select id="cityFilter">
+                            <option value="ALL">All cities</option>
                         </select>
                     </div>
-                    <div>
-                        <label for="limitFilter">Rows to show</label>
-                        <select id="limitFilter">
-                            <option value="100">100</option>
-                            <option value="500">500</option>
-                            <option value="1000">1,000</option>
-                            <option value="0">All</option>
+
+                    <div class="form-group" id="dateGroup">
+                        <span class="field-label">Dates</span>
+                        <div class="date-row">
+                            <label class="sub-label" for="dateFrom">From
+                                <input type="date" id="dateFrom">
+                            </label>
+                            <label class="sub-label" for="dateTo">To
+                                <input type="date" id="dateTo">
+                            </label>
+                        </div>
+                    </div>
+
+                    <fieldset class="form-group">
+                        <legend>Air quality category</legend>
+                        <p class="field-help">Tick one or more. Leave all unticked to include every category.</p>
+                        <div class="check-list" id="categoryChecks"></div>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <legend>Main pollutant</legend>
+                        <p class="field-help">Tick one or more. A day is included when any ticked pollutant was among its main pollutants. Leave all unticked to include every day.</p>
+                        <div class="check-grid" id="pollutantChecks"></div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="stationsFilter">Stations reporting</label>
+                        <select id="stationsFilter">
+                            <option value="0">Any number of stations</option>
+                            <option value="3">3 or more stations</option>
+                            <option value="5">5 or more stations (more reliable)</option>
+                            <option value="10">10 or more stations</option>
                         </select>
+                    </div>
+
+                    <div class="form-group two-col">
+                        <div>
+                            <label for="sortFilter">Sort by</label>
+                            <select id="sortFilter">
+                                <option value="newest">Newest first</option>
+                                <option value="oldest">Oldest first</option>
+                                <option value="highest">Highest AQI first</option>
+                                <option value="lowest">Lowest AQI first</option>
+                                <option value="city">City, A to Z</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="limitFilter">Rows to show</label>
+                            <select id="limitFilter">
+                                <option value="100">100</option>
+                                <option value="500">500</option>
+                                <option value="1000">1,000</option>
+                                <option value="0">All</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
-                <p id="matchCount" class="match-count" aria-live="polite"></p>
-
-                <div class="filter-actions">
-                    <button type="button" id="applyFiltersBtn" class="secondary-btn" disabled>Show matching records</button>
-                    <button type="button" id="clearFiltersBtn" class="ghost-btn" disabled>Clear</button>
+                <div class="filter-footer">
+                    <p id="matchCount" class="match-count" aria-live="polite"></p>
+                    <div class="filter-actions">
+                        <button type="button" id="applyFiltersBtn" class="secondary-btn" disabled>Show matching records</button>
+                        <button type="button" id="clearFiltersBtn" class="ghost-btn" disabled>Clear</button>
+                    </div>
                 </div>
             </section>
         </aside>
 
         <section class="workspace">
-            <!-- Ready-made queries placed neatly above the SQL editor -->
             <div class="panel presets-top-panel">
                 <div class="presets-header-row">
                     <h2>Example queries</h2>
-                    <p class="hint">Select a pre-built analysis to load its SQL into the editor.</p>
+                    <p class="hint">Each one loads its SQL into the editor so you can adapt it.</p>
                 </div>
                 <div class="preset-buttons horizontal-presets" id="presetContainer"></div>
             </div>
