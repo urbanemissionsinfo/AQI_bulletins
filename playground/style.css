@@ -100,7 +100,7 @@ a {
 .status-badge.error   { color: var(--danger); }
 .status-badge.success { color: var(--success); }
 
-/* Layout: sidebar plus workspace, one viewport on desktop */
+/* Layout: sidebar plus workspace */
 .app-container {
     display: grid;
     grid-template-columns: 340px minmax(0, 1fr);
@@ -110,13 +110,13 @@ a {
     min-height: 0;
 }
 
+/* Sidebar: NO scroll needed now */
 .sidebar {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     min-height: 0;
-    overflow-y: auto;
-    padding-right: 0.25rem;
+    overflow-y: hidden; 
 }
 
 .workspace {
@@ -125,6 +125,7 @@ a {
     gap: 1rem;
     min-height: 0;
     min-width: 0;
+    overflow-y: auto;
 }
 
 .panel,
@@ -146,47 +147,42 @@ a {
 }
 
 .hint {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.6rem;
 }
 
-/* Filter builder */
+/* Filter builder optimizations for compact view without scrolling */
 .form-group {
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.6rem;
 }
 
 .form-group label,
 .query-header label {
     display: block;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-weight: 500;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 .form-group select {
     width: 100%;
     font: inherit;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     background: var(--surface);
     color: var(--text);
     border: 1px solid var(--border);
     border-radius: 5px;
-    padding: 0.5rem 0.6rem;
-}
-
-.form-group input[type="range"] {
-    width: 100%;
-    accent-color: var(--ue-green);
+    padding: 0.35rem 0.5rem;
 }
 
 /* Buttons */
 button {
     font-family: inherit;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 500;
     border-radius: 5px;
-    padding: 0.5rem 0.95rem;
+    padding: 0.45rem 0.85rem;
     cursor: pointer;
     transition: background-color 0.15s, border-color 0.15s;
 }
@@ -218,10 +214,28 @@ button:disabled {
 }
 .ghost-btn:hover:not(:disabled) { border-color: var(--ue-green); color: var(--ue-green); }
 
-.preset-buttons {
+/* Ready-made questions arranged horizontally/flexibly above the editor */
+.presets-top-panel {
+    padding: 0.8rem 1rem;
+}
+
+.presets-header-row {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
     gap: 0.5rem;
+}
+
+.presets-header-row .hint {
+    margin-bottom: 0.4rem;
+}
+
+.horizontal-presets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.4rem;
+    margin-top: 0.4rem;
 }
 
 .preset-btn {
@@ -229,12 +243,119 @@ button:disabled {
     color: var(--text);
     border: 1px solid var(--border);
     text-align: left;
-    padding: 0.6rem 0.8rem;
-    font-size: 0.92rem;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
 }
 .preset-btn:hover:not(:disabled) {
     border-color: var(--ue-green);
     background: var(--ue-green-soft);
+}
+
+/* Filter builder additions */
+fieldset {
+    border: none;
+    min-width: 0;
+}
+
+legend,
+.field-label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    padding: 0;
+}
+
+.field-help {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+}
+
+.date-row,
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.sub-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.form-group input[type="date"] {
+    display: block;
+    width: 100%;
+    margin-top: 0.1rem;
+    font: inherit;
+    font-size: 0.88rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.35rem 0.4rem;
+}
+
+.check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.2rem 0.5rem;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.86rem;
+    cursor: pointer;
+}
+
+.check input {
+    accent-color: var(--ue-green);
+    width: 0.95rem;
+    height: 0.95rem;
+    flex-shrink: 0;
+}
+
+.check .range {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+}
+
+.check.is-disabled {
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+.match-count {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ue-green);
+    min-height: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.match-count.warn {
+    color: var(--danger);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.filter-actions .secondary-btn {
+    width: auto;
+    flex: 1;
+    margin-top: 0;
 }
 
 /* SQL editor */
@@ -249,7 +370,7 @@ button:disabled {
     justify-content: space-between;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
     flex-wrap: wrap;
 }
 
@@ -269,15 +390,15 @@ button:disabled {
 textarea {
     width: 100%;
     font-family: var(--font-mono);
-    font-size: 0.95rem;
-    line-height: 1.55;
+    font-size: 0.9rem;
+    line-height: 1.5;
     background: #FBFCFA;
     color: var(--text);
     border: 1px solid var(--border);
     border-radius: 5px;
-    padding: 0.7rem 0.8rem;
+    padding: 0.6rem 0.7rem;
     resize: vertical;
-    min-height: 7rem;
+    min-height: 6rem;
 }
 
 textarea:focus {
@@ -310,7 +431,7 @@ textarea:disabled {
 }
 
 #resultsMeta {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
 }
 
@@ -324,21 +445,21 @@ textarea:disabled {
 }
 
 .placeholder-text {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.98rem;
+    font-size: 0.95rem;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.93rem;
+    font-size: 0.9rem;
     text-align: left;
 }
 
 th, td {
-    padding: 0.55rem 0.9rem;
+    padding: 0.5rem 0.8rem;
     border-bottom: 1px solid var(--border);
     white-space: nowrap;
 }
@@ -369,8 +490,8 @@ tbody tr:hover td {
 }
 
 .truncation-note {
-    padding: 0.7rem 0.9rem;
-    font-size: 0.88rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     background: var(--bg);
     border-top: 1px solid var(--border);
@@ -379,9 +500,9 @@ tbody tr:hover td {
 /* AQI category chips (CPCB colour scale) */
 .chip {
     display: inline-block;
-    padding: 0.1rem 0.65rem;
+    padding: 0.1rem 0.6rem;
     border-radius: 999px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
     color: #111;
     background: #E5E8E1;
@@ -396,12 +517,12 @@ tbody tr:hover td {
 /* Errors */
 .error-msg {
     margin: 1rem;
-    padding: 0.9rem 1rem;
+    padding: 0.8rem 0.9rem;
     background: var(--danger-soft);
     border-left: 4px solid var(--danger);
     border-radius: 4px;
     color: var(--text);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .error-msg strong {
@@ -409,12 +530,12 @@ tbody tr:hover td {
 }
 
 .error-msg ul {
-    margin: 0.5rem 0 0.5rem 1.25rem;
+    margin: 0.4rem 0 0.4rem 1.2rem;
 }
 
 .error-msg code {
     font-family: var(--font-mono);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     background: rgba(0, 0, 0, 0.06);
     padding: 0.05rem 0.3rem;
     border-radius: 3px;
@@ -423,18 +544,18 @@ tbody tr:hover td {
 pre.error-msg {
     white-space: pre-wrap;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 }
 
 /* Footer */
 .app-footer {
-    padding: 0.6rem 1.5rem 0.9rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 1.5rem 0.8rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
     flex-shrink: 0;
 }
 
-/* Desktop: keep everything in one viewport and scroll inside panels */
+/* Desktop: keep everything in one viewport */
 @media (min-width: 901px) {
     body {
         height: 100vh;
@@ -451,7 +572,6 @@ pre.error-msg {
 
     .sidebar {
         overflow: visible;
-        padding-right: 0;
     }
 
     .app-header {
@@ -466,7 +586,7 @@ pre.error-msg {
     }
 
     .app-footer {
-        padding: 0.6rem 1rem 1rem;
+        padding: 0.5rem 1rem 1rem;
     }
 }
 

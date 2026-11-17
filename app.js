@@ -96,7 +96,7 @@ function info() {
   $('#legend').replaceChildren(...CATS.map((c, i) => {
     const li = document.createElement('li'), bt = document.createElement('button'), sw = document.createElement('i'), s = document.createElement('span'), rg = document.createElement('span'), b = document.createElement('b');
     sw.style.background = c[1]; s.className = 'nm'; s.textContent = c[0]; rg.className = 'rg'; rg.textContent = ' (' + c[2] + ')';
-    b.textContent = set.filter(p => p.g === i).length.toLocaleString('en-IN');
+    b.textContent = set.filter(p => p.g === i).length.toLocaleString('en-IN') +' days';
     bt.title = c[0] + ' (' + c[2] + ')'; bt.setAttribute('aria-label', c[0] + ' (' + c[2] + '), ' + b.textContent + ' days');
     bt.type = 'button'; bt.setAttribute('aria-pressed', S.cats.has(i));
     bt.onclick = () => { S.cats.has(i) ? S.cats.delete(i) : S.cats.add(i); filt(); info(); };
@@ -172,10 +172,10 @@ function stats(set) {
   }
   const worst = set.reduce((b, p) => p.a > b.a ? p : b), bad = set.filter(p => p.g >= 3).length;
   render($('#stats'), [
-    ['Latest day', Math.round(last.a), fd(last.t) + ', ' + CATS[last.g][0], last.g],
+    ['AQI, Latest day', Math.round(last.a), fd(last.t) + ', ' + CATS[last.g][0], last.g],
     ['Longest Poor or worse streak', best ? best.n + (best.n === 1 ? ' day' : ' days') : 'None',
       best ? (best.n > 1 ? fd(best.a) + ' to ' + fd(best.b) : fd(best.a)) : 'No Poor or worse days', 3],
-    ['Worst day', Math.round(worst.a), fd(worst.t) + ', ' + CATS[worst.g][0], worst.g],
+    ['AQI, Worst day', Math.round(worst.a), fd(worst.t) + ', ' + CATS[worst.g][0], worst.g],
     ['Poor or worse', Math.round(bad / n * 100) + '%', f(bad) + ' of ' + f(n) + ' days', -1]]);
   if (!ns.length) return;
   const end = ns[ns.length - 1], avg = ns.reduce((t, p) => t + p.n, 0) / ns.length;

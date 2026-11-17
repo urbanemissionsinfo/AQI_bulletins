@@ -157,12 +157,19 @@ const resultsContent = document.getElementById('resultsContent');
 const resultsMeta = document.getElementById('resultsMeta');
 const presetContainer = document.getElementById('presetContainer');
 
+const filterPanel = document.getElementById('filterPanel');
 const cityFilter = document.getElementById('cityFilter');
-const categoryFilter = document.getElementById('categoryFilter');
-const pollutantFilter = document.getElementById('pollutantFilter');
-const minAqiFilter = document.getElementById('minAqiFilter');
-const minAqiVal = document.getElementById('minAqiVal');
+const dateGroup = document.getElementById('dateGroup');
+const dateFrom = document.getElementById('dateFrom');
+const dateTo = document.getElementById('dateTo');
+const categoryChecks = document.getElementById('categoryChecks');
+const pollutantChecks = document.getElementById('pollutantChecks');
+const stationsFilter = document.getElementById('stationsFilter');
+const sortFilter = document.getElementById('sortFilter');
+const limitFilter = document.getElementById('limitFilter');
+const matchCount = document.getElementById('matchCount');
 const applyFiltersBtn = document.getElementById('applyFiltersBtn');
+const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 
 // ---------------------------------------------------------------
 // 1. Load the SQLite engine and the database file
@@ -238,10 +245,9 @@ async function initApp() {
         sqlInput.disabled = false;
         runBtn.disabled = false;
         resetBtn.disabled = false;
-        applyFiltersBtn.disabled = false;
         presetContainer.querySelectorAll('button').forEach(b => { b.disabled = false; });
 
-        populateFilterDropdowns();
+        setupFilters();
         executeQuery(DEFAULT_QUERY);
     } catch (err) {
         showLoadError(err);
@@ -275,10 +281,43 @@ function showLoadError(err) {
 // ---------------------------------------------------------------
 // 2. Filter builder
 // ---------------------------------------------------------------
-function populateFilterDropdowns() {
-    populateSelect(cityFilter, 'city');
-    populateSelect(categoryFilter, 'aqi_category', (a, b) => categoryRank(a) - categoryRank(b));
-    populateSelect(pollutantFilter, 'prominent_pollutant');
+
+// The seven pollutants CPCB reports as "prominent". The data column can hold several of
+// them in one value (for example "PM2.5, PM10"), so each is matched with LIKE '%name%'.
+const POLLUTANTS = [
+    { label: 'PM2.5', patterns: ['PM2.5'] },
+    { label: 'PM10',  patterns: ['PM10'] },
+    { label: 'NO\u2082', patterns: ['NO2'] },
+    { label: 'SO\u2082', patterns: ['SO2'] },
+    { label: 'CO',    patterns: ['CO'] },
+    { label: 'O\u2083', patterns: ['O3'] },
+    { label: 'NH\u2083', patterns: ['NH3'] }
+];
+
+// CPCB AQI bands, shown next to each category so the numbers are clear to everyone
+const CATEGORY_RANGES = {
+    'good': '0\u201350',
+    'satisfactory': '51\u2013100',
+    'moderate': '101\u2013200',
+    'poor': '201\u2013300',
+    'very poor': '301\u2013400',
+    'severe': '401\u2013500'
+};
+
+const SORT_OPTIONS = {
+    newest:  'date DESC',
+    oldest:  'date ASC',
+    highest: 'aqi DESC, date DESC',
+    lowest:  'aqi IS NULL, aqi ASC, date DESC',
+    city:    'city ASC, date DESC'
+};
+
+let dataMinDate = '';
+let dataMaxDate = '';
+let dateHasTime = false;
+
+function sqlQuote(value) {
+    return `'${String(value).replace(/'/g, "''")}'`;
 }
 
 function categoryRank(name) {
@@ -286,59 +325,232 @@ function categoryRank(name) {
     return i === -1 ? CATEGORY_ORDER.length : i;
 }
 
-function populateSelect(selectElement, column, sorter) {
-    try {
-        const result = db.exec(
-            `SELECT DISTINCT ${column} FROM aqi_bulletins WHERE ${column} IS NOT NULL ORDER BY ${column} ASC;`
-        );
-        const values = result.length ? result[0].values.map(row => row[0]) : [];
-        if (sorter) values.sort(sorter);
+function likeClauses(patterns) {
+    return patterns.map(p => `prominent_pollutant LIKE '%${p}%'`);
+}
 
-        values.forEach(val => {
+function setupFilters() {
+    populateCities();
+    buildCategoryChecks();
+    buildPollutantChecks();
+    setupDateRange();
+
+    applyFiltersBtn.disabled = false;
+    clearFiltersBtn.disabled = false;
+    updateMatchCount();
+}
+
+function populateCities() {
+    try {
+        const res = db.exec('SELECT DISTINCT city FROM aqi_bulletins WHERE city IS NOT NULL ORDER BY city ASC;');
+        (res.length ? res[0].values : []).forEach(([city]) => {
             const opt = document.createElement('option');
-            opt.value = val;
-            opt.textContent = val;
-            selectElement.appendChild(opt);
+            opt.value = city;
+            opt.textContent = city;
+            cityFilter.appendChild(opt);
         });
     } catch (e) {
-        console.warn(`Could not populate the ${column} dropdown:`, e);
+        console.warn('Could not list cities:', e);
     }
 }
 
-function sqlQuote(value) {
-    return `'${String(value).replace(/'/g, "''")}'`;
+function buildCategoryChecks() {
+    try {
+        const res = db.exec('SELECT DISTINCT aqi_category FROM aqi_bulletins WHERE aqi_category IS NOT NULL;');
+        const values = (res.length ? res[0].values.map(r => r[0]) : [])
+            .sort((a, b) => categoryRank(a) - categoryRank(b));
+
+        values.forEach(val => {
+            const lower = String(val).toLowerCase().trim();
+            const label = document.createElement('label');
+            label.className = 'check';
+
+            const input = document.createElement('input');
+            input.type = 'checkbox';
+            input.value = val;
+
+            const chip = document.createElement('span');
+            chip.className = `chip cat-${lower.replace(/\s+/g, '-')}`;
+            chip.textContent = val;
+
+            label.append(input, chip);
+
+            if (CATEGORY_RANGES[lower]) {
+                const range = document.createElement('span');
+                range.className = 'range';
+                range.textContent = `AQI ${CATEGORY_RANGES[lower]}`;
+                label.append(range);
+            }
+            categoryChecks.appendChild(label);
+        });
+    } catch (e) {
+        console.warn('Could not list AQI categories:', e);
+    }
 }
 
-minAqiFilter.addEventListener('input', e => {
-    minAqiVal.textContent = e.target.value;
-});
+function buildPollutantChecks() {
+    POLLUTANTS.forEach((p, index) => {
+        let count = 0;
+        try {
+            const res = db.exec(`SELECT COUNT(*) FROM aqi_bulletins WHERE ${likeClauses(p.patterns).join(' OR ')};`);
+            count = res[0].values[0][0];
+        } catch (e) {
+            console.warn(`Could not count ${p.label}:`, e);
+        }
 
-applyFiltersBtn.addEventListener('click', () => {
+        const label = document.createElement('label');
+        label.className = 'check' + (count === 0 ? ' is-disabled' : '');
+
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.value = String(index);
+        input.disabled = count === 0;
+
+        const name = document.createElement('span');
+        name.textContent = p.label;
+
+        const range = document.createElement('span');
+        range.className = 'range';
+        range.textContent = count === 0 ? 'none in data' : `${count.toLocaleString()} days`;
+
+        label.title = count === 0 ? `${p.label} does not appear in this dataset` : '';
+        label.append(input, name, range);
+        pollutantChecks.appendChild(label);
+    });
+}
+
+function setupDateRange() {
+    try {
+        const res = db.exec('SELECT MIN(SUBSTR(date, 1, 10)), MAX(SUBSTR(date, 1, 10)), MAX(LENGTH(date)) FROM aqi_bulletins;');
+        const [min, max, maxLen] = res[0].values[0];
+        const isoDate = /^\d{4}-\d{2}-\d{2}$/;
+
+        if (!isoDate.test(min || '') || !isoDate.test(max || '')) {
+            dateGroup.hidden = true; // dates are not in YYYY-MM-DD form, so skip the date picker
+            return;
+        }
+        dataMinDate = min;
+        dataMaxDate = max;
+        dateHasTime = maxLen > 10;
+
+        dateFrom.min = dateTo.min = min;
+        dateFrom.max = dateTo.max = max;
+        dateFrom.value = min;
+        dateTo.value = max;
+    } catch (e) {
+        dateGroup.hidden = true;
+        console.warn('Could not read the date range:', e);
+    }
+}
+
+// Collect the WHERE conditions that match what the person has chosen
+function collectFilters() {
     const conditions = [];
 
     if (cityFilter.value !== 'ALL') {
         conditions.push(`city = ${sqlQuote(cityFilter.value)}`);
     }
-    if (categoryFilter.value !== 'ALL') {
-        conditions.push(`aqi_category = ${sqlQuote(categoryFilter.value)}`);
+
+    if (!dateGroup.hidden) {
+        const from = dateFrom.value;
+        const to = dateTo.value;
+        if (from && to && from > to) {
+            return { conditions, error: 'The start date is after the end date.' };
+        }
+        const col = dateHasTime ? 'SUBSTR(date, 1, 10)' : 'date';
+        if (from && from !== dataMinDate) conditions.push(`${col} >= ${sqlQuote(from)}`);
+        if (to && to !== dataMaxDate) conditions.push(`${col} <= ${sqlQuote(to)}`);
     }
-    if (pollutantFilter.value !== 'ALL') {
-        conditions.push(`prominent_pollutant = ${sqlQuote(pollutantFilter.value)}`);
+
+    const categories = [...categoryChecks.querySelectorAll('input:checked')].map(i => i.value);
+    if (categories.length === 1) {
+        conditions.push(`aqi_category = ${sqlQuote(categories[0])}`);
+    } else if (categories.length > 1) {
+        conditions.push(`aqi_category IN (${categories.map(sqlQuote).join(', ')})`);
     }
-    const minAqi = parseInt(minAqiFilter.value, 10);
-    if (minAqi > 0) {
-        conditions.push(`aqi >= ${minAqi}`);
+
+    const pollutantClauses = [...pollutantChecks.querySelectorAll('input:checked')]
+        .flatMap(i => likeClauses(POLLUTANTS[Number(i.value)].patterns));
+    if (pollutantClauses.length === 1) {
+        conditions.push(pollutantClauses[0]);
+    } else if (pollutantClauses.length > 1) {
+        conditions.push(`(${pollutantClauses.join('\n       OR ')})`);
     }
+
+    const minStations = parseInt(stationsFilter.value, 10);
+    if (minStations > 0) {
+        conditions.push(`no_stations >= ${minStations}`);
+    }
+
+    return { conditions, error: null };
+}
+
+function buildFilterSql() {
+    const { conditions, error } = collectFilters();
+    if (error) return { error };
 
     const lines = ['SELECT *', 'FROM aqi_bulletins'];
-    if (conditions.length) {
-        lines.push(`WHERE ${conditions.join('\n  AND ')}`);
-    }
-    lines.push('ORDER BY date DESC', 'LIMIT 100;');
+    conditions.forEach((c, i) => lines.push((i === 0 ? 'WHERE ' : '  AND ') + c));
+    lines.push(`ORDER BY ${SORT_OPTIONS[sortFilter.value] || SORT_OPTIONS.newest}`);
 
-    const generatedSql = lines.join('\n');
-    sqlInput.value = generatedSql;
-    executeQuery(generatedSql);
+    const limit = parseInt(limitFilter.value, 10);
+    if (limit > 0) {
+        lines.push(`LIMIT ${limit};`);
+    } else {
+        lines[lines.length - 1] += ';';
+    }
+    return { sql: lines.join('\n') };
+}
+
+// Live count under the filters, so people know what they will get before running it
+function updateMatchCount() {
+    if (!db) return;
+    const { conditions, error } = collectFilters();
+
+    if (error) {
+        matchCount.textContent = error;
+        matchCount.classList.add('warn');
+        return;
+    }
+    matchCount.classList.remove('warn');
+
+    try {
+        const where = conditions.length ? ` WHERE ${conditions.join(' AND ')}` : '';
+        const n = db.exec(`SELECT COUNT(*) FROM aqi_bulletins${where};`)[0].values[0][0];
+        matchCount.textContent = n === 0
+            ? 'No records match these filters.'
+            : `${n.toLocaleString()} matching ${n === 1 ? 'record' : 'records'}`;
+    } catch (e) {
+        matchCount.textContent = '';
+        console.warn('Could not count matches:', e);
+    }
+}
+
+function clearFilters() {
+    cityFilter.value = 'ALL';
+    if (!dateGroup.hidden) {
+        dateFrom.value = dataMinDate;
+        dateTo.value = dataMaxDate;
+    }
+    filterPanel.querySelectorAll('input[type="checkbox"]').forEach(i => { i.checked = false; });
+    stationsFilter.value = '0';
+    sortFilter.value = 'newest';
+    limitFilter.value = '100';
+    updateMatchCount();
+}
+
+filterPanel.addEventListener('change', updateMatchCount);
+clearFiltersBtn.addEventListener('click', clearFilters);
+
+applyFiltersBtn.addEventListener('click', () => {
+    const { sql, error } = buildFilterSql();
+    if (error) {
+        matchCount.textContent = error;
+        matchCount.classList.add('warn');
+        return;
+    }
+    sqlInput.value = sql;
+    executeQuery(sql);
 });
 
 // ---------------------------------------------------------------
