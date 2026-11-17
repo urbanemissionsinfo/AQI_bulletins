@@ -3,108 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AQI Bulletins Explorer & SQL Playground</title>
+    <title>AQI Bulletins SQL Playground | Urban Emissions Info</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- sql.js WASM distribution -->
+
+    <!-- sql.js (SQLite compiled to WebAssembly) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
 </head>
 <body>
     <header class="app-header">
-        <div>
-            <h1>AQI Bulletins Explorer</h1>
-            <p>Table: <code>aqi_bulletins</code> | Columns: <code>date</code>, <code>city</code>, <code>no_stations</code>, <code>aqi_category</code>, <code>aqi</code>, <code>prominent_pollutant</code></p>
+        <div class="app-title">
+            <h1>AQI bulletins SQL playground</h1>
+            <p>
+                Table <code>aqi_bulletins</code> with columns
+                <code>date</code>, <code>city</code>, <code>no_stations</code>,
+                <code>aqi_category</code>, <code>aqi</code>, <code>prominent_pollutant</code>
+            </p>
         </div>
-        <span id="dbStatus" class="status-badge loading">Loading database...</span>
+        <span id="dbStatus" class="status-badge loading" role="status">Loading database…</span>
     </header>
 
     <main class="app-container">
-        <!-- Left Sidebar: Visual Question Builder & Presets -->
-        <aside class="sidebar">
-            <!-- Visual Query Builder -->
-            <div class="panel">
-                <h3>Interactive Filter Builder</h3>
-                <p class="hint">Build a query without writing SQL:</p>
-                
+        <aside class="sidebar" aria-label="Query helpers">
+            <section class="panel">
+                <h2>Filter builder</h2>
+                <p class="hint">Choose filters and the matching SQL appears in the editor.</p>
+
                 <div class="form-group">
                     <label for="cityFilter">City</label>
                     <select id="cityFilter">
-                        <option value="ALL">All Cities</option>
+                        <option value="ALL">All cities</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="categoryFilter">AQI Category</label>
+                    <label for="categoryFilter">AQI category</label>
                     <select id="categoryFilter">
-                        <option value="ALL">All Categories</option>
+                        <option value="ALL">All categories</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="pollutantFilter">Prominent Pollutant</label>
+                    <label for="pollutantFilter">Prominent pollutant</label>
                     <select id="pollutantFilter">
-                        <option value="ALL">All Pollutants</option>
+                        <option value="ALL">All pollutants</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="minAqiFilter">Minimum AQI: <span id="minAqiVal">0</span></label>
+                    <label for="minAqiFilter">Minimum AQI: <strong id="minAqiVal">0</strong></label>
                     <input type="range" id="minAqiFilter" min="0" max="500" step="10" value="0">
                 </div>
 
-                <button id="applyFiltersBtn" class="secondary-btn" disabled>Generate & Run Query</button>
-            </div>
+                <button type="button" id="applyFiltersBtn" class="secondary-btn" disabled>Build and run query</button>
+            </section>
 
-            <!-- Analytical Presets -->
-            <div class="panel">
-                <h3>Analytical Questions</h3>
-                <p class="hint">Click to explore complex aggregations:</p>
-                <div class="preset-buttons" id="presetContainer">
-                    <button class="preset-btn" data-query="SELECT city, COUNT(*) AS days_recorded, ROUND(AVG(aqi), 1) AS mean_aqi, MAX(aqi) AS max_aqi, MAX(no_stations) AS stations FROM aqi_bulletins GROUP BY city ORDER BY mean_aqi DESC;">
-                        City Rankings (Mean & Peak AQI)
-                    </button>
-                    <button class="preset-btn" data-query="SELECT city, aqi_category, COUNT(*) AS days FROM aqi_bulletins GROUP BY city, aqi_category ORDER BY city, days DESC;">
-                        Category Breakdown per City
-                    </button>
-                    <button class="preset-btn" data-query="SELECT SUBSTR(date, 1, 7) AS year_month, ROUND(AVG(aqi), 1) AS monthly_avg_aqi, COUNT(*) AS records FROM aqi_bulletins GROUP BY year_month ORDER BY year_month DESC;">
-                        Monthly AQI Trend (All Cities)
-                    </button>
-                    <button class="preset-btn" data-query="SELECT prominent_pollutant, COUNT(*) AS occurrences, ROUND(AVG(aqi), 1) AS avg_aqi_when_prominent FROM aqi_bulletins WHERE prominent_pollutant IS NOT NULL GROUP BY prominent_pollutant ORDER BY occurrences DESC;">
-                        Dominant Pollutants & Severity
-                    </button>
-                    <button class="preset-btn" data-query="SELECT date, city, aqi, aqi_category, prominent_pollutant, no_stations FROM aqi_bulletins WHERE aqi >= 400 ORDER BY aqi DESC LIMIT 50;">
-                        Severe Episodes (AQI &ge; 400)
-                    </button>
-                </div>
-            </div>
+            <section class="panel">
+                <h2>Ready-made questions</h2>
+                <p class="hint">Each one loads its SQL into the editor so you can adapt it.</p>
+                <div class="preset-buttons" id="presetContainer"></div>
+            </section>
         </aside>
 
-        <!-- Main Workspace: SQL Editor + Data Table -->
         <section class="workspace">
             <div class="query-box">
                 <div class="query-header">
-                    <label for="sqlInput">SQL Query Editor</label>
+                    <label for="sqlInput">SQL query</label>
                     <div class="btn-group">
-                        <button id="resetBtn" class="ghost-btn" disabled>Reset</button>
-                        <button id="runBtn" class="primary-btn" disabled>Run SQL (Ctrl + Enter)</button>
+                        <button type="button" id="resetBtn" class="ghost-btn" disabled>Reset</button>
+                        <button type="button" id="runBtn" class="primary-btn" disabled>Run query (Ctrl + Enter)</button>
                     </div>
                 </div>
-                <textarea id="sqlInput" rows="4" disabled spellcheck="false"></textarea>
+                <textarea id="sqlInput" rows="6" disabled spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
             </div>
 
             <div class="results-box">
                 <div class="results-header">
                     <div>
-                        <h3>Query Output</h3>
-                        <span id="resultsMeta"></span>
+                        <h2>Results</h2>
+                        <span id="resultsMeta" aria-live="polite"></span>
                     </div>
-                    <button id="exportCsvBtn" class="ghost-btn" disabled>Export CSV</button>
+                    <button type="button" id="exportCsvBtn" class="ghost-btn" disabled>Download CSV</button>
                 </div>
                 <div id="resultsContent" class="table-container">
-                    <div class="placeholder-text">Initializing database...</div>
+                    <div class="placeholder-text">Loading the database…</div>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="app-footer">
+        Data: <a href="https://cpcb.nic.in/AQI_Bulletin.php" target="_blank" rel="noopener">CPCB AQI bulletins</a>.
+        Built by <a href="https://urbanemissions.info" target="_blank" rel="noopener">Urban Emissions Info</a>.
+    </footer>
 
     <script src="app.js"></script>
 </body>
