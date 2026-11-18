@@ -144,6 +144,7 @@ LIMIT 25;`
 ];
 
 let db = null;
+let isRunning = false; // true while a query is starting or running
 let lastColumns = [];
 let lastRows = [];
 
@@ -154,6 +155,7 @@ const runBtn = document.getElementById('runBtn');
 const resetBtn = document.getElementById('resetBtn');
 const exportCsvBtn = document.getElementById('exportCsvBtn');
 const resultsContent = document.getElementById('resultsContent');
+const queryProgress = document.getElementById('queryProgress');
 const resultsMeta = document.getElementById('resultsMeta');
 const presetContainer = document.getElementById('presetContainer');
 
@@ -554,6 +556,7 @@ applyFiltersBtn.addEventListener('click', () => {
         matchCount.classList.add('warn');
         return;
     }
+    if (isRunning) return;
     sqlInput.value = sql;
     executeQuery(sql);
 });
@@ -569,6 +572,7 @@ function renderPresets() {
         btn.textContent = preset.label;
         btn.disabled = true; // enabled once the database is loaded
         btn.addEventListener('click', () => {
+            if (isRunning) return;
             sqlInput.value = preset.sql;
             executeQuery(preset.sql);
         });
@@ -579,6 +583,7 @@ function renderPresets() {
 runBtn.addEventListener('click', () => executeQuery(sqlInput.value));
 
 resetBtn.addEventListener('click', () => {
+    if (isRunning) return;
     sqlInput.value = DEFAULT_QUERY;
     executeQuery(DEFAULT_QUERY);
 });
@@ -593,8 +598,21 @@ sqlInput.addEventListener('keydown', e => {
 // ---------------------------------------------------------------
 // 4. Run a query
 // ---------------------------------------------------------------
-function executeQuery(query) {
-    if (!db) return;
+// The browser cannot repaint while SQLite is busy, so let it draw the progress overlay
+// before the query starts. The timer is a fallback for background tabs, where
+// requestAnimationFrame is paused.
+function waitForPaint() {
+    return new Promise(resolve => {
+        const fallback = setTimeout(resolve, 150);
+        requestAnimationFrame(() => setTimeout(() => {
+            clearTimeout(fallback);
+            resolve();
+        }, 0));
+    });
+}
+
+async function executeQuery(query) {
+    if (!db || isRunning) return;
 
     const sql = String(query).trim();
     if (!sql) {
@@ -603,6 +621,11 @@ function executeQuery(query) {
         exportCsvBtn.disabled = true;
         return;
     }
+
+    isRunning = true;
+    runBtn.disabled = true;
+    queryProgress.hidden = false; // CSS keeps it invisible for 0.3 s, so quick queries never flash it
+    await waitForPaint();
 
     const startTime = performance.now();
     try {
@@ -634,6 +657,10 @@ function executeQuery(query) {
         resultsContent.innerHTML = `<pre class="error-msg"><strong>SQL error:</strong> ${escapeHtml(err.message)}</pre>`;
         resultsMeta.textContent = '';
         exportCsvBtn.disabled = true;
+    } finally {
+        queryProgress.hidden = true;
+        runBtn.disabled = false;
+        isRunning = false;
     }
 }
 

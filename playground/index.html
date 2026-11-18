@@ -140,6 +140,20 @@
             </div>
 
             <div class="results-box">
+                <div id="queryProgress" class="query-progress" hidden role="status">
+                    <div class="progress-card">
+                        <span class="sr-only">Running your query, please wait.</span>
+                        <div class="progress-track" aria-hidden="true"><div class="progress-fill"></div></div>
+                        <div class="progress-messages" aria-hidden="true">
+                            <span>Running your query…</span>
+                            <span>Counting thousands of bulletins…</span>
+                            <span>Sniffing out PM2.5…</span>
+                            <span>Asking every monitoring station…</span>
+                            <span>Still crunching. Big questions take a moment…</span>
+                        </div>
+                        <p class="progress-note" aria-hidden="true">Everything runs in your browser, so large queries can take a few seconds.</p>
+                    </div>
+                </div>
                 <div class="results-header">
                     <div>
                         <h2>Results</h2>
